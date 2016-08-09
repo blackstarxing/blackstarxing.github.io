@@ -294,6 +294,9 @@ hr.small {
   font-size: 15px;
   margin-top: 30px;
   margin-bottom: 30px;
+  border: 1px solid #ccc;
+  padding: 3px 10px;
+  border-radius: 50px;
 }
 .post-tags a,
 .post-categories a {
