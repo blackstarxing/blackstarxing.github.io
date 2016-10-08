@@ -297,7 +297,6 @@ hr.small {
 }
 .post-tags a,
 .post-categories a {
-  border-bottom: 1px dotted #ababab;
   text-transform: uppercase;
   margin-right: 10px;
 }
@@ -308,7 +307,12 @@ hr.small {
 .post-tags a:active,
 .post-categories a:active {
   text-decoration: none;
-  border-bottom: none;
+}
+.article-tags {
+  font-size: 15px;
+  border: 1px solid #ccc;
+  padding: 3px 10px;
+  border-radius: 50px;
 }
 .archive-before-pagination {
   height: 30px;
