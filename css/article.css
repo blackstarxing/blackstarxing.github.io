@@ -1,5 +1,4 @@
-article .container .row {
-img
+article .container .row img {
   max-width: 100% !important;
   height: auto;
   display: inline-block;

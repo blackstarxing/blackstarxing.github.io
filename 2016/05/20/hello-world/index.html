@@ -129,13 +129,13 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Disqus Comments -->
+<!-- toc content -->
 
 <script type="text/javascript">
     window.onload = function(){ 
         $(window).scroll(function(){
             console.log(1)
-            // 滚动条距离顶部的距离 大于 200px时
+            // 滚动条距离顶部的距离大于banner时
             if($(window).scrollTop() >= $('.intro-header').height()){
                 $(".toc-content").addClass('fixed');
             } else {
