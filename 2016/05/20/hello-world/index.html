@@ -129,22 +129,6 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- toc content -->
-
-<script type="text/javascript">
-    window.onload = function(){ 
-        $(window).scroll(function(){
-            console.log(1)
-            // 滚动条距离顶部的距离大于banner时
-            if($(window).scrollTop() >= $('.intro-header').height()){
-                $(".toc-content").addClass('fixed');
-            } else {
-                $(".toc-content").removeClass('fixed');
-            }
-        });
-    }
-</script>
-
 <header class="intro-header" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529827147060&di=9daf466807623fea081eaffa76c5dac6&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F539fa0f4e65ad.jpg')">
     <div class="container">
         <div class="row">
@@ -176,16 +160,28 @@
 
             <!-- Table of Contents -->
             
-            <div id="toc" class="toc-article
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="toc-content">
-                    <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
-                </div>
-            </div>
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
             
 
             <!-- Post Main Content -->
@@ -244,38 +240,38 @@ var duoshuoQuery = {short_name:"blackstar"};
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
-                    
+    
 
-                    
+    
 
-                    
-                        <li>
-                            <a href="https://github.com/blackstarxing" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
 
-                    
-                        <li>
-                            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
 
-                    
+    
 
-                    
+    
 
-                    
-                </ul>
+    
+</ul>
                 <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
                 <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
             </div>

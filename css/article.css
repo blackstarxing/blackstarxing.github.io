@@ -52,7 +52,7 @@ article .container .row .pullquote.left {
   float: left;
 }
 article .container .row .toc-article {
-  margin-top: 30px;
+  margin-top: 40px;
   padding: 0;
 }
 article .container .row .toc-article .toc-content {
@@ -60,14 +60,21 @@ article .container .row .toc-article .toc-content {
   overflow: auto;
   height: auto;
   padding: 10px;
-  width: 195px;
+  width: 275px;
   border: 1px solid #ccc;
   border-radius: 10px;
   background: #f5f5f5;
 }
-article .container .row .toc-article .fixed {
+article .container .row .toc-article .toc-content.fixed {
   position: fixed;
-  top: 45px;
+  top: 85px;
+}
+article .container .row .toc-article .toc-content .toc-title {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+article .container .row .toc-article .toc-content ol {
+  padding-left: 20px;
 }
 figure.highlight {
   background: #eee;
