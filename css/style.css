@@ -334,6 +334,9 @@ hr.small {
   border-radius: 50px;
   margin-bottom: 5px;
 }
+.article-tags:hover {
+  text-decoration: none;
+}
 .archive-before-pagination {
   height: 30px;
 }
