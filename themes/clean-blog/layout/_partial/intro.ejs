@@ -1,0 +1,20 @@
+<section class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
+    <div class="visible-md visible-lg">
+        <hr><h5>TAGS</h5>
+        <div class="tags">
+            <% site.tags.forEach(function(tag){ %>
+              <a class="article-tags" href="<%= config.root %><%= tag.path %>" title="<%= tag.name %>"><%= tag.name %></a>
+            <% }) %>
+        </div>
+    </div>            
+</section>
+<section class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
+    <div class="visible-md visible-lg">
+        <hr><h5>WHO AM I</h5>
+        <div class="short-about">               
+            <img src="/img/avatar.jpg">               
+            <p>非典型程序员，重度后摇、金属迷，常年游走于livehouse<br>曾沉醉游山玩水，晋升奶爸后目前失去自由中</p>                
+            <%- partial('link') %>
+        </div>
+    </div>            
+</section>

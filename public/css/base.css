@@ -271,13 +271,31 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
-    font-size: 36px;
+    font-size: 28px;
   }
 }
 .section-heading {
   font-size: 36px;
   margin-top: 60px;
   font-weight: 700;
+}
+.sidebar-container .short-about {
+  width: 80%;
+}
+.sidebar-container .short-about img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.sidebar-container .short-about p {
+  font-size: 14px;
+  color: #bfbfbf;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.sidebar-container .short-about .list-inline>li {
+  padding-left: 0;
 }
 .caption {
   text-align: center;
@@ -309,10 +327,15 @@ hr.small {
   text-decoration: none;
 }
 .article-tags {
+  display: inline-block;
   font-size: 15px;
   border: 1px solid #ccc;
   padding: 3px 10px;
   border-radius: 50px;
+  margin-bottom: 5px;
+}
+.article-tags:hover {
+  text-decoration: none;
 }
 .archive-before-pagination {
   height: 30px;
