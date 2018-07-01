@@ -11,7 +11,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="问题出现4月初进入到了一家新公司，在使用公司下发的.sh的文件生成git秘钥时却发现用我自己的MAC打开输入几部操作后显示报错，几次尝试过后还是不行。无奈只好先使用公司的windows机先pull代码熟悉项目。
+        <meta name="description" content="问题出现4月初进入到了一家新公司，在使用公司下发的.sh的文件生成git秘钥时却发现用我自己的MAC打开输入几步操作后显示报错，几次尝试过后还是不行。无奈只好先使用公司的windows机先pull代码熟悉项目。
 探寻问题但是问题既然出现了就应该好好探究一番，更何况有的时候在家里需要对代码进行一些紧急">
     
 
@@ -152,10 +152,35 @@
 <article>
     <div class="container">
         <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题出现"><span class="toc-text">问题出现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#探寻问题"><span class="toc-text">探寻问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#水落石出"><span class="toc-text">水落石出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新的问题"><span class="toc-text">新的问题</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
 
             <!-- Tags and categories -->
-           
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
                         
 
@@ -165,25 +190,22 @@
 
                     
                 </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    
+                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                    <!--  -->
                         <!-- 
 
 <a href="/categories/技术/">技术</a>
  -->
-                    
-                </div>
+                    <!--  -->
+                <!-- </div> -->
             
 
             <!-- Gallery -->
             
 
-            <!-- Table of Contents -->
-            
-
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h3><p>4月初进入到了一家新公司，在使用公司下发的.sh的文件生成git秘钥时却发现用我自己的MAC打开输入几部操作后显示报错，几次尝试过后还是不行。无奈只好先使用公司的windows机先pull代码熟悉项目。</p>
+                <h3 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h3><p>4月初进入到了一家新公司，在使用公司下发的.sh的文件生成git秘钥时却发现用我自己的MAC打开输入几步操作后显示报错，几次尝试过后还是不行。无奈只好先使用公司的windows机先pull代码熟悉项目。</p>
 <h3 id="探寻问题"><a href="#探寻问题" class="headerlink" title="探寻问题"></a>探寻问题</h3><p>但是问题既然出现了就应该好好探究一番，更何况有的时候在家里需要对代码进行一些紧急的修改，不能拉取推送代码也着实不方便，经过一番查找很快便有了答案。</p>
 <h3 id="水落石出"><a href="#水落石出" class="headerlink" title="水落石出"></a>水落石出</h3><p>原来，由于Linux和windows的文本格式不同，所以对于.sh需要先进行转换，可以先在终端通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi text.sh</span><br></pre></td></tr></table></figure></p>
 <p>新建一个.sh文件，然后输入i进入编辑模式，将原来.sh中的命令复制进来ESC退出编辑，:wq保存<br>这时候再运行新建的.sh文件，这个时候可能会报permission denied的错误，没关系只要再执行一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 text.sh</span><br></pre></td></tr></table></figure></p>
