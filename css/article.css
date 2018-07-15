@@ -20,21 +20,21 @@ article .container .row .video-container embed {
   height: 100%;
   margin-top: 0;
 }
-article .container .row .video-container blockquote {
+article .container .row blockquote {
   font-style: italic;
   font-family: font-serif;
   font-size: 1.2em;
   padding: 0 30px 15px;
   text-align: left;
 }
-article .container .row .video-container blockquote footer {
+article .container .row blockquote footer {
   border-top: none;
   font-size: 0.8em;
   line-height: 1;
   margin: 20px 0 0;
   padding-top: 0;
 }
-article .container .row .video-container blockquote footer cite:before {
+article .container .row blockquote footer cite:before {
   content: '—';
   color: #ccc;
   padding: 0 0.5em;
@@ -74,7 +74,11 @@ article .container .row .toc-article .toc-content .toc-title {
   margin-bottom: 10px;
 }
 article .container .row .toc-article .toc-content ol {
-  padding-left: 40px;
+  padding-left: 20px;
+  list-style: none;
+}
+article .container .row .toc-article .toc-content ol a {
+  text-decoration: none;
 }
 figure.highlight {
   background: #eee;
@@ -108,21 +112,21 @@ figure.highlight table {
   margin-top: 0;
   border-spacing: 0;
 }
-figure.highlight .gutter {
+figure.highlight table .gutter {
   color: color-meta;
   padding-right: 15px;
   border-right: 1px solid color-border;
   text-align: right;
 }
-figure.highlight .code {
+figure.highlight table .code {
   padding-left: 15px;
   border-left: 1px solid #fff;
   color: #666;
 }
-figure.highlight .line {
+figure.highlight table .line {
   height: 20px;
 }
-figure.highlight .line.marked {
+figure.highlight table .line.marked {
   background: #d6d6d6;
 }
 pre .comment,
