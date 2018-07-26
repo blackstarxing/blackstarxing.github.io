@@ -5,10 +5,11 @@
 # Site
 title: Blackstar's Blog
 subtitle: 临渊羡鱼不如退而结网
-description:
+description: 这里是非典型程序员blackstar的博客，我将在这里分享有关前端技术、生活以及音乐方面的东西，欢迎各位同好和我一起交流心得
 author: Jiaxing Yan
 language: zh-CN
 timezone:
+keywords: 前端,web,vue,博客,blackstar,音乐
 
 
 # URL
@@ -27,6 +28,9 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - 'baidu_verify_8XSeM7eMve.html'
+  - 'baidu_verify_dwtSoxggNN.html'
+  - 'google4c032a09928621bb.html'
 
 # Writing
 new_post_name: :title.md # File name of new posts

@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 
+    <%
+    var keywords = '';
+    if (page.keywords && page.keywords.length) {
+        keywords = page.keywords;
+    } else if (page.tags && page.tags.length) {
+        var tags = [];
+        page.tags.forEach(function(tag){
+            tags.push(tag.name);
+        });
+        keywords = tags.join(',')
+    } else if (config.keywords) {
+        keywords = config.keywords;
+    }
+    %>
+
+    <!--Keywords-->
+    <% if (keywords) { %>
+        <meta name="keywords" content="<%= keywords %>" />
+    <% } %>
+
     <!--Description-->
     <% if (page.description){ %>
         <meta name="description" content="<%= page.description %>">

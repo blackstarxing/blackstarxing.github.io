@@ -74,7 +74,11 @@ article .container .row .toc-article .toc-content .toc-title {
   margin-bottom: 10px;
 }
 article .container .row .toc-article .toc-content ol {
-  padding-left: 40px;
+  padding-left: 20px;
+  list-style: none;
+}
+article .container .row .toc-article .toc-content ol a {
+  text-decoration: none;
 }
 figure.highlight {
   background: #eee;
