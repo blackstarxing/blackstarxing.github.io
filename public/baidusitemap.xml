@@ -4,11 +4,11 @@
 
     
   <url>
-    <loc>https://blackstarxing.github.io/2018/07/14/VUE%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2018-07-21T10:48:56.000Z</lastmod>
+    <loc>https://blackstarxing.github.io/2018/07/14/VUE%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93%E2%80%94%E2%80%94%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E7%AF%87/</loc>
+    <lastmod>2018-07-27T14:30:21.000Z</lastmod>
     <data>
         <display>
-        <title>VUE使用小结（一）</title>
+        <title>VUE使用小结——组件通信篇</title>
         <pubTime>2018-07-14T14:23:26.000Z</pubTime>
         
         <tag>前端</tag>
@@ -18,7 +18,29 @@
          
            
              
-              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018/07/27/VUE%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93%E2%80%94%E2%80%94%E8%B8%A9%E5%9D%91%E7%AF%87/</loc>
+    <lastmod>2018-07-27T14:29:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>VUE使用小结——踩坑篇</title>
+        <pubTime>2018-07-27T12:00:17.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
