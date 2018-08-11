@@ -249,6 +249,7 @@ hr.small {
 .post-preview > a > .post-subtitle {
   margin: 0;
   font-weight: 300;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 .post-preview > .post-meta {
@@ -491,11 +492,15 @@ article .container .row .video-container embed {
   margin-top: 0;
 }
 article .container .row blockquote {
-  font-style: italic;
+/*font-style italic*/
   font-family: "Georgia", serif;
-  font-size: 1.2em;
-  padding: 0 30px 15px;
+  font-size: 1em;
+  padding: 10px 30px 15px;
   text-align: left;
+  background: rgba(102,128,153,0.05);
+}
+article .container .row blockquote p {
+  margin-top: 5px;
 }
 article .container .row blockquote footer {
   border-top: none;
@@ -551,7 +556,7 @@ article .container .row .toc-article .toc-content ol a {
   text-decoration: none;
 }
 figure.highlight {
-  background: #eee;
+  background: #f3f3f3;
   border: 1px solid #ddd;
   margin-top: 15px;
   padding: 7px 15px;

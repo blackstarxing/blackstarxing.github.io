@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="JS" />
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="这里是非典型程序员blackstar的博客，我将在这里分享有关前端技术、生活以及音乐方面的东西，欢迎各位同好和我一起交流心得">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="浅谈正则"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="这里是非典型程序员blackstar的博客，我将在这里分享有关前端技术、生活以及音乐方面的东西，欢迎各位同好和我一起交流心得" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>浅谈正则 - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to my world</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529827147060&di=9daf466807623fea081eaffa76c5dac6&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F539fa0f4e65ad.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>浅谈正则</h1>
+                    
+                    <h2 class="post-subheading">
+                        强大且高效的字符串模式
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2018-08-10
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是正则表达式？"><span class="toc-text">什么是正则表达式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则表达式对象及修饰符"><span class="toc-text">正则表达式对象及修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元字符"><span class="toc-text">元字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非贪婪模式"><span class="toc-text">非贪婪模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则相关方法"><span class="toc-text">正则相关方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#test"><span class="toc-text">test()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#exec"><span class="toc-text">exec()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#match"><span class="toc-text">match()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#search"><span class="toc-text">search()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#split"><span class="toc-text">split()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replace"><span class="toc-text">replace()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用正则"><span class="toc-text">常用正则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化在线校验工具"><span class="toc-text">可视化在线校验工具</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+
+            <!-- Tags and categories -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+                        
+
+
+<a href="/tags/JS/" class="article-tags">JS</a>
+
+
+                    
+                </div>
+                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                    <!--  -->
+                        <!-- 
+
+<a href="/categories/技术/">技术</a>
+ -->
+                    <!--  -->
+                <!-- </div> -->
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>作为一枚程序猿，无论是前端还是后端，对正则都不会陌生。正则表达式对于处理字符串、对字符串制定验证规则有着强大而高效的能力。</p>
+<h3 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h3><p>正则表达式是使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。它可以针对特定要求完成我们对字符串的处理要求，在程序世界里使用广泛。特别是在表单输入验证的环节，正则表达式起到了举重若轻的作用。例如我们想要验证用户是否输入了一组6位数字就可以使用这样的规则：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">6</span>&#125;$/</span><br></pre></td></tr></table></figure></p>
+<p>这个例子只是简单让你知道正则表达式可以做什么，我们接下来从基础开始说起。</p>
+<h3 id="正则表达式对象及修饰符"><a href="#正则表达式对象及修饰符" class="headerlink" title="正则表达式对象及修饰符"></a>正则表达式对象及修饰符</h3><p>正则表达式对象有两种定义方式<br>1、构造函数定义<br>通过new RegExp(pattern, attributes)的方式构造，如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"abc"</span>,<span class="string">"g"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>其中pattern为表示表达式内容,上面的例子表示匹配abc,attributes：</p>
+<blockquote>
+<p>g 全局匹配<br>i 不区分大小写<br>m 多行匹配</p>
+</blockquote>
+<p>2、文本定义<br>/pattern/attributes,如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/abc/g</span>;</span><br></pre></td></tr></table></figure></p>
+<p>等价于第一种构造函数方式</p>
+<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><blockquote>
+<p>\ 将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，‘n’匹配字符“n”。‘\n’匹配一个换行符。序列‘\’匹配 “\”，而‘(’则匹配“(”<br>+ 匹配一次或多次<br>* 匹配0次、1次或多次<br>? 匹配0次或1次<br>. 匹配除换行符之外的任何字符<br>{n} n为非负整数，匹配n次<br>{n,} 至少匹配n次<br>{n,m} 匹配n~m次<br>^匹配字符串开始，值得注意的是它还有另外一个含义。当在一组方括号里使用^是，它表示”非”或”排除”的意思，常常用来剔除某个字符<br>$匹配字符串结束<br>x|y 匹配x或y<br>[xyz] 匹配xyz中的任一个字符<br>[^xyx] 匹配除xyz的任一个字符<br>\b 匹配一个单词边界，也就是指单词和空格间的位置。例如，‘er\b’可以匹配“never”中的‘er’，但不能匹配“verb”中的‘er’<br>\d 匹配一个数字，相当于[0-9]<br>\D 匹配非数字字符，相当于[^0-9]<br>\s 匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]<br>\S 匹配任何非空白字符。等价于[^ \f\n\r\t\v]<br>\w 匹配字母、数字、下划线。等价于[A-Za-z0-9_]<br>\W 匹配非字母、数字、下划线。等价于[^A-Za-z0-9_]</p>
+</blockquote>
+<h3 id="非贪婪模式"><a href="#非贪婪模式" class="headerlink" title="非贪婪模式"></a>非贪婪模式</h3><p>*和+限定符都是贪婪的，他们会尽可能的多匹配字符，在其后面加上?便可以实现最小匹配。<br>如对于字符串starstarstar，“s.*r”匹配的是starstarstar，而“s.*?r”匹配的是star</p>
+<h3 id="正则相关方法"><a href="#正则相关方法" class="headerlink" title="正则相关方法"></a>正则相关方法</h3><h4 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h4><p>test()是正则表达式方法，用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// reg为正则规则，str为待测试字符串</span></span><br><span class="line">reg.test(str)</span><br></pre></td></tr></table></figure></p>
+<h4 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h4><p>exec()是正则表达式方法，用于检索字符串中的正则表达式的匹配，该函数返回一个数组，存放匹配的结果。如果未找到匹配，则返回值为 null。但若有匹配的情况下，exec()返回的数组长度永远为1。exec()方法受参数g影响,如果不指定g那么它永远返回第一个匹配值，如果指定了g那么下一次调用时它将从上一次结束的位置继续查找,下面这个例子可以很清楚的向你解释这一点：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"star1star2star3"</span>; </span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"star."</span>, <span class="string">"g"</span>); </span><br><span class="line"><span class="built_in">console</span>.log(reg.exec(str)[<span class="number">0</span>]); <span class="comment">// star1</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.exec(str)[<span class="number">0</span>]); <span class="comment">// star2</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h4><p>以下方法皆为字符串方法。<br>match()有点类似于exec()的作用，只不过当指定了g时，match()方法一次性返回所有匹配结果。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"star1star2star3"</span>; </span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"star."</span>, <span class="string">"g"</span>); </span><br><span class="line"><span class="built_in">console</span>.log(str.exec(reg)); <span class="comment">// ["star1","star2","star3"]</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h4><p>search()方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置，若无结果则返回-1</p>
+<h4 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h4><p>split()根据正则规则分割字符串返回数组</p>
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h4><p>replace()方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>$1,…$9: 正则表达式中有几个()，就会传递几个参数，$1~$9分别代表本次匹配中每个()提取的结果，最多9个<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mobile.replace(<span class="regexp">/^(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;4&#125;)$/</span>, <span class="string">"$1****$2"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这是一个手机号加密的正则</p>
+<h3 id="常用正则"><a href="#常用正则" class="headerlink" title="常用正则"></a>常用正则</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 手机号码</span></span><br><span class="line">/^<span class="number">1</span>([<span class="number">358</span>][<span class="number">0</span><span class="number">-9</span>]|<span class="number">4</span>[<span class="number">579</span>]|<span class="number">66</span>|<span class="number">7</span>[<span class="number">0135678</span>]|<span class="number">9</span>[<span class="number">89</span>])[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">8</span>&#125;$/</span><br><span class="line"><span class="comment">// 固定电话</span></span><br><span class="line">/^(<span class="number">400</span>|<span class="number">800</span>)([<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">7</span>&#125;)|(<span class="number">0</span>\d&#123;<span class="number">2</span>,<span class="number">3</span>&#125;(-?)\d&#123;<span class="number">7</span>,<span class="number">8</span>&#125;)$/</span><br></pre></td></tr></table></figure>
+<h3 id="可视化在线校验工具"><a href="#可视化在线校验工具" class="headerlink" title="可视化在线校验工具"></a>可视化在线校验工具</h3><p><a href="https://www.debuggex.com/" target="_blank" rel="noopener">https://www.debuggex.com/</a><br>很棒的在线工具，不仅可以帮你运算出结果，还可以让你结合图形一环一环的捋清验证的过程，方便你进行修改调试<br><img src="http://oerh3364g.bkt.clouddn.com/reg.png" alt="reg"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+ 
+  <section id="comments">
+   <!-- 多说评论框 start -->
+<div id="ds-thread" class="ds-thread" data-thread-key="2018/08/10/浅谈正则/" data-title="浅谈正则" data-url="https://blackstarxing.github.io/2018/08/10/浅谈正则/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"blackstar"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+  </section>
+  
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
