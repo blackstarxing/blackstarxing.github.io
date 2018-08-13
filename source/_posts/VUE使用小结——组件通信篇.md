@@ -1,6 +1,7 @@
 ---
 title: VUE使用小结——组件通信篇
 date: 2018-07-14 22:23:26
+urlname: vue-components-communication
 categories: ["技术"]
 tags: ["前端", "vue"]
 toc: true

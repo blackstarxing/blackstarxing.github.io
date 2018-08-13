@@ -1,6 +1,7 @@
 ---
 title: VUE使用小结——踩坑篇
 date: 2018-07-27 20:00:17
+urlname:  vue-damn-problems
 categories: ["技术"]
 tags: ["前端", "vue"]
 toc: true

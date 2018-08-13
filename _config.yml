@@ -17,8 +17,9 @@ keywords: 前端,web,vue,博客,blackstar,音乐
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://blackstarxing.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year-:month-:day-:urlname.html
 permalink_defaults:
+  urlname: index
 
 # Directory
 source_dir: source
@@ -53,6 +54,9 @@ highlight:
 default_category: uncategorized
 category_map: 
 tag_map:
+  生活: life
+  前端: frontend
+  操作系统: OS
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -60,6 +64,13 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+
+# Url submit
+baidu_url_submit:
+  count: 10
+  host: blackstarxing.github.io
+  token: pcfdm02ZxR8LKkkg
+  path: baidu_urls.txt
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -76,8 +87,9 @@ duoshuo_shortname: blackstar
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repository: 
     git: https://github.com/blackstarxing/blackstarxing.github.io.git
     coding: https://git.coding.net/blackstar/blackstar.git
   branch: master
+- type: baidu_url_submitter

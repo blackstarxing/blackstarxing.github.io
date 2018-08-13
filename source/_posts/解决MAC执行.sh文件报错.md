@@ -1,6 +1,7 @@
 ---
 title: 解决MAC执行.sh文件报错
 date: 2018-07-01 17:52:31
+urlname: mac-sh-wrong
 categories: ["技术"]
 tags: ["操作系统", "MAC"]
 toc: true
