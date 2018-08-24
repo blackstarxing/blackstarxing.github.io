@@ -1,6 +1,7 @@
-https://blackstarxing.github.io/2018-08-10-regular-expression.html
-https://blackstarxing.github.io/2018-07-27-vue-damn-problems.html
-https://blackstarxing.github.io/2018-07-14-vue-components-communication.html
-https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html
-https://blackstarxing.github.io/2018-06-24-keep-going-on.html
-https://blackstarxing.github.io/2016-10-08-meet-beautiful.html
+https://blackstar.coding.me/2018-08-23-arraybuffer-to-base64orblob.html
+https://blackstar.coding.me/2018-08-10-regular-expression.html
+https://blackstar.coding.me/2018-07-27-vue-damn-problems.html
+https://blackstar.coding.me/2018-07-14-vue-components-communication.html
+https://blackstar.coding.me/2018-07-01-mac-sh-wrong.html
+https://blackstar.coding.me/2018-06-24-keep-going-on.html
+https://blackstar.coding.me/2016-10-08-meet-beautiful.html

@@ -1,3 +1,6 @@
+article .container {
+  padding-bottom: 80px;
+}
 article .container .row img {
   max-width: 100% !important;
   height: auto;
@@ -115,6 +118,13 @@ figure.highlight pre {
 figure.highlight table {
   margin-top: 0;
   border-spacing: 0;
+  display: block;
+  border: none;
+}
+figure.highlight table td,
+figure.highlight table th {
+  border: none;
+  background: none;
 }
 figure.highlight table .gutter {
   color: color-meta;
