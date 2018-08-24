@@ -4,14 +4,78 @@
 
     
   <url>
+    <loc>https://blackstarxing.github.io/2018-08-23-arraybuffer-to-base64orblob.html</loc>
+    <lastmod>2018-08-24T14:13:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>二进制流图片转base64或blob地址</title>
+        <pubTime>2018-08-23T12:28:30.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blackstarxing.github.io/2018-08-10-regular-expression.html</loc>
-    <lastmod>2018-08-13T15:09:26.000Z</lastmod>
+    <lastmod>2018-08-24T14:01:30.000Z</lastmod>
     <data>
         <display>
         <title>浅谈正则</title>
         <pubTime>2018-08-10T12:25:54.000Z</pubTime>
         
         <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-07-27-vue-damn-problems.html</loc>
+    <lastmod>2018-08-24T13:58:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>VUE使用小结——踩坑篇</title>
+        <pubTime>2018-07-27T12:00:17.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
+    <lastmod>2018-08-24T13:55:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>VUE使用小结——组件通信篇</title>
+        <pubTime>2018-07-14T14:23:26.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>vue</tag>
          
          
            
@@ -79,50 +143,6 @@
            
              
               <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-07-27-vue-damn-problems.html</loc>
-    <lastmod>2018-08-13T14:34:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>VUE使用小结——踩坑篇</title>
-        <pubTime>2018-07-27T12:00:17.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
-    <lastmod>2018-08-13T14:33:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>VUE使用小结——组件通信篇</title>
-        <pubTime>2018-07-14T14:23:26.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>

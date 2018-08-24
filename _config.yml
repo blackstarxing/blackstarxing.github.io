@@ -68,7 +68,7 @@ time_format: HH:mm:ss
 # Url submit
 baidu_url_submit:
   count: 10
-  host: blackstarxing.github.io
+  host: https://blackstar.coding.me
   token: pcfdm02ZxR8LKkkg
   path: baidu_urls.txt
 

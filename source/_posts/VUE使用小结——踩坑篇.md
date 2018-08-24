@@ -12,9 +12,7 @@ toc: true
 ### 组件只能有一个根元素
 
 当我们兴致勃勃的建立好一个新的VUE项目并运行起来的时候，可能却并没有看到预期酷炫的页面，相反展现出来的是编译失败的错误提示:
-``` hash
-  - Component template should contain exactly one root element. If you are using v-if on multiple elements, use v-else-if to chain them instead.
-```
+`Component template should contain exactly one root element. If you are using v-if on multiple elements, use v-else-if to chain them instead.`
 
 那么很可能你组件中html的结构是类似于这样的：
 ``` html
@@ -45,14 +43,14 @@ toc: true
 
 这是官方文档中关于数组更新监测的注意事项，也就是说之所以视图没有更新，是我们直接通过索引来改变了数组中的某一项值或者直接通过修改length改变数组的长度，vue不能检测到这种情况下的变动。
 
-当你试图修改数据的某一个值时,正确的做法是通过Vue的set方法或者通过调用splice()变异方法触发试图更新：
+当你试图修改数据的某一个值时,正确的做法是通过Vue的`set`方法或者通过调用`splice()`变异方法触发试图更新：
 ``` vue
 vm.$set(vm.items, indexOfItem, newValue)
 //或
 vm.items.splice(indexOfItem, 1, newValue)
 ```
 
-而改变数组长度同样使用splice()方法：
+而改变数组长度同样使用`splice()`方法：
 ``` vue
 vm.items.splice(newLength)
 ```
@@ -61,6 +59,6 @@ vm.items.splice(newLength)
 
 ### 双向数据绑定失效
 
-常规来讲当我们在input上使用了v-model指令后，输入框的值会与数据进行同步，可当我们给v-model添加了lazy修饰符后，同步的条件便转为了change事件，所以当我们并不希望数据延迟同步的时候，切记不要使用lazy修饰符。
+常规来讲当我们在input上使用了`v-model`指令后，输入框的值会与数据进行同步，可当我们给`v-model`添加了`lazy`修饰符后，同步的条件便转为了`change`事件，所以当我们并不希望数据延迟同步的时候，切记不要使用`lazy`修饰符。
 
 （未完待续...)
