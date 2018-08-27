@@ -4,12 +4,34 @@
 
     
   <url>
-    <loc>https://blackstarxing.github.io/2018-08-23-arraybuffer-to-base64orblob.html</loc>
-    <lastmod>2018-08-24T14:13:36.000Z</lastmod>
+    <loc>https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html</loc>
+    <lastmod>2018-08-27T15:03:54.000Z</lastmod>
     <data>
         <display>
-        <title>二进制流图片转base64或blob地址</title>
-        <pubTime>2018-08-23T12:28:30.000Z</pubTime>
+        <title>解决MAC执行.sh文件报错</title>
+        <pubTime>2018-07-01T09:52:31.000Z</pubTime>
+        
+        <tag>操作系统</tag>
+         
+        <tag>MAC</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-08-10-regular-expression.html</loc>
+    <lastmod>2018-08-27T15:01:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>浅谈正则</title>
+        <pubTime>2018-08-10T12:25:54.000Z</pubTime>
         
         <tag>JS</tag>
          
@@ -24,12 +46,54 @@
 
     
   <url>
-    <loc>https://blackstarxing.github.io/2018-08-10-regular-expression.html</loc>
-    <lastmod>2018-08-24T14:01:30.000Z</lastmod>
+    <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
+    <lastmod>2018-08-27T14:53:49.000Z</lastmod>
     <data>
         <display>
-        <title>浅谈正则</title>
-        <pubTime>2018-08-10T12:25:54.000Z</pubTime>
+        <title>VUE使用小结——组件通信篇</title>
+        <pubTime>2018-07-14T14:23:26.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
+    <lastmod>2018-08-27T14:49:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>生命中那些不期而遇</title>
+        <pubTime>2016-10-08T12:42:23.000Z</pubTime>
+        
+        <tag>生活</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-08-23-arraybuffer-to-base64orblob.html</loc>
+    <lastmod>2018-08-27T14:49:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>二进制流图片转base64或blob地址</title>
+        <pubTime>2018-08-23T12:28:30.000Z</pubTime>
         
         <tag>JS</tag>
          
@@ -54,70 +118,6 @@
         <tag>前端</tag>
          
         <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
-    <lastmod>2018-08-24T13:55:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>VUE使用小结——组件通信篇</title>
-        <pubTime>2018-07-14T14:23:26.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
-    <lastmod>2018-08-13T15:09:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>生命中那些不期而遇</title>
-        <pubTime>2016-10-08T12:42:23.000Z</pubTime>
-        
-        <tag>生活</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html</loc>
-    <lastmod>2018-08-13T14:35:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>解决MAC执行.sh文件报错</title>
-        <pubTime>2018-07-01T09:52:31.000Z</pubTime>
-        
-        <tag>操作系统</tag>
-         
-        <tag>MAC</tag>
          
          
            

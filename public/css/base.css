@@ -13,7 +13,7 @@
 .serif,
 body,
 .intro-header .post-heading .meta {
-  font-family: '微软雅黑', 'Lora', 'Times New Roman', serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 }
 .sans-serif,
 h1,
@@ -29,7 +29,7 @@ h6,
 .btn,
 .pager li > a,
 .pager li > span {
-  font-family: '微软雅黑', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 }
 body {
   font-size: 16px;
@@ -62,13 +62,15 @@ a img:hover,
 a img:focus {
   cursor: zoom-in;
 }
+ul {
+  padding-left: 10px;
+}
 table {
   width: 100%;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
 table tr {
-  display: flex;
   width: 100%;
 }
 table tr td,
@@ -76,13 +78,12 @@ table tr th {
   padding: 5px 10px;
   border-left: 1px solid #ccc;
   border-top: 1px solid #ccc;
-  flex: 1;
 }
 table tr th {
   background: #f3f3f3;
 }
 table tr td {
-  background: #f7f9fa;
+  background: #fdfdfd;
 }
 hr.small {
   max-width: 100px;

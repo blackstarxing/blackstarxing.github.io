@@ -96,7 +96,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Welcome to my world</a>
+            <a class="navbar-brand" href="/">Don't rush and never settle.</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -227,16 +227,103 @@
 </blockquote>
 <p>2、文本定义<br><code>/pattern/attributes</code>,如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/abc/g</span>;</span><br></pre></td></tr></table></figure></p>
 <p>等价于第一种构造函数方式</p>
-<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><blockquote>
-<p>\ 将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，‘n’匹配字符“n”。‘\n’匹配一个换行符。序列‘\’匹配 “\”，而‘(’则匹配“(”<br>+ 匹配一次或多次<br>* 匹配0次、1次或多次<br>? 匹配0次或1次<br>. 匹配除换行符之外的任何字符<br>{n} n为非负整数，匹配n次<br>{n,} 至少匹配n次<br>{n,m} 匹配n~m次<br>^匹配字符串开始，值得注意的是它还有另外一个含义。当在一组方括号里使用^是，它表示”非”或”排除”的意思，常常用来剔除某个字符<br>$匹配字符串结束<br>x|y 匹配x或y<br>[xyz] 匹配xyz中的任一个字符<br>[^xyx] 匹配除xyz的任一个字符<br>\b 匹配一个单词边界，也就是指单词和空格间的位置。例如，‘er\b’可以匹配“never”中的‘er’，但不能匹配“verb”中的‘er’<br>\d 匹配一个数字，相当于[0-9]<br>\D 匹配非数字字符，相当于[^0-9]<br>\s 匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]<br>\S 匹配任何非空白字符。等价于[^ \f\n\r\t\v]<br>\w 匹配字母、数字、下划线。等价于[A-Za-z0-9_]<br>\W 匹配非字母、数字、下划线。等价于[^A-Za-z0-9_]</p>
-</blockquote>
-<h3 id="非贪婪模式"><a href="#非贪婪模式" class="headerlink" title="非贪婪模式"></a>非贪婪模式</h3><p>*和+限定符都是贪婪的，他们会尽可能的多匹配字符，在其后面加上?便可以实现最小匹配。<br>如对于字符串starstarstar，<code>s.\*r</code>匹配的是starstarstar，而<code>s.\*?r</code>匹配的是star</p>
-<h3 id="正则相关方法"><a href="#正则相关方法" class="headerlink" title="正则相关方法"></a>正则相关方法</h3><h4 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h4><p><code>test()</code>是正则表达式方法，用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// reg为正则规则，str为待测试字符串</span></span><br><span class="line">reg.test(str)</span><br></pre></td></tr></table></figure></p>
-<h4 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h4><p><code>exec()</code>是正则表达式方法，用于检索字符串中的正则表达式的匹配，该函数返回一个数组，存放匹配的结果。如果未找到匹配，则返回值为 null。但若有匹配的情况下，<code>exec()</code>返回的数组长度永远为1。<code>exec()</code>方法受参数g影响,如果不指定g那么它永远返回第一个匹配值，如果指定了g那么下一次调用时它将从上一次结束的位置继续查找,下面这个例子可以很清楚的向你解释这一点：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"star1star2star3"</span>; </span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"star."</span>, <span class="string">"g"</span>); </span><br><span class="line"><span class="built_in">console</span>.log(reg.exec(str)[<span class="number">0</span>]); <span class="comment">// star1</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.exec(str)[<span class="number">0</span>]); <span class="comment">// star2</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，<code>&#39;n&#39;</code>匹配字符<code>n</code>。<code>&#39;\n&#39;</code>匹配一个换行符。序列<code>&#39;\\&#39;</code>匹配 <code>\</code>，而<code>&#39;\(&#39;</code>则匹配<code>(</code></td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配一次或多次</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配0次、1次或多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配0次或1次</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符之外的任何字符</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n为非负整数，匹配n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>至少匹配n次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>匹配n~m次</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串开始，值得注意的是它还有另外一个含义。当在一组方括号里使用<code>^</code>时，它表示<code>非</code>或<code>排除</code>的意思，常常用来剔除某个字符</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串结束</td>
+</tr>
+<tr>
+<td>x&#124;y</td>
+<td>匹配x或y</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>匹配xyz中的任一个字符</td>
+</tr>
+<tr>
+<td>[^xyx]</td>
+<td>匹配除xyz的任一个字符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。例如，<code>&quot;er\b&quot;</code>可以匹配<code>&quot;never&quot;</code>中的<code>er</code>，但不能匹配<code>&quot;verb&quot;</code>中的<code>er</code></td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字，相当于[0-9]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配非数字字符，相当于[^0-9]</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于[\f\n\r\t\v]</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于[^\f\n\r\t\v]</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母、数字、下划线。等价于[A-Za-z0-9_]</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配非字母、数字、下划线。等价于[^A-Za-z0-9_]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="非贪婪模式"><a href="#非贪婪模式" class="headerlink" title="非贪婪模式"></a>非贪婪模式</h3><p><code>*</code>和<code>+</code>限定符都是贪婪的，他们会尽可能的多匹配字符，在其后面加上<code>?</code>便可以实现最小匹配。<br>如对于字符串starstarstar，<code>s.\*r</code>匹配的是starstarstar，而<code>s.\*?r</code>匹配的是star</p>
+<h3 id="正则相关方法"><a href="#正则相关方法" class="headerlink" title="正则相关方法"></a>正则相关方法</h3><h4 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h4><p><code>test()</code>是正则表达式方法，用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回<code>true</code>，否则返回<code>false</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// reg为正则规则，str为待测试字符串</span></span><br><span class="line">reg.test(str)</span><br></pre></td></tr></table></figure></p>
+<h4 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h4><p><code>exec()</code>是正则表达式方法，用于检索字符串中的正则表达式的匹配，该函数返回一个数组，存放匹配的结果。如果未找到匹配，则返回值为<code>null</code>。但若有匹配的情况下，<code>exec()</code>返回的数组长度永远为1。<code>exec()</code>方法受参数<code>g</code>影响,如果不指定<code>g</code>那么它永远返回第一个匹配值，如果指定了<code>g</code>那么下一次调用时它将从上一次结束的位置继续查找,下面这个例子可以很清楚的向你解释这一点：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"star1star2star3"</span>; </span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"star."</span>, <span class="string">"g"</span>); </span><br><span class="line"><span class="built_in">console</span>.log(reg.exec(str)[<span class="number">0</span>]); <span class="comment">// star1</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.exec(str)[<span class="number">0</span>]); <span class="comment">// star2</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h4><p>以下方法皆为字符串方法。<br><code>match()</code>有点类似于<code>exec()</code>的作用，只不过当指定了g时，<code>match()</code>方法一次性返回所有匹配结果。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"star1star2star3"</span>; </span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"star."</span>, <span class="string">"g"</span>); </span><br><span class="line"><span class="built_in">console</span>.log(str.exec(reg)); <span class="comment">// ["star1","star2","star3"]</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h4><p><code>search()</code>方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置，若无结果则返回-1</p>
+<h4 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h4><p><code>search()</code>方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置，若无结果则返回<code>-1</code></p>
 <h4 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h4><p><code>split()</code>根据正则规则分割字符串返回数组</p>
-<h4 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h4><p><code>replace()</code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>$1,…$9: 正则表达式中有几个()，就会传递几个参数，$1~$9分别代表本次匹配中每个()提取的结果，最多9个<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mobile.replace(<span class="regexp">/^(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;4&#125;)$/</span>, <span class="string">"$1****$2"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h4><p><code>replace()</code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>$1,…$9: 正则表达式中有几个<code>()</code>，就会传递几个参数，$1~$9分别代表本次匹配中每个<code>()</code>提取的结果，最多9个<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mobile.replace(<span class="regexp">/^(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;4&#125;)$/</span>, <span class="string">"$1****$2"</span>)</span><br></pre></td></tr></table></figure></p>
 <p>这是一个手机号加密的正则</p>
 <h3 id="常用正则"><a href="#常用正则" class="headerlink" title="常用正则"></a>常用正则</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 手机号码</span></span><br><span class="line">/^<span class="number">1</span>([<span class="number">358</span>][<span class="number">0</span><span class="number">-9</span>]|<span class="number">4</span>[<span class="number">579</span>]|<span class="number">66</span>|<span class="number">7</span>[<span class="number">0135678</span>]|<span class="number">9</span>[<span class="number">89</span>])[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">8</span>&#125;$/</span><br><span class="line"><span class="comment">// 固定电话</span></span><br><span class="line">/^(<span class="number">400</span>|<span class="number">800</span>)([<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">7</span>&#125;)|(<span class="number">0</span>\d&#123;<span class="number">2</span>,<span class="number">3</span>&#125;(-?)\d&#123;<span class="number">7</span>,<span class="number">8</span>&#125;)$/</span><br></pre></td></tr></table></figure>
 <h3 id="可视化在线校验工具"><a href="#可视化在线校验工具" class="headerlink" title="可视化在线校验工具"></a>可视化在线校验工具</h3><p><a href="https://www.debuggex.com/" target="_blank" rel="noopener">https://www.debuggex.com/</a><br>很棒的在线工具，不仅可以帮你运算出结果，还可以让你结合图形一环一环的捋清验证的过程，方便你进行修改调试<br><img src="http://oerh3364g.bkt.clouddn.com/reg.png" alt="reg"></p>

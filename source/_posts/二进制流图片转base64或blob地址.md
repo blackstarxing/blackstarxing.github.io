@@ -14,9 +14,9 @@ tags: ["JS"]
 
 来分析一下我们要做到把二进制流转换成base64编码都需要做哪些事情：
 
-一般情况下后台返回的响应数据类型是json,现在我们需要通过`responseType:arraybuffer`指定二进制流对应的响应类型arraybuffer。
+一般情况下后台返回的响应数据类型是json,现在我们需要通过`responseType:arraybuffer`指定二进制流对应的响应类型`arraybuffer`。
 
-ArrayBuffer本质上是类型化数组，它作为内存区域，可以存放多种类型的数据。但ArrayBuffer不能直接操作，而是要通过类型数组对象或DataView对象来操作，它们会将缓冲区中的数据表示为特定的格式，并通过这些格式来读写缓冲区的内容。这些类型数组对象我们称为“视图”。有以下类型：
+`ArrayBuffer`本质上是类型化数组，它作为内存区域，可以存放多种类型的数据。但`ArrayBuffer`不能直接操作，而是要通过类型数组对象或`DataView`对象来操作，它们会将缓冲区中的数据表示为特定的格式，并通过这些格式来读写缓冲区的内容。这些类型数组对象我们称为“视图”。有以下类型：
 >Int8Array：8位有符号整数，长度1个字节。
 >Uint8Array：8位无符号整数，长度1个字节。
 >Int16Array：16位有符号整数，长度2个字节。
@@ -30,14 +30,14 @@ ArrayBuffer本质上是类型化数组，它作为内存区域，可以存放多
 // 创建一个指向后台返回的二进制流的Uint8视图
 new Uint8Array(response.data)
 ```
-这里我们在二进制流上建立一个Unint8的视图来对接收到的二进制流进行操作，将其转化为字符串。这就到了`String.fromCharCode()`方法登场的时间了。
+这里我们在二进制流上建立一个Uint8的视图来对接收到的二进制流进行操作，将其转化为字符串。这就到了`String.fromCharCode()`方法登场的时间了。
 
-fromCharCode()可接受一个指定的Unicode值，然后返回一个字符串。而其实上面得到的视图是一组字节数组，和一般的数组基本无异。之前有看到别人在处理视图转成字符串用了reduce()方法：
+`fromCharCode()`可接受一个指定的`Unicode`值，然后返回一个字符串。而其实上面得到的视图是一组字节数组，和一般的数组基本无异。之前有看到别人在处理视图转成字符串用了`reduce()`方法：
 
 ``` javascript
 new Uint8Array(response.data).reduce((data, byte) => data + String.fromCharCode(byte), '')
 ```
-利用了reduce()方法累加的作用将视图中的值一个一个的转成字符串然后拼接起来。reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+利用了`reduce()`方法累加的作用将视图中的值一个一个的转成字符串然后拼接起来。`reduce() `方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
 `array.reduce(function(total, currentValue, currentIndex, arr), initialValue)`
 
 | 参数          | 描述   |
@@ -48,7 +48,7 @@ new Uint8Array(response.data).reduce((data, byte) => data + String.fromCharCode(
 | arr          | 可选。当前元素所属的数组对象  |
 | initialValue | 可选。传递给函数的初始值    |
 
-但其实fromCharCode()可以同时接受多个Unicode值，利用ES6的`...`扩展运算符可以将上面获得的类型化数组作为参数序列一次性将它们转化为字符串
+但其实`fromCharCode()`可以同时接受多个`Unicode`值，利用ES6的`...`扩展运算符可以将上面获得的类型化数组作为参数序列一次性将它们转化为字符串
 ``` javascript
 String.fromCharCode(...new Uint8Array(response.data))
 ```
@@ -72,7 +72,7 @@ var blob = new Blob( array, options );
 >* array是一个由ArrayBuffer,ArrayBufferView,Blob,DOMString等对象构成的Array，或者其他类似对象的混合体，它将会被放进Blob
 >* options提供了一个type属性，代表了将会被放入到blob中的数组内容的MIME类型，默认为`""`
 
-后台给我们返回的数据刚好是ArrayBuffer,不用任何操作直接放进Blob对象，并指定图片MIME类型，我们就创建了一个存放这张图片的Blob对象，再通过`URL.createObjectURL()`方法创建一个指向Blob对象的URL，就可以直接拿来用了。
+后台给我们返回的数据刚好是`ArrayBuffer`,不用任何操作直接放进`Blob`对象，并指定图片`MIME`类型，我们就创建了一个存放这张图片的`Blob`对象，再通过`URL.createObjectURL()`方法创建一个指向`Blob`对象的URL，就可以直接拿来用了。
 
 ### 结语
 
