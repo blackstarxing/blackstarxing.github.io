@@ -53,10 +53,13 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 category_map: 
+  技术: technology
+  生活: life
 tag_map:
   生活: life
   前端: frontend
   操作系统: OS
+  小程序: miniProgram
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
