@@ -169,7 +169,7 @@
     catalog-container">
     <div class="toc-content">
         <strong class="toc-title">文章目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#组件只能有一个根元素"><span class="toc-text">组件只能有一个根元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改数组视图无法更新"><span class="toc-text">修改数组视图无法更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向数据绑定失效"><span class="toc-text">双向数据绑定失效</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#组件只能有一个根元素"><span class="toc-text">组件只能有一个根元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改数组视图无法更新"><span class="toc-text">修改数组视图无法更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向数据绑定失效"><span class="toc-text">双向数据绑定失效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eventbus组件通信事件重复触发"><span class="toc-text">eventbus组件通信事件重复触发</span></a></li></ol>
     </div>
 </div>
 <!-- toc scroll -->
@@ -227,6 +227,15 @@
 <p>而改变数组长度同样使用<code>splice()</code>方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm.items.splice(newLength)</span><br></pre></td></tr></table></figure></p>
 <p>掌握了这一条我们再也不会被视图更新的问题困扰了，是不是很棒呢！</p>
 <h3 id="双向数据绑定失效"><a href="#双向数据绑定失效" class="headerlink" title="双向数据绑定失效"></a>双向数据绑定失效</h3><p>常规来讲当我们在input上使用了<code>v-model</code>指令后，输入框的值会与数据进行同步，可当我们给<code>v-model</code>添加了<code>lazy</code>修饰符后，同步的条件便转为了<code>change</code>事件，所以当我们并不希望数据延迟同步的时候，切记不要使用<code>lazy</code>修饰符。</p>
+<h3 id="eventbus组件通信事件重复触发"><a href="#eventbus组件通信事件重复触发" class="headerlink" title="eventbus组件通信事件重复触发"></a>eventbus组件通信事件重复触发</h3><p>在使用了eventbus来处理组件通信的页面上，如果我们多切换几次路由再回来会发现监听事件触发了多次，这是什么原因呢？</p>
+<p>原来，由eventbus方式注册的事件是全局的，并且不会随着组件的销毁而自动注销，因此当我们反复进入这个组件时也就会多次注册这个相同的监听事件。为了验证，我们在这个组件里打印一下这个eventbus实例，看一看它里面是怎么样的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">    <span class="comment">// Bus为vue实例</span></span><br><span class="line">    <span class="built_in">console</span>.log(Bus)</span><br><span class="line">    Bus.$on(<span class="string">'freshDefault'</span>, (e) =&gt; &#123;</span><br><span class="line">        <span class="keyword">this</span>.getData()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://app.yinxiang.com/shard/s51/res/8512e244-1fd7-4a9f-859e-fc04dc7ebbf0/TIM%E6%88%AA%E5%9B%BE20181012163545.png" alt="console"></p>
+<p>进出几次这个页面后，我们看到<code>Bus</code>这个实例对象里已经有了4个<code>freshDefault</code>事件，这也就造成了事件的重复触发。</p>
+<p>如何避免这种情况出现，我们只要在组件销毁时移除这个事件监听器就可以了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beforeDestroy() &#123; <span class="comment">// 或destroyed</span></span><br><span class="line">    Bus.$off(<span class="string">'freshDefault'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就能保证相同的事件监听只会有一个注册。</p>
+<p>插一句，当路由A切换到路由B时，他们之间的过程是<code>B beforeCreate</code>=&gt;<code>B created</code>=&gt;<code>A beforeDestroy</code>=&gt;<code>A destroyed</code>=&gt;<code>B mounted</code>。牢记这个生命周期，它会对你产生帮助。</p>
 <p>（未完待续…)</p>
 
 
