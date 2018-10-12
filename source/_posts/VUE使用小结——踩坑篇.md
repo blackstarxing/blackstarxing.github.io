@@ -61,4 +61,36 @@ vm.items.splice(newLength)
 
 常规来讲当我们在input上使用了`v-model`指令后，输入框的值会与数据进行同步，可当我们给`v-model`添加了`lazy`修饰符后，同步的条件便转为了`change`事件，所以当我们并不希望数据延迟同步的时候，切记不要使用`lazy`修饰符。
 
+### eventbus组件通信事件重复触发
+
+在使用了eventbus来处理组件通信的页面上，如果我们多切换几次路由再回来会发现监听事件触发了多次，这是什么原因呢？
+
+原来，由eventbus方式注册的事件是全局的，并且不会随着组件的销毁而自动注销，因此当我们反复进入这个组件时也就会多次注册这个相同的监听事件。为了验证，我们在这个组件里打印一下这个eventbus实例，看一看它里面是怎么样的：
+
+``` javascript
+mounted() {
+    // Bus为vue实例
+    console.log(Bus)
+    Bus.$on('freshDefault', (e) => {
+        this.getData()
+    })
+}
+```
+
+![console](https://app.yinxiang.com/shard/s51/res/8512e244-1fd7-4a9f-859e-fc04dc7ebbf0/TIM%E6%88%AA%E5%9B%BE20181012163545.png)
+
+进出几次这个页面后，我们看到`Bus`这个实例对象里已经有了4个`freshDefault`事件，这也就造成了事件的重复触发。
+
+如何避免这种情况出现，我们只要在组件销毁时移除这个事件监听器就可以了：
+
+``` javascript
+beforeDestroy() { // 或destroyed
+    Bus.$off('freshDefault')
+}
+```
+
+这样就能保证相同的事件监听只会有一个注册。
+
+插一句，当路由A切换到路由B时，他们之间的过程是`B beforeCreate`=>`B created`=>`A beforeDestroy`=>`A destroyed`=>`B mounted`。牢记这个生命周期，它会对你产生帮助。
+
 （未完待续...)
