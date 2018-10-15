@@ -84,7 +84,7 @@ listen("click",function handler(evt) {
 
 这里引用一张经典的图示来说明这个过程。
 
-![eventloop](http://oerh3364g.bkt.clouddn.com/eventloop.png)
+![eventloop](https://s1.ax1x.com/2018/10/15/iaMWCR.png)
 
 `stack`代表主线程中执行的同步任务，`WebAPIs`代表浏览器执行异步任务的线程，当异步任务有结果时便会在`callback queue`（也就是上面提到的`任务队列`）中放置一个事件，这个事件并不能立即执行，而是要等主线程上的任务全部结束，`stack`中的任务每执行完一个便会出栈直至栈空。`stack`在忙活了一阵终于把自己手头的工作做完了，然而它并不能马上休息，要先去看任务队列中是否有事件等待，如果有便要去任务队列中提取事件进入自己内部执行，任务队列中的事件遵循先进先出原则。每一次事件循环称为tick，整个过程不断循环，我们将这种运行机制称为`Event Loop（事件循环）`。
 
