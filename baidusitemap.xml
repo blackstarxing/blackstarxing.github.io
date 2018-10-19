@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>https://blackstarxing.github.io/2018-10-18-javascript-scope.html</loc>
+    <lastmod>2018-10-19T16:42:58.622Z</lastmod>
+    <data>
+        <display>
+        <title>探访JS作用域</title>
+        <pubTime>2018-10-18T13:38:50.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
+    <lastmod>2018-10-19T13:13:02.446Z</lastmod>
+    <data>
+        <display>
+        <title>微信小程序那些你不知道的事儿</title>
+        <pubTime>2018-09-20T12:54:19.000Z</pubTime>
+        
+        <tag>小程序</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-09-05-javascript-singlethread-asynchronous.html</loc>
+    <lastmod>2018-10-18T14:39:37.285Z</lastmod>
+    <data>
+        <display>
+        <title>JS单线程与异步</title>
+        <pubTime>2018-09-05T13:09:09.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blackstarxing.github.io/2018-10-06-MFFL.html</loc>
     <lastmod>2018-10-16T10:35:29.243Z</lastmod>
     <data>
@@ -37,26 +97,6 @@
            
              
               <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-09-05-javascript-singlethread-asynchronous.html</loc>
-    <lastmod>2018-10-15T14:47:42.807Z</lastmod>
-    <data>
-        <display>
-        <title>JS单线程与异步</title>
-        <pubTime>2018-09-05T13:09:09.000Z</pubTime>
-        
-        <tag>JS</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
           
         </display>
     </data>
@@ -114,26 +154,6 @@
         <tag>前端</tag>
          
         <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
-    <lastmod>2018-09-21T16:30:28.000Z</lastmod>
-    <data>
-        <display>
-        <title>微信小程序那些你不知道的事儿</title>
-        <pubTime>2018-09-20T12:54:19.000Z</pubTime>
-        
-        <tag>小程序</tag>
          
          
            
