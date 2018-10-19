@@ -455,6 +455,7 @@ form .row:first-child .floating-label-form-group {
   padding: 15px 25px;
   background-color: #fff;
   border-radius: 0;
+  text-decoration: none;
 }
 .pager li > a:hover,
 .pager li > a:focus {
