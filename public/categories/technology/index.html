@@ -157,6 +157,19 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
                 <div class="post-preview">
+    <a href="/2018-11-01-javascript-this-disabuse.html">
+        <h1 class="post-title archive">
+            解惑JavaScript中的this指向问题
+        </h1>
+    </a>
+    <p class="post-meta archive">
+        <!-- Date and Author -->
+        
+        2018-11-01
+    </p>
+</div>
+            
+                <div class="post-preview">
     <a href="/2018-10-18-javascript-scope.html">
         <h1 class="post-title archive">
             探访JS作用域
@@ -270,6 +283,11 @@
 </div>
 
 
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
 
     <!-- Footer -->
     <hr />
@@ -344,6 +362,23 @@
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
 </script>
 
 <!-- Disqus Comments -->
