@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>https://blackstarxing.github.io/2018-11-01-javascript-this-disabuse.html</loc>
+    <lastmod>2018-11-02T15:50:49.720Z</lastmod>
+    <data>
+        <display>
+        <title>解惑JavaScript中的this指向问题</title>
+        <pubTime>2018-11-01T13:10:25.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
+    <lastmod>2018-11-02T14:55:02.676Z</lastmod>
+    <data>
+        <display>
+        <title>微信小程序那些你不知道的事儿</title>
+        <pubTime>2018-09-20T12:54:19.000Z</pubTime>
+        
+        <tag>小程序</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
     <lastmod>2018-10-28T05:02:19.049Z</lastmod>
     <data>
@@ -32,26 +72,6 @@
         <pubTime>2018-10-18T13:38:50.000Z</pubTime>
         
         <tag>JS</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
-    <lastmod>2018-10-19T13:13:02.446Z</lastmod>
-    <data>
-        <display>
-        <title>微信小程序那些你不知道的事儿</title>
-        <pubTime>2018-09-20T12:54:19.000Z</pubTime>
-        
-        <tag>小程序</tag>
          
          
            
