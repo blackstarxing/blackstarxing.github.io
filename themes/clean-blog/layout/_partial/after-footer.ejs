@@ -30,6 +30,9 @@
             $("html,body").animate({scrollTop:0},'slow');
         });
         var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
         $(window).scroll(function(){
             if($(window).scrollTop()>h){
                 $(".backTop").fadeIn();

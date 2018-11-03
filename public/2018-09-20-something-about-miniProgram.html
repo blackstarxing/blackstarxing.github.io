@@ -229,6 +229,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">"/utils/request.js"</span>)</span><br><span class="line">App(&#123;</span><br><span class="line">    <span class="comment">// 全局声明https请求方法</span></span><br><span class="line">    http:request</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取应用实例</span></span><br><span class="line"><span class="keyword">const</span> app = getApp()</span><br><span class="line">Page(&#123;</span><br><span class="line">    data: &#123;</span><br><span class="line">        code: <span class="string">''</span></span><br><span class="line">    &#125;,</span><br><span class="line">    onLoad() &#123;</span><br><span class="line">        app.http.GET(<span class="string">'https://...'</span>,&#123;<span class="attr">name</span>:<span class="string">''</span>,<span class="attr">pwd</span>:<span class="string">''</span>&#125;).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="comment">// 成功</span></span><br><span class="line">        &#125;).catch(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="comment">// 异常</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="14、日期转换"><a href="#14、日期转换" class="headerlink" title="14、日期转换"></a>14、日期转换</h4><p>IOS系统中<code>new Date()</code>方法不支持对’2018-04-12 23:00:00’这样的日期进行转换，需要对字符串进行正则替换<code>replace(/-/g, &#39;/&#39;)</code>。</p>
+<h4 id="15、“分享监听”能力调整"><a href="#15、“分享监听”能力调整" class="headerlink" title="15、“分享监听”能力调整"></a>15、“分享监听”能力调整</h4><p>出于倡导用户主动分享小程序的考虑，微信官方不再支持<code>onShareAppMessage</code>分享事件函数的回调参数：<code>success</code>、<code>fail</code>、<code>complete</code>，因此开发者以后将无法通过这几个回调来获取用户的分享结果，如果需求有涉及请尽快调整，以免受到影响。</p>
 
 
                 
@@ -352,6 +353,9 @@ var duoshuoQuery = {short_name:"blackstar"};
             $("html,body").animate({scrollTop:0},'slow');
         });
         var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
         $(window).scroll(function(){
             if($(window).scrollTop()>h){
                 $(".backTop").fadeIn();

@@ -66,6 +66,22 @@ var obj2 = {
 obj2.obj1.foo() // 1
 ```
 
+注意该规则针对于对象方法调用，像下面这样实际还是默认绑定：
+
+``` javascript
+var a = 1
+var obj = {
+    a:2,
+    foo:function(){
+        var fn = function(){
+            console.log(this.a) // 1
+        }
+        fn() // fn没有对象调用，this绑定全局
+    }
+}
+obj.foo()
+```
+
 可是这种隐式绑定this会丢失绑定的对象，常见的两种情况是引用赋值和回调函数：
 
 （1）引用赋值
@@ -126,7 +142,7 @@ foo.call( obj ) // 2
 
 #### 4、new绑定
 
-最后一种绑定规则，我们通过new一个构造函数来创建一个新的对象，这个函数上的this就会绑定到这个对象上。
+最后一种绑定规则，如果在一个函数前面带上new来调用，那么将会创建一个新对象，同时函数中的this会绑定到这个新对象上。在 JavaScript 中，把这些使用new操作符时被调用的函数称为构造函数。
 
 ``` javascript
 function foo(a) {
@@ -136,9 +152,11 @@ function foo(a) {
 var bar = new foo(2) // foo {a: 2}
 ```
 
+如此，foo中的this就被绑定到了bar上。
+
 ### 优先级
 
-当不同的调用规则混合使用时，我们就需要判断优先级，而new绑定高于显式绑定高于隐式绑定高于默认绑定。
+介绍了各种this绑定规则，那么当不同的调用规则混合使用时，我们就需要判断优先级，而new绑定高于显式绑定高于隐式绑定高于默认绑定。
 
 因此我们可以得出以下的判断方法：
 
@@ -149,19 +167,41 @@ var bar = new foo(2) // foo {a: 2}
 
 ### 箭头函数中的this
 
-不同于前面介绍的四种绑定规则，箭头函数内部的this是词法作用域，由上下文确定，并且箭头函数的绑定无法修改。
+不同于前面介绍的四种绑定规则，箭头函数内部的this是词法作用域，由上下文确定，因此箭头函数中的this指向的是定义时的this，而不是执行时的this，并且箭头函数的绑定无法修改。
 
 ``` javascript
 var obj = {
     a:1,
     foo:function(){
         setTimeout(()=>{
+            // this指向obj
             console.log(this.a)
         },1000)
     }
 }
+var a = 2
 obj.foo() // 1而不是2
 ```
+
+``` javascript
+var obj = {
+    a:1,
+    foo:()=>{
+        // this指向window
+        console.log(this.a)
+    }
+}
+var a = 2
+obj.foo() // 2而不是1
+```
+
+上述两段代码都是使用了箭头函数，可为什么结果不尽相同？
+
+要记住，箭头函数中的this是根据定义时的上下文决定的，第一段代码中setTimeout中的箭头函数定义在foo中，而foo的上一级是obj，所以this指向obj。而第二段代码的箭头函数是定义在obj中，obj的上一级是全局，因此this指向全局。
+
+***
+
+到此我们就已经介绍了this的全部绑定情况，虽然例子举得简单，但是明确了判断规则后，相信你再不会被小小的this难住。
 
 *&#42;本文根据**《你不知道的JavaScript（上）》**第二部分第二章总结整理*
 
