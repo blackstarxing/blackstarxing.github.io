@@ -4,14 +4,14 @@
 
     
   <url>
-    <loc>https://blackstarxing.github.io/2018-11-01-javascript-this-disabuse.html</loc>
-    <lastmod>2018-11-03T08:28:00.131Z</lastmod>
+    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
+    <lastmod>2018-11-05T12:38:51.179Z</lastmod>
     <data>
         <display>
-        <title>解惑JavaScript中的this指向问题</title>
-        <pubTime>2018-11-01T13:10:25.000Z</pubTime>
+        <title>微信小程序那些你不知道的事儿</title>
+        <pubTime>2018-09-20T12:54:19.000Z</pubTime>
         
-        <tag>JS</tag>
+        <tag>小程序</tag>
          
          
            
@@ -24,14 +24,14 @@
 
     
   <url>
-    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
-    <lastmod>2018-11-03T05:47:12.313Z</lastmod>
+    <loc>https://blackstarxing.github.io/2018-11-01-javascript-this-disabuse.html</loc>
+    <lastmod>2018-11-05T12:31:04.551Z</lastmod>
     <data>
         <display>
-        <title>微信小程序那些你不知道的事儿</title>
-        <pubTime>2018-09-20T12:54:19.000Z</pubTime>
+        <title>解惑JavaScript中的this指向问题</title>
+        <pubTime>2018-11-01T13:10:25.000Z</pubTime>
         
-        <tag>小程序</tag>
+        <tag>JS</tag>
          
          
            
