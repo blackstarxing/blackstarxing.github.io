@@ -4,39 +4,19 @@
 
     
   <url>
-    <loc>https://blackstarxing.github.io/2018-11-14-javascript-prototype.html</loc>
-    <lastmod>2018-11-16T14:57:22.572Z</lastmod>
+    <loc>https://blackstarxing.github.io/2018-10-06-MFFL.html</loc>
+    <lastmod>2018-11-16T15:19:02.701Z</lastmod>
     <data>
         <display>
-        <title>对原型及原型链的简单理解</title>
-        <pubTime>2018-11-14T14:10:51.000Z</pubTime>
+        <title>达拉斯弧线</title>
+        <pubTime>2018-10-06T10:44:08.000Z</pubTime>
         
-        <tag>JS</tag>
+        <tag>生活</tag>
          
          
            
              
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
-    <lastmod>2018-11-05T12:38:51.179Z</lastmod>
-    <data>
-        <display>
-        <title>微信小程序那些你不知道的事儿</title>
-        <pubTime>2018-09-20T12:54:19.000Z</pubTime>
-        
-        <tag>小程序</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/life/"/>
           
         </display>
     </data>
@@ -45,7 +25,7 @@
     
   <url>
     <loc>https://blackstarxing.github.io/2018-11-01-javascript-this-disabuse.html</loc>
-    <lastmod>2018-11-05T12:31:04.551Z</lastmod>
+    <lastmod>2018-11-16T15:19:02.701Z</lastmod>
     <data>
         <display>
         <title>解惑JavaScript中的this指向问题</title>
@@ -65,7 +45,7 @@
     
   <url>
     <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
-    <lastmod>2018-10-28T05:02:19.049Z</lastmod>
+    <lastmod>2018-11-16T15:19:02.700Z</lastmod>
     <data>
         <display>
         <title>生命中那些不期而遇</title>
@@ -84,130 +64,8 @@
 
     
   <url>
-    <loc>https://blackstarxing.github.io/2018-10-18-javascript-scope.html</loc>
-    <lastmod>2018-10-27T08:19:42.261Z</lastmod>
-    <data>
-        <display>
-        <title>探访JS作用域</title>
-        <pubTime>2018-10-18T13:38:50.000Z</pubTime>
-        
-        <tag>JS</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-09-05-javascript-singlethread-asynchronous.html</loc>
-    <lastmod>2018-10-18T14:39:37.285Z</lastmod>
-    <data>
-        <display>
-        <title>JS单线程与异步</title>
-        <pubTime>2018-09-05T13:09:09.000Z</pubTime>
-        
-        <tag>JS</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-10-06-MFFL.html</loc>
-    <lastmod>2018-10-16T10:35:29.243Z</lastmod>
-    <data>
-        <display>
-        <title>达拉斯弧线</title>
-        <pubTime>2018-10-06T10:44:08.000Z</pubTime>
-        
-        <tag>生活</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-06-24-keep-going-on.html</loc>
-    <lastmod>2018-10-15T14:45:40.949Z</lastmod>
-    <data>
-        <display>
-        <title>善始者实繁，而克终者盖寡</title>
-        <pubTime>2018-06-24T00:24:00.000Z</pubTime>
-        
-        <tag>生活</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-08-10-regular-expression.html</loc>
-    <lastmod>2018-10-15T14:44:56.402Z</lastmod>
-    <data>
-        <display>
-        <title>浅谈正则</title>
-        <pubTime>2018-08-10T12:25:54.000Z</pubTime>
-        
-        <tag>JS</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2018-07-27-vue-damn-problems.html</loc>
-    <lastmod>2018-10-12T14:05:58.925Z</lastmod>
-    <data>
-        <display>
-        <title>VUE使用小结——踩坑篇</title>
-        <pubTime>2018-07-27T12:00:17.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html</loc>
-    <lastmod>2018-08-27T15:03:54.000Z</lastmod>
+    <lastmod>2018-11-16T15:19:02.700Z</lastmod>
     <data>
         <display>
         <title>解决MAC执行.sh文件报错</title>
@@ -228,8 +86,130 @@
 
     
   <url>
+    <loc>https://blackstarxing.github.io/2018-08-10-regular-expression.html</loc>
+    <lastmod>2018-11-16T15:19:02.700Z</lastmod>
+    <data>
+        <display>
+        <title>浅谈正则</title>
+        <pubTime>2018-08-10T12:25:54.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
+    <lastmod>2018-11-16T15:19:02.699Z</lastmod>
+    <data>
+        <display>
+        <title>微信小程序那些你不知道的事儿</title>
+        <pubTime>2018-09-20T12:54:19.000Z</pubTime>
+        
+        <tag>小程序</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-10-18-javascript-scope.html</loc>
+    <lastmod>2018-11-16T15:19:02.699Z</lastmod>
+    <data>
+        <display>
+        <title>探访JS作用域</title>
+        <pubTime>2018-10-18T13:38:50.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-06-24-keep-going-on.html</loc>
+    <lastmod>2018-11-16T15:19:02.698Z</lastmod>
+    <data>
+        <display>
+        <title>善始者实繁，而克终者盖寡</title>
+        <pubTime>2018-06-24T00:24:00.000Z</pubTime>
+        
+        <tag>生活</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-08-23-arraybuffer-to-base64orblob.html</loc>
+    <lastmod>2018-11-16T15:19:02.698Z</lastmod>
+    <data>
+        <display>
+        <title>二进制流图片转base64或blob地址</title>
+        <pubTime>2018-08-23T12:28:30.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-07-27-vue-damn-problems.html</loc>
+    <lastmod>2018-11-16T15:19:02.697Z</lastmod>
+    <data>
+        <display>
+        <title>VUE使用小结——踩坑篇</title>
+        <pubTime>2018-07-27T12:00:17.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
-    <lastmod>2018-08-27T14:53:49.000Z</lastmod>
+    <lastmod>2018-11-16T15:19:02.697Z</lastmod>
     <data>
         <display>
         <title>VUE使用小结——组件通信篇</title>
@@ -250,12 +230,32 @@
 
     
   <url>
-    <loc>https://blackstarxing.github.io/2018-08-23-arraybuffer-to-base64orblob.html</loc>
-    <lastmod>2018-08-27T14:49:00.000Z</lastmod>
+    <loc>https://blackstarxing.github.io/2018-09-05-javascript-singlethread-asynchronous.html</loc>
+    <lastmod>2018-11-16T15:19:02.696Z</lastmod>
     <data>
         <display>
-        <title>二进制流图片转base64或blob地址</title>
-        <pubTime>2018-08-23T12:28:30.000Z</pubTime>
+        <title>JS单线程与异步</title>
+        <pubTime>2018-09-05T13:09:09.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-11-14-javascript-prototype.html</loc>
+    <lastmod>2018-11-16T14:57:22.572Z</lastmod>
+    <data>
+        <display>
+        <title>对原型及原型链的简单理解</title>
+        <pubTime>2018-11-14T14:10:51.000Z</pubTime>
         
         <tag>JS</tag>
          
