@@ -1,3 +1,4 @@
+https://blackstar.coding.me/2018-11-14-javascript-prototype.html
 https://blackstar.coding.me/2018-11-01-javascript-this-disabuse.html
 https://blackstar.coding.me/2018-10-18-javascript-scope.html
 https://blackstar.coding.me/2018-10-06-MFFL.html
@@ -7,4 +8,3 @@ https://blackstar.coding.me/2018-08-23-arraybuffer-to-base64orblob.html
 https://blackstar.coding.me/2018-08-10-regular-expression.html
 https://blackstar.coding.me/2018-07-27-vue-damn-problems.html
 https://blackstar.coding.me/2018-07-14-vue-components-communication.html
-https://blackstar.coding.me/2018-07-01-mac-sh-wrong.html
