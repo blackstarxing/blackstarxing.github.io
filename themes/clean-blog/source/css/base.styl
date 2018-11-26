@@ -9,6 +9,7 @@ body
 p
   line-height 1.8
   margin 20px 0
+  word-wrap break-word
 
 p, li
   a
@@ -165,6 +166,11 @@ hr.small
     @media only screen and (min-width: 768px)
       h1
         font-size 80px
+    @media only screen and (max-width: 414px)
+      h1
+        font-size 30px
+      .subheading
+        font-size 20px
   .post-heading
     h1
       font-size 35px
@@ -188,6 +194,11 @@ hr.small
         font-size 50px
       .subheading
         font-size 30px
+    @media only screen and (max-width: 414px)
+      h1
+        font-size 24px
+      .meta
+        font-size 18px
 
 .post-preview
   > a
@@ -222,6 +233,12 @@ hr.small
     > a
       > .post-title
         font-size 24px
+  @media only screen and (max-width: 414px)
+    > a
+      > .post-title
+        font-size 20px
+      > .post-subtitle
+        font-size 16px
 
 .section-heading
   font-size 36px

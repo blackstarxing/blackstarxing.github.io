@@ -39,6 +39,7 @@ body {
 p {
   line-height: 1.8;
   margin: 20px 0;
+  word-wrap: break-word;
 }
 p a,
 li a {
@@ -241,6 +242,16 @@ hr.small {
     font-size: 80px;
   }
 }
+@media only screen and (max-width: 414px) {
+  .intro-header .site-heading h1,
+  .intro-header .page-heading h1 {
+    font-size: 30px;
+  }
+  .intro-header .site-heading .subheading,
+  .intro-header .page-heading .subheading {
+    font-size: 20px;
+  }
+}
 .intro-header .post-heading h1 {
   font-size: 35px;
 }
@@ -268,6 +279,14 @@ hr.small {
   }
   .intro-header .post-heading .subheading {
     font-size: 30px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .intro-header .post-heading h1 {
+    font-size: 24px;
+  }
+  .intro-header .post-heading .meta {
+    font-size: 18px;
   }
 }
 .post-preview > a {
@@ -312,6 +331,14 @@ hr.small {
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
     font-size: 24px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .post-preview > a > .post-title {
+    font-size: 20px;
+  }
+  .post-preview > a > .post-subtitle {
+    font-size: 16px;
   }
 }
 .section-heading {
