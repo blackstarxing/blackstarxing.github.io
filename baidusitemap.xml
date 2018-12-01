@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
-    <lastmod>2018-11-26T15:45:30.868Z</lastmod>
+    <lastmod>2018-12-01T14:26:34.234Z</lastmod>
     <data>
         <display>
         <title>时间烙下的是举手投足的习惯</title>
@@ -17,6 +17,28 @@
            
              
               <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blackstarxing.github.io/2018-11-28-es6-change.html</loc>
+    <lastmod>2018-12-01T14:22:06.799Z</lastmod>
+    <data>
+        <display>
+        <title>ES6——一场JavaScript语法的重大变革</title>
+        <pubTime>2018-11-28T15:21:08.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
           
         </display>
     </data>
@@ -64,6 +86,26 @@
 
     
   <url>
+    <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
+    <lastmod>2018-11-16T15:30:15.014Z</lastmod>
+    <data>
+        <display>
+        <title>生命中那些不期而遇</title>
+        <pubTime>2016-10-08T12:42:23.000Z</pubTime>
+        
+        <tag>生活</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html</loc>
     <lastmod>2018-11-16T15:30:15.014Z</lastmod>
     <data>
@@ -79,26 +121,6 @@
            
              
               <breadCrumb title="技术" url="https://blackstarxing.github.io/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
-    <lastmod>2018-11-16T15:30:15.014Z</lastmod>
-    <data>
-        <display>
-        <title>生命中那些不期而遇</title>
-        <pubTime>2016-10-08T12:42:23.000Z</pubTime>
-        
-        <tag>生活</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="https://blackstarxing.github.io/categories/life/"/>
           
         </display>
     </data>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="JS,ES6" />
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="这里是非典型程序员blackstar的博客，我将在这里分享有关前端技术、生活以及音乐方面的东西，欢迎各位同好和我一起交流心得">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="ES6——一场JavaScript语法的重大变革"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="这里是非典型程序员blackstar的博客，我将在这里分享有关前端技术、生活以及音乐方面的东西，欢迎各位同好和我一起交流心得" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>ES6——一场JavaScript语法的重大变革 - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle.</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://s1.ax1x.com/2018/11/28/FZneED.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>ES6——一场JavaScript语法的重大变革</h1>
+                    
+                    <h2 class="post-subheading">
+                        less is more
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2018-11-28
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#箭头函数"><span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let和const"><span class="toc-text">let和const</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板字符串"><span class="toc-text">模板字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解构赋值"><span class="toc-text">解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组解构赋值"><span class="toc-text">数组解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象解构赋值"><span class="toc-text">对象解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串解构赋值"><span class="toc-text">字符串解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数参数解构赋值"><span class="toc-text">函数参数解构赋值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认参数值"><span class="toc-text">默认参数值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-text">...运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#扩展运算符"><span class="toc-text">扩展运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rest参数"><span class="toc-text">rest参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组扩展"><span class="toc-text">数组扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find-和findIndex"><span class="toc-text">find()和findIndex()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#entries-，keys-和values"><span class="toc-text">entries()，keys()和values()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set"><span class="toc-text">Set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-assign"><span class="toc-text">Object.assign()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-of-循环"><span class="toc-text">for..of 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Promise"><span class="toc-text">Promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化"><span class="toc-text">模块化</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+
+            <!-- Tags and categories -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+                        
+
+
+<a href="/tags/JS/" class="article-tags">JS</a> <a href="/tags/ES6/" class="article-tags">ES6</a>
+
+
+                    
+                </div>
+                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                    <!--  -->
+                        <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                    <!--  -->
+                <!-- </div> -->
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>ES5标准发布后，JavaScript的发展步伐越来越快，新的特性和语法形式亟待标准化。而在经历了各种波折后，千呼万唤的ECMAScript 6（简称ES6）作为JavaScript语言的下一代标准终于在2015年发布。</p>
+<p>对于JavaScript这门语言来说，ES6 是一次激进的飞跃。简洁高效的语法解放了开发者，同时也弥补了一些最初的设计缺陷。可以说这是一场JavaScript语法的重大变革。</p>
+<p>那么ES6究竟为我们带来了哪些新的特性？它又颠覆哪些我们之前固有的语法习惯？</p>
+<p>下面这张思维导图概括了ES6的一些核心特性，虽不完全但足够日常使用。</p>
+<p><img src="https://s1.ax1x.com/2018/11/29/FZsRBV.png" alt="es6_mind"></p>
+<p><em><font color="#bbb" size="3">思维导图来自@<a href="https://github.com/ljianshu/Blog" target="_blank" rel="noopener">浪里行舟</a>，已获得使用许可</font></em></p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>箭头函数是ES6使用率最高的特性之一。从字面上看，箭头函数简化了定义函数的写法，使用<code>=&gt;</code>替代<code>function</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function">(<span class="params">x,y</span>) =&gt;</span> x + y</span><br></pre></td></tr></table></figure>
+<p>箭头函数定义包括一个参数列表（零个或多个参数，如果参数个数不是一个的话要用<code>( .. )</code>包围起来），然后是标识<code>=&gt;</code>，函数体放在最后。 </p>
+<p>所以，在前面的代码中，箭头函数就是<code>(x,y) =&gt; x + y</code>这一部分，然后这个函数引用被赋给变量 foo。 </p>
+<p>只有在函数体的表达式个数多于1个，或者函数体包含非表达式语句的时候才需要用<code>{ .. }</code>包围。如果只有一个表达式，并且省略了包围的<code>{ .. }</code>的话，则意味着表达式前面有一个隐含的<code>return</code>，就像前面代码中展示的那样。</p>
+<p>由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错。 这里列出了几种不同形式的箭头函数： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">12</span></span><br><span class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="params">x</span> =&gt;</span> x * <span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> f3 = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123; </span><br><span class="line">    <span class="keyword">var</span> z = x * <span class="number">2</span> + y</span><br><span class="line">    y++</span><br><span class="line">    x *= <span class="number">3</span></span><br><span class="line">    <span class="keyword">return</span> (x + y + z) / <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f4 = <span class="function">(<span class="params">x,y</span>) =&gt;</span> (&#123; <span class="attr">x</span>:x, <span class="attr">y</span>:y &#125;)</span><br></pre></td></tr></table></figure>
+<p>箭头函数<strong>总是</strong>函数表达式；并不存在箭头函数声明。</p>
+<p>除了简化写法，箭头函数的主要设计目的是以特定的方式改变<code>this</code>的行为特性。在前面的<a href="/2018-11-01-javascript-this-disabuse.html">解惑JavaScript中的this指向问题</a>中我们有介绍，ES5中<code>this</code>指向取决于函数调用方式，而箭头函数中的<code>this</code>不一样，它指向定义时的对象，这也正是多数情况下我们所希望的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5中使用var self = this这一hack方法绑定this</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a:<span class="number">1</span>,</span><br><span class="line">    foo:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">// 希望获取obj中的a</span></span><br><span class="line">            <span class="built_in">console</span>.log(self.a)</span><br><span class="line">        &#125;,<span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 箭头函数</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a:<span class="number">1</span>,</span><br><span class="line">    foo:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="comment">// 没问题this指向obj</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">        &#125;,<span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>我们知道ES5中只有全局作用域和函数作用域，并没有块级作用域的概念（有关作用域看<a href="/2018-10-18-javascript-scope.html">这里</a>），这会导致几个问题：</p>
+<p>1、变量可能会发生冲突并覆盖变量值</p>
+<p>2、用来计数的循环变量泄露为全局变量，比如在for循环中。</p>
+<p>如果在ES5中需要创建一个块级作用域可以使用立即调用函数表达式（IIFE），IIFE中的变量和函数会在在执行后销毁，防止污染到外部作用域。</p>
+<p>ES6为我们带来了<code>let</code>和<code>const</code>两个命令，我们可以利用它们创建绑定到任意块的声明，我们只需要一对<code>{ .. }</code>就可以创建一个作用域。不像使用var那样声明的变量总是归属于包含函数（即全局，如果在最顶层的话）作用域，<code>let</code>声明的变量只在其所在的代码块内有效，且不存在变量提升。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( a ) <span class="comment">// Uncaught ReferenceError: a is not defined</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">3</span></span><br><span class="line">    <span class="built_in">console</span>.log( a ) <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log( a ) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>和<code>let</code>差不多，只不过<code>const</code>声明一个只读的常量。一旦声明，常量的值就不能改变。实际应用中，使用<code>const</code>定义变量也能够明白地告诉后来的开发者该变量不可修改赋值。</p>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>ES6以前，我们定义字符串模板时，需要使用<code>+</code>拼接字符串、变量以及进行换行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'blackstar'</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'hello '</span> + name + <span class="string">','</span></span><br><span class="line">	<span class="string">'nice to meet you!'</span></span><br></pre></td></tr></table></figure>
+<p>在ES6中我们使用反引号<strong> `</strong> 作为标识，它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量甚至是函数调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">upper</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.toUpperCase()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'blackstar'</span></span><br><span class="line"><span class="comment">// 模板字符串会保留所有的空格和缩进</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">`hello <span class="subst">$&#123;upper(name)&#125;</span>,</span></span><br><span class="line"><span class="string">	nice to meet you!`</span></span><br></pre></td></tr></table></figure>
+<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>ES6允许按照一定模式，从数组和对象中提取值对变量进行赋值，这被称为解构。</p>
+<h4 id="数组解构赋值"><a href="#数组解构赋值" class="headerlink" title="数组解构赋值"></a>数组解构赋值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">3</span></span><br><span class="line"><span class="comment">// 无须再像上面那样一个一个赋值</span></span><br><span class="line"><span class="keyword">var</span> [a,b,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<p>解构赋值支持嵌套，数组的解构赋值按照位置对应取值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo, [[bar], baz]] = [<span class="number">1</span>, [[<span class="number">2</span>], <span class="number">3</span>]]</span><br><span class="line">foo <span class="comment">// 1</span></span><br><span class="line">bar <span class="comment">// 2</span></span><br><span class="line">baz <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [ , , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>]</span><br><span class="line">third <span class="comment">// "baz"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [x, , y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">x <span class="comment">// 1</span></span><br><span class="line">y <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [x, y] = [<span class="string">'a'</span>]</span><br><span class="line">x <span class="comment">// "a"</span></span><br><span class="line">y <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>解构赋值允许指定默认值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>] <span class="comment">// x='a', y='b'</span></span><br></pre></td></tr></table></figure>
+<h4 id="对象解构赋值"><a href="#对象解构赋值" class="headerlink" title="对象解构赋值"></a>对象解构赋值</h4><p>不同于数组按照位置解构赋值，对象的解构赋值是按照属性名来的。变量名须与属性名相同才可以取到值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; foo, baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;</span><br><span class="line">foo <span class="comment">// "aaa"</span></span><br><span class="line">baz <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>如果变量名与属性不一致，需要使用如下写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;</span><br><span class="line">baz <span class="comment">// "aaa"</span></span><br></pre></td></tr></table></figure>
+<p>对象解构赋值同样支持嵌套和指定默认值。</p>
+<p>有一点很重要需要牢记，如果是给已经声明的变量赋值，需要使用<code>()</code>包裹，不然<code>{}</code>会被当做代码块。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x</span><br><span class="line">(&#123;x&#125; = &#123;<span class="attr">x</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="字符串解构赋值"><a href="#字符串解构赋值" class="headerlink" title="字符串解构赋值"></a>字符串解构赋值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [a, b, c, d, e] = <span class="string">'hello'</span></span><br><span class="line">a <span class="comment">// "h"</span></span><br><span class="line">b <span class="comment">// "e"</span></span><br><span class="line">c <span class="comment">// "l"</span></span><br><span class="line">d <span class="comment">// "l"</span></span><br><span class="line">e <span class="comment">// "o"</span></span><br></pre></td></tr></table></figure>
+<h4 id="函数参数解构赋值"><a href="#函数参数解构赋值" class="headerlink" title="函数参数解构赋值"></a>函数参数解构赋值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">[x, y]</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add([<span class="number">1</span>, <span class="number">2</span>]) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h3 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a>默认参数值</h3><p>JavaScript最常见的一个技巧就是关于设定函数参数默认值的。多年以来我们实现这一点的方式是这样的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    x = x || <span class="number">11</span></span><br><span class="line">    y = y || <span class="number">31</span></span><br><span class="line">    <span class="built_in">console</span>.log( x + y )</span><br><span class="line">&#125;</span><br><span class="line">foo() <span class="comment">// 42</span></span><br><span class="line">foo( <span class="number">5</span>, <span class="number">6</span> ) <span class="comment">// 11</span></span><br><span class="line">foo( <span class="number">5</span> ) <span class="comment">// 36</span></span><br><span class="line">foo( <span class="literal">null</span>, <span class="number">6</span> ) <span class="comment">// 17</span></span><br></pre></td></tr></table></figure>
+<p>当然，如果你之前使用过这个模式，就会知道它很有用，但同时又有点危险，比如，如果对于一个参数你需要能够传入被认为是false（假）的值。考虑：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo( <span class="number">0</span>, <span class="number">42</span> ) <span class="comment">// 53 &lt;--哎呀，并非42</span></span><br></pre></td></tr></table></figure>
+<p>为什么？因为这里0为假，所以<code>x || 11</code>结果为11，而不是直接传入的0。要修正这个问题，有些人会选择增加更多的检查，就像下面这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    x = (x !== <span class="literal">undefined</span>) ? x : <span class="number">11</span></span><br><span class="line">    y = (y !== <span class="literal">undefined</span>) ? y : <span class="number">31</span></span><br><span class="line">    <span class="built_in">console</span>.log( x + y )</span><br><span class="line">&#125;</span><br><span class="line">foo( <span class="number">0</span>, <span class="number">42</span> ) <span class="comment">// 42</span></span><br><span class="line">foo( <span class="literal">undefined</span>, <span class="number">6</span> ) <span class="comment">// 17</span></span><br></pre></td></tr></table></figure>
+<p>那么ES6新增的一个有用的语法可以改进为缺失参数赋默认值的流程。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x = <span class="number">11</span>, y = <span class="number">31</span></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( x + y )</span><br><span class="line">&#125;</span><br><span class="line">foo() <span class="comment">// 42</span></span><br><span class="line">foo( <span class="number">5</span>, <span class="number">6</span> ) <span class="comment">// 11</span></span><br><span class="line">foo( <span class="number">0</span>, <span class="number">42</span> ) <span class="comment">// 42</span></span><br><span class="line">foo( <span class="number">5</span> ) <span class="comment">// 36</span></span><br><span class="line">foo( <span class="number">5</span>, <span class="literal">undefined</span> ) <span class="comment">// 36 &lt;-- 丢了undefined</span></span><br><span class="line">foo( <span class="number">5</span>, <span class="literal">null</span> ) <span class="comment">// 5 &lt;-- null被强制转换为0</span></span><br><span class="line">foo( <span class="literal">undefined</span>, <span class="number">6</span> ) <span class="comment">// 17 &lt;-- 丢了undefined</span></span><br><span class="line">foo( <span class="literal">null</span>, <span class="number">6</span> ) <span class="comment">// 6 &lt;-- null被强制转换为0</span></span><br></pre></td></tr></table></figure>
+<p>函数默认值可以不只是简单值，它们可以是任意合法表达式，甚至是函数调用。但是需要注意由于参数变量是默认声明的，所以不能用<code>let</code>或<code>const</code>再次声明。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x = <span class="number">5</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> x = <span class="number">1</span> <span class="comment">// error</span></span><br><span class="line">    <span class="keyword">const</span> x = <span class="number">2</span> <span class="comment">// error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参数默认值也可以与解构赋值的默认值结合起来使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">&#123;x, y = <span class="number">5</span>&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x, y)</span><br><span class="line">&#125;</span><br><span class="line">foo(&#123;&#125;) <span class="comment">// undefined 5</span></span><br><span class="line">foo(&#123;<span class="attr">x</span>: <span class="number">1</span>&#125;) <span class="comment">// 1 5</span></span><br><span class="line">foo(&#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;) <span class="comment">// 1 2</span></span><br><span class="line">foo() <span class="comment">// TypeError: Cannot read property 'x' of undefined</span></span><br></pre></td></tr></table></figure>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="...运算符"></a><code>...</code>运算符</h3><p>ES6 引入了一个新的运算符<code>...</code>，通常称为spread或rest（展开或收集）运算符，取决于它在哪 / 如何使用。</p>
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><p>当<code>...</code>用在数组或字符串之前时，它会把这个变量“展开”为各个独立的值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+<p>这一特性也方便我们替代<code>concat()</code>方法来合并数组.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> b = [ <span class="number">1</span>, ...a, <span class="number">5</span> ]</span><br><span class="line"><span class="built_in">console</span>.log( b ) <span class="comment">// [1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+<h3 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h3><p>作为扩展运算符的反向行为，<code>...</code>可以用于获取函数的多余参数并且收集到一起成为一个数组，这样就不需要使用arguments对象了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x, y, ...z</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( x, y, z )</span><br><span class="line">&#125;</span><br><span class="line">foo( <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> ) <span class="comment">// 1 2 [3,4,5]</span></span><br></pre></td></tr></table></figure>
+<p>对于上面的参数<code>z</code>，我们称其为rest参数。<code>注意：rest参数只能作为最后一个参数</code>。</p>
+<h3 id="数组扩展"><a href="#数组扩展" class="headerlink" title="数组扩展"></a>数组扩展</h3><h4 id="find-和findIndex"><a href="#find-和findIndex" class="headerlink" title="find()和findIndex()"></a>find()和findIndex()</h4><p><code>find()</code>方法用于找出第一个符合条件的数组成员。它的参数是一个回调函数，回调函数可接受三个参数，依次为当前的值、当前的位置和原数组。所有数组成员依次执行该回调函数，直到找出第一个返回值为<code>true</code>的成员，然后返回该成员。如果没有符合条件的成员，则返回<code>undefined</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">10</span>].find(<span class="function">(<span class="params">n</span>) =&gt;</span> n &lt; <span class="number">0</span>)</span><br><span class="line"><span class="comment">// -5</span></span><br></pre></td></tr></table></figure>
+<p><code>findIndex()</code>则是返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回<code>-1</code>。</p>
+<h4 id="entries-，keys-和values"><a href="#entries-，keys-和values" class="headerlink" title="entries()，keys()和values()"></a>entries()，keys()和values()</h4><p>ES6 提供三个新的方法<code>entries()</code>，<code>keys()</code>和<code>values()</code>用于遍历数组。<code>keys()</code>是对键名的遍历、<code>values()</code>是对键值的遍历，<code>entries()</code>是对键值对的遍历。</p>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>])</span><br><span class="line"><span class="built_in">console</span>.log(set) <span class="comment">// Set(4) &#123;1, 2, 3, 4&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h3><p><code>Object.assign()</code>方法用于对象的合并，将源对象的所有可枚举属性，复制到目标对象上。但如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">1</span> &#125;</span><br><span class="line"><span class="keyword">const</span> source1 = &#123; <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">2</span> &#125;</span><br><span class="line"><span class="keyword">const</span> source2 = &#123; <span class="attr">c</span>: <span class="number">3</span> &#125;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source1, source2)</span><br><span class="line"><span class="built_in">console</span>.log(target) <span class="comment">// &#123;a:1, b:2, c:3&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="for-of-循环"><a href="#for-of-循环" class="headerlink" title="for..of 循环"></a>for..of 循环</h3><p>ES6在把JavaScript中我们熟悉的<code>for</code>和<code>for..in</code>循环组合起来的基础上，又新增了一个<code>for..of</code>循环，<code>for...of</code>循环可以使用的范围包括数组、Set和Map结构、某些类似数组的对象（比如arguments对象、DOM NodeList 对象）、Generator对象，以及字符串。</p>
+<p><code>for..in</code>在数组的键/索引上循环，而<code>for..of</code>在值上循环。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>,<span class="string">"e"</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> idx <span class="keyword">in</span> a) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log( idx )</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0 1 2 3 4</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> val <span class="keyword">of</span> a) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log( val )</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "a" "b" "c" "d" "e"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>我们在处理异步的时候通常会使用回调来处理流程，可这样会比较混乱，也不利于代码的阅读和维护(可能形成回调地狱)，而ES6为我们提供了一个名为<code>Promise</code>的范式，可以不把回调事先传给异步任务，而是给我们提供了解其任务何时结束的能力，然后由我们自己的代码来决定下一步做什么。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ... some code</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="comment">/* 异步操作成功 */</span>)&#123;</span><br><span class="line">        resolve(value)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        reject(error)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// success</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// failure</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>有关<code>Promise</code>更详细的内容前面的文章<a href="/2018-09-05-javascript-singlethread-asynchronous.html">JS单线程与异步</a>中有介绍。</p>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>在ES6中我们可以通过<code>import</code>和<code>export</code>命令来帮助我们实现模块化。<code>export</code>用来导出变量或函数，<code>import</code>则是加载。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 几种导出方式</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="comment">// ..</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="comment">// ..</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> awesome = <span class="number">42</span></span><br><span class="line"><span class="keyword">var</span> bar = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">export</span> &#123; foo, awesome, bar &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; .. &#125;</span><br><span class="line"><span class="keyword">export</span> &#123; foo <span class="keyword">as</span> bar &#125; <span class="comment">// 导出时重命名</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载方式</span></span><br><span class="line"><span class="keyword">import</span> foo <span class="keyword">from</span> <span class="string">"foo"</span></span><br><span class="line"><span class="comment">// 或者：</span></span><br><span class="line"><span class="keyword">import</span> &#123; foo <span class="keyword">as</span> bar &#125; <span class="keyword">from</span> <span class="string">"foo"</span></span><br></pre></td></tr></table></figure>
+<p>好了，有关ES6的总结就先写到这里，其实它还有很多特性值得我们去发掘使用，但是把最常使用的用精用熟才是硬道理。</p>
+<p><em><font color="#bbb" size="3">文章部分内容参考自《你不知道的JavaScript（下卷）》及阮一峰《<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门</a>》</font></em></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+ 
+  <section id="comments">
+   <!-- 多说评论框 start -->
+<div id="ds-thread" class="ds-thread" data-thread-key="2018-11-28-es6-change.html" data-title="ES6——一场JavaScript语法的重大变革" data-url="https://blackstarxing.github.io/2018-11-28-es6-change.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"blackstar"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+  </section>
+  
+                </div>
+            
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
