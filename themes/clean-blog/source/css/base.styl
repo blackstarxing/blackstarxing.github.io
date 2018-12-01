@@ -174,14 +174,18 @@ hr.small
   .post-heading
     h1
       font-size 35px
+      text-shadow 3px 2px 2px #666
     .subheading, .meta
       line-height 1.1
       display block
+      text-shadow 1px 2px 2px #666
     .subheading
       @extend .sans-serif
       font-size 24px
       margin 10px 0 30px
       font-weight 600
+    .post-subheading
+      text-shadow 2px 2px 2px #666
     .meta
       @extend .serif
       font-style italic
@@ -197,6 +201,8 @@ hr.small
     @media only screen and (max-width: 414px)
       h1
         font-size 24px
+      .post-subheading
+        font-size 20px
       .meta
         font-size 18px
 

@@ -254,16 +254,21 @@ hr.small {
 }
 .intro-header .post-heading h1 {
   font-size: 35px;
+  text-shadow: 3px 2px 2px #666;
 }
 .intro-header .post-heading .subheading,
 .intro-header .post-heading .meta {
   line-height: 1.1;
   display: block;
+  text-shadow: 1px 2px 2px #666;
 }
 .intro-header .post-heading .subheading {
   font-size: 24px;
   margin: 10px 0 30px;
   font-weight: 600;
+}
+.intro-header .post-heading .post-subheading {
+  text-shadow: 2px 2px 2px #666;
 }
 .intro-header .post-heading .meta {
   font-style: italic;
@@ -284,6 +289,9 @@ hr.small {
 @media only screen and (max-width: 414px) {
   .intro-header .post-heading h1 {
     font-size: 24px;
+  }
+  .intro-header .post-heading .post-subheading {
+    font-size: 20px;
   }
   .intro-header .post-heading .meta {
     font-size: 18px;
@@ -641,6 +649,10 @@ article .container .row .toc-article .toc-content ol {
 }
 article .container .row .toc-article .toc-content ol a {
   text-decoration: none;
+}
+article .container .row .toc-article .toc-content .toc {
+  height: 200px;
+  overflow: auto;
 }
 figure.highlight {
   background: #f3f3f3;
