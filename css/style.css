@@ -651,7 +651,7 @@ article .container .row .toc-article .toc-content ol a {
   text-decoration: none;
 }
 article .container .row .toc-article .toc-content .toc {
-  height: 200px;
+  max-height: 200px;
   overflow: auto;
 }
 figure.highlight {
