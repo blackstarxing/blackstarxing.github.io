@@ -241,7 +241,7 @@ console.log('console')
 
 在开始动笔写这篇博客前，我参阅了几篇有关这部分内容的博客，更是反复阅读了阮一峰老师的*[JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)*以及*[Javascript异步编程的4种方法](http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html)*，但在这过程中其实对文章中的一些解读和概念并不能很好的理解，甚至于感觉有些内容存在矛盾，比如对于异步编程方法中回调函数的举例描述以及事件循环主线程和任务队列关系的语义相反的关系描述，这也引起了我极大的求知欲，不停查找资料以求找到更加准确的定义。也在找寻答案的路途中发现很多有关异步的博客都是几乎照搬阮一峰的博客，并没有引入自己的见解和解读，想说写博客的目的既是一个学习过程的记录，同时也是一个发现并解决问题的契机，与其照搬不如直接加个（转）。希望可以和大家共勉，如果发现我的文章内容描述有偏颇也欢迎一起讨论学习。
 
-*部分内容参考自以下：*
+*<font color="#bbb" size="3">部分内容参考自以下：</font>*
 [https://www.cnblogs.com/woodyblog/p/6061671.html](https://www.cnblogs.com/woodyblog/p/6061671.html)
 [https://blog.csdn.net/jssy_csu/article/details/78627628](https://blog.csdn.net/jssy_csu/article/details/78627628)
 [http://www.ruanyifeng.com/blog/2014/10/event-loop.html](http://www.ruanyifeng.com/blog/2014/10/event-loop.html) 

@@ -93,4 +93,4 @@ beforeDestroy() { // 或destroyed
 
 插一句，当路由A切换到路由B时，他们之间的过程是`B beforeCreate`=>`B created`=>`A beforeDestroy`=>`A destroyed`=>`B mounted`。牢记这个生命周期，它会对你产生帮助。
 
-（未完待续...)
+*<font color="#bbb" size="3">（未完待续...)</font>*

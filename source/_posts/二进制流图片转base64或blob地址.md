@@ -78,6 +78,6 @@ var blob = new Blob( array, options );
 
 这一次的探究找寻到的两种解决方案虽然难易程度相差比较大，但是过程中学习到的知识点还是很多的。可能如果先知道了第二种方法也就不会花时间去了解第一种方法的实现原理了。所以，相信过程吧，总不会是白忙活的。
 
-*部分内容参考自以下链接：*
+*<font color="#bbb" size="3">部分内容参考自以下链接：</font>*
 [https://www.cnblogs.com/copperhaze/p/6149041.html](https://www.cnblogs.com/copperhaze/p/6149041.html)
 [https://stackoverflow.com/questions/9267899/arraybuffer-to-base64-encoded-string](https://stackoverflow.com/questions/9267899/arraybuffer-to-base64-encoded-string)
