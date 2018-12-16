@@ -66,11 +66,13 @@ a img:focus {
 }
 ul {
   padding-left: 10px;
+  line-height: 1.8;
 }
 table {
   width: 100%;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
 }
 table tr {
   width: 100%;
@@ -686,6 +688,7 @@ figure.highlight pre {
 }
 figure.highlight table {
   margin-top: 0;
+  margin-bottom: 0;
   border-spacing: 0;
   display: block;
   border: none;
