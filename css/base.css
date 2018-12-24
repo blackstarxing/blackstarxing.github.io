@@ -58,6 +58,7 @@ a {
 a:hover,
 a:focus {
   color: #0085a1;
+  text-decoration: none;
 }
 a img:hover,
 a img:focus {
