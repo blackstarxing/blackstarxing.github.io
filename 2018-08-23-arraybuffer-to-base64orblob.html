@@ -162,35 +162,35 @@
         <div class="row">
             <!-- Table of Contents -->
             
-
-            <!-- Tags and categories -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
                         
+                            
 
 
 <a href="/tags/JS/" class="article-tags">JS</a>
 
 
-                    
-                </div>
-                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
-                    <!--  -->
-                        <!-- 
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
 
 <a href="/categories/technology/">技术</a>
  -->
-                    <!--  -->
-                <!-- </div> -->
-            
+                        <!--  -->
+                    <!-- </div> -->
+                
 
-            <!-- Gallery -->
-            
+                <!-- Gallery -->
+                
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>前不久做了一个在前端展示小程序二维码的需求，怎料后台给出的接口并没有返回图片url地址，而是直接以二进制流的形式返回了一张图片。</p>
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <p>前不久做了一个在前端展示小程序二维码的需求，怎料后台给出的接口并没有返回图片url地址，而是直接以二进制流的形式返回了一张图片。</p>
 <h3 id="base64编码"><a href="#base64编码" class="headerlink" title="base64编码"></a>base64编码</h3><p>我们知道img标签的src属性通常接收的值是一个路径地址，既然没有路径那我们就考虑另外一种方法，即base64编码数据显示图片。</p>
 <p>来分析一下我们要做到把二进制流转换成base64编码都需要做哪些事情：</p>
 <p>一般情况下后台返回的响应数据类型是json,现在我们需要通过<code>responseType:arraybuffer</code>指定二进制流对应的响应类型<code>arraybuffer</code>。</p>
@@ -249,13 +249,13 @@
 <p><em><font color="#bbb" size="3">部分内容参考自以下链接：</font></em><br><a href="https://www.cnblogs.com/copperhaze/p/6149041.html" target="_blank" rel="noopener">https://www.cnblogs.com/copperhaze/p/6149041.html</a><br><a href="https://stackoverflow.com/questions/9267899/arraybuffer-to-base64-encoded-string" target="_blank" rel="noopener">https://stackoverflow.com/questions/9267899/arraybuffer-to-base64-encoded-string</a></p>
 
 
-                
-            </div>
-
-            <!-- Comments -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
     <hr>
     <h3>留言:</h3>
     <div id="disqus_thread">
@@ -265,8 +265,9 @@
 
 
 
-                </div>
-            
+                    </div>
+                
+            </div>
         </div>
     </div>
 </article>

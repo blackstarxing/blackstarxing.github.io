@@ -162,35 +162,35 @@
         <div class="row">
             <!-- Table of Contents -->
             
-
-            <!-- Tags and categories -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
                         
+                            
 
 
 <a href="/tags/miniProgram/" class="article-tags">小程序</a>
 
 
-                    
-                </div>
-                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
-                    <!--  -->
-                        <!-- 
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
 
 <a href="/categories/technology/">技术</a>
  -->
-                    <!--  -->
-                <!-- </div> -->
-            
+                        <!--  -->
+                    <!-- </div> -->
+                
 
-            <!-- Gallery -->
-            
+                <!-- Gallery -->
+                
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>最近从零开始开发了一个微信小程序商城，一个月的时间下来也算颇有心得，于是想拿出来分享一下。本来想给文章标题起为“微信小程序奇技淫巧”，但是一查，奇技淫巧的意思是指过于奇巧，让人着迷，却又无益的技艺与制品。但咱们这可不是无意义瞎扯淡，不能这么叫，所以咱们就来聊聊小程序那些你知道或不知道的事儿，没准就能帮到困惑中的你。</p>
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <p>最近从零开始开发了一个微信小程序商城，一个月的时间下来也算颇有心得，于是想拿出来分享一下。本来想给文章标题起为“微信小程序奇技淫巧”，但是一查，奇技淫巧的意思是指过于奇巧，让人着迷，却又无益的技艺与制品。但咱们这可不是无意义瞎扯淡，不能这么叫，所以咱们就来聊聊小程序那些你知道或不知道的事儿，没准就能帮到困惑中的你。</p>
 <h4 id="1、button边框样式修改"><a href="#1、button边框样式修改" class="headerlink" title="1、button边框样式修改"></a>1、button边框样式修改</h4><p>小程序的button组件可能是使用率最高的组件之一了，如果我们想要修改边框样式时直接修改button的css是没有效果的，需要这样：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">button</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">     <span class="attribute">border</span>:none;</span><br><span class="line">     <span class="attribute">border-radius</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2、事件传参"><a href="#2、事件传参" class="headerlink" title="2、事件传参"></a>2、事件传参</h4><p>小程序中我们通常使用<code>bindtap</code>来绑定事件，但是绑定的方法并不能直接传参，我们需要借助标签的<code>data-*</code>属性，例如：</p>
@@ -236,13 +236,13 @@
 <p>实际上就是去除了默认的导航栏但是会保留右上角胶囊按钮，标题什么的也没有了，需要开发者自己编写顶部导航。</p>
 
 
-                
-            </div>
-
-            <!-- Comments -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
     <hr>
     <h3>留言:</h3>
     <div id="disqus_thread">
@@ -252,8 +252,9 @@
 
 
 
-                </div>
-            
+                    </div>
+                
+            </div>
         </div>
     </div>
 </article>

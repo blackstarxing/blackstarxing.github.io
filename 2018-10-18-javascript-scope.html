@@ -185,35 +185,35 @@
     }
 </script>
             
-
-            <!-- Tags and categories -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
                         
+                            
 
 
 <a href="/tags/JS/" class="article-tags">JS</a>
 
 
-                    
-                </div>
-                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
-                    <!--  -->
-                        <!-- 
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
 
 <a href="/categories/technology/">技术</a>
  -->
-                    <!--  -->
-                <!-- </div> -->
-            
+                        <!--  -->
+                    <!-- </div> -->
+                
 
-            <!-- Gallery -->
-            
+                <!-- Gallery -->
+                
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h3><p>文章开始，先用一道我曾经栽过跟头的面试题来引出今天的主题：</p>
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <h3 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h3><p>文章开始，先用一道我曾经栽过跟头的面试题来引出今天的主题：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">scopeA</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span></span><br><span class="line">    scopeB()</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">scopeB</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br><span class="line">scopeA()</span><br></pre></td></tr></table></figure>
 <p>想想看这段代码的输出结果是1还是2？为什么？</p>
 <h3 id="什么是作用域？"><a href="#什么是作用域？" class="headerlink" title="什么是作用域？"></a>什么是作用域？</h3><p>几乎所有编程语言最基本的功能之一，就是能够储存变量当中的值并且能在之后对这个值进行访问或修改。而作用域就是一套规则，用于确定在何处以及如何查找变量。</p>
@@ -243,13 +243,13 @@
 <p>这样，通过<code>let</code>声明的变量就只在所在代码块内有效，而不会泄漏到全局，也不会提升到块的顶部。</p>
 
 
-                
-            </div>
-
-            <!-- Comments -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
     <hr>
     <h3>留言:</h3>
     <div id="disqus_thread">
@@ -259,8 +259,9 @@
 
 
 
-                </div>
-            
+                    </div>
+                
+            </div>
         </div>
     </div>
 </article>

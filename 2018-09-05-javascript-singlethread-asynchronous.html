@@ -185,35 +185,35 @@
     }
 </script>
             
-
-            <!-- Tags and categories -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
                         
+                            
 
 
 <a href="/tags/JS/" class="article-tags">JS</a>
 
 
-                    
-                </div>
-                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
-                    <!--  -->
-                        <!-- 
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
 
 <a href="/categories/technology/">技术</a>
  -->
-                    <!--  -->
-                <!-- </div> -->
-            
+                        <!--  -->
+                    <!-- </div> -->
+                
 
-            <!-- Gallery -->
-            
+                <!-- Gallery -->
+                
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="单线程的JS"><a href="#单线程的JS" class="headerlink" title="单线程的JS"></a>单线程的JS</h3><p>作为JavaScript的核心特性，单线程决定了其同一时间只能做一件事，所有任务排队等候执行，前一个结束后一个才可以执行。但是当遇到http请求这类比较耗时的任务时，如果持续等待结果将会阻塞整个队列的快速执行，甚至造成浏览器停止响应。举个例子：傍晚时候，我给老王发了条微信，老铁周末去打球吗，老王不一定秒回，如果我一直抱着手机等待老王的回复，那不知道我什么时候可以去吃晚饭，也许刚巧老王前一天通宵到下午才回到家此时正在呼呼大睡，于是在饥肠辘辘的等待中，博主卒。但是如果我发好了微信就去吃饭，什么时候老王回我了再去订球馆就会避免这种情况的出现。好在作为JS宿主环境的浏览器并不是单线程的。</p>
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <h3 id="单线程的JS"><a href="#单线程的JS" class="headerlink" title="单线程的JS"></a>单线程的JS</h3><p>作为JavaScript的核心特性，单线程决定了其同一时间只能做一件事，所有任务排队等候执行，前一个结束后一个才可以执行。但是当遇到http请求这类比较耗时的任务时，如果持续等待结果将会阻塞整个队列的快速执行，甚至造成浏览器停止响应。举个例子：傍晚时候，我给老王发了条微信，老铁周末去打球吗，老王不一定秒回，如果我一直抱着手机等待老王的回复，那不知道我什么时候可以去吃晚饭，也许刚巧老王前一天通宵到下午才回到家此时正在呼呼大睡，于是在饥肠辘辘的等待中，博主卒。但是如果我发好了微信就去吃饭，什么时候老王回我了再去订球馆就会避免这种情况的出现。好在作为JS宿主环境的浏览器并不是单线程的。</p>
 <h3 id="多线程的浏览器"><a href="#多线程的浏览器" class="headerlink" title="多线程的浏览器"></a>多线程的浏览器</h3><p>浏览器只会给JS分配一个主线程来执行任务，但是浏览器却为那些耗时的任务单独开辟了其他线程，比如：浏览器事件触发线程 、http请求线程 、定时器触发线程 ······当主线程执行到这类耗时任务时便会暂时将它们挂起，继续向下执行后面的任务，等到挂起的任务执行完成后再回过头来进入到主线程继续执行。</p>
 <h3 id="“现在”与“将来”"><a href="#“现在”与“将来”" class="headerlink" title="“现在”与“将来”"></a>“现在”与“将来”</h3><p>如此一来，任务被分成了两种，一种是<code>同步任务</code>，一种是<code>异步任务</code>，同步任务在主线程上执行，主线程之外存在一个<code>任务队列</code>，当异步任务有了执行结果就在任务队列当中放置一个事件，等待主线程上的同步任务全部执行完成后便会进入主线程中执行。异步任务都有一个或多个回调函数，当任务队列中的事件被主线程读取时便会执行这个回调函数。在<strong>《你不知道的JavaScript（中卷）》</strong>一书中，作者将其称为“现在”与“将来”。</p>
 <h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><blockquote>
@@ -269,13 +269,13 @@
 <p><em><font color="#bbb" size="3">部分内容参考自以下：</font></em><br><a href="https://www.cnblogs.com/woodyblog/p/6061671.html" target="_blank" rel="noopener">https://www.cnblogs.com/woodyblog/p/6061671.html</a><br><a href="https://blog.csdn.net/jssy_csu/article/details/78627628" target="_blank" rel="noopener">https://blog.csdn.net/jssy_csu/article/details/78627628</a><br><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2014/10/event-loop.html</a><br><a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">http://es6.ruanyifeng.com/#docs/promise</a><br>《你不知道的JavaScript（中卷）》</p>
 
 
-                
-            </div>
-
-            <!-- Comments -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
     <hr>
     <h3>留言:</h3>
     <div id="disqus_thread">
@@ -285,8 +285,9 @@
 
 
 
-                </div>
-            
+                    </div>
+                
+            </div>
         </div>
     </div>
 </article>

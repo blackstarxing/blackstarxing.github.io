@@ -185,35 +185,35 @@
     }
 </script>
             
-
-            <!-- Tags and categories -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
                         
+                            
 
 
 <a href="/tags/frontend/" class="article-tags">前端</a> <a href="/tags/vue/" class="article-tags">vue</a>
 
 
-                    
-                </div>
-                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
-                    <!--  -->
-                        <!-- 
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
 
 <a href="/categories/technology/">技术</a>
  -->
-                    <!--  -->
-                <!-- </div> -->
-            
+                        <!--  -->
+                    <!-- </div> -->
+                
 
-            <!-- Gallery -->
-            
+                <!-- Gallery -->
+                
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>相信不少朋友在一开始上手做VUE的项目前都没有仔细完整的阅读几遍文档及API，往往都是在项目的过程中有针对性的查阅，也因此踩了不少大坑小坑自己挖的坑。实际上初始阶段我们遇到的很多问题都可以轻易地在文档中找到答案。我也踩过不少类似的坑，这些坑在未来也可能会继续增加，我们不怕犯错误，只是不能总是犯相同的错误，也要思考为什么没有避免这些错误。改正过后把这些踩坑经历总结记录于此，也是给自己一点提醒。</p>
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <p>相信不少朋友在一开始上手做VUE的项目前都没有仔细完整的阅读几遍文档及API，往往都是在项目的过程中有针对性的查阅，也因此踩了不少大坑小坑自己挖的坑。实际上初始阶段我们遇到的很多问题都可以轻易地在文档中找到答案。我也踩过不少类似的坑，这些坑在未来也可能会继续增加，我们不怕犯错误，只是不能总是犯相同的错误，也要思考为什么没有避免这些错误。改正过后把这些踩坑经历总结记录于此，也是给自己一点提醒。</p>
 <h3 id="组件只能有一个根元素"><a href="#组件只能有一个根元素" class="headerlink" title="组件只能有一个根元素"></a>组件只能有一个根元素</h3><p>当我们兴致勃勃的建立好一个新的VUE项目并运行起来的时候，可能却并没有看到预期酷炫的页面，相反展现出来的是编译失败的错误提示:<br><code>Component template should contain exactly one root element. If you are using v-if on multiple elements, use v-else-if to chain them instead.</code></p>
 <p>那么很可能你组件中html的结构是类似于这样的：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h3</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>这就违背了vue中组件只能有一个根元素的原则，解决的方法也很简单，只要用一个父元素将这些内容包裹在一起就好了。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -239,13 +239,13 @@
 <p><em><font color="#bbb" size="3">（未完待续…)</font></em></p>
 
 
-                
-            </div>
-
-            <!-- Comments -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
     <hr>
     <h3>留言:</h3>
     <div id="disqus_thread">
@@ -255,8 +255,9 @@
 
 
 
-                </div>
-            
+                    </div>
+                
+            </div>
         </div>
     </div>
 </article>
