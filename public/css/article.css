@@ -108,6 +108,9 @@ article .container .row .toc-article .toc-content .toc {
   max-height: 200px;
   overflow: auto;
 }
+article .container .row .article-comments {
+  margin-top: 50px;
+}
 figure.highlight {
   background: #f3f3f3;
   border: 1px solid color-border;
