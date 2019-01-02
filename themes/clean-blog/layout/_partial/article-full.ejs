@@ -35,47 +35,48 @@
             <% if (!is_home() && item.toc){ %>
                 <%- partial('article-toc', {item: item}) %>
             <% } %>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
+                    <div class="article-tag">
+                        <% if (item.tags && item.tags.length){ %>
+                            <%- partial('article-tags', {item: item}) %>
+                        <% } else { %>
+                            <%- partial('article-categories', {item: item}) %>
+                        <% } %>
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!-- <% if (item.tags && item.tags.length && item.categories && item.categories.length){ %> -->
+                            <!-- <%- partial('article-categories', {item: item}) %> -->
+                        <!-- <% } %> -->
+                    <!-- </div> -->
+                <% } %>
 
-            <!-- Tags and categories -->
-            <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <% if (item.tags && item.tags.length){ %>
-                        <%- partial('article-tags', {item: item}) %>
-                    <% } else { %>
-                        <%- partial('article-categories', {item: item}) %>
+                <!-- Gallery -->
+                <% if (item.photos && item.photos.length){ %>
+                    <%- partial('gallery') %>
+                <% } %>
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <%- item.content %>
+
+                    <% if(theme.addthis) { %>
+                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%- theme.addthis %>"></script>
+
+                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        <div class="addthis_sharing_toolbox"></div>
                     <% } %>
                 </div>
-                <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
-                    <!-- <% if (item.tags && item.tags.length && item.categories && item.categories.length){ %> -->
-                        <!-- <%- partial('article-categories', {item: item}) %> -->
-                    <!-- <% } %> -->
-                <!-- </div> -->
-            <% } %>
 
-            <!-- Gallery -->
-            <% if (item.photos && item.photos.length){ %>
-                <%- partial('gallery') %>
-            <% } %>
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <%- item.content %>
-
-                <% if(theme.addthis) { %>
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%- theme.addthis %>"></script>
-
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                    <div class="addthis_sharing_toolbox"></div>
+                <!-- Comments -->
+                <% if (item.comment != false) { %>
+                    <div class="article-comments">
+                        <%- partial("_partial/comments.ejs") %>
+                    </div>
                 <% } %>
             </div>
-
-            <!-- Comments -->
-            <% if (item.comment != false) { %>
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <%- partial("_partial/comments.ejs") %>
-                </div>
-            <% } %>
         </div>
     </div>
 </article>
