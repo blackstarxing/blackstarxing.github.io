@@ -80,6 +80,7 @@ table tr {
 }
 table tr td,
 table tr th {
+  min-width: 100px;
   padding: 5px 10px;
   border-left: 1px solid #ccc;
   border-top: 1px solid #ccc;
@@ -100,7 +101,7 @@ hr.small {
   display: none;
   position: fixed;
   bottom: 5em;
-  right: 2em;
+  right: 1em;
   z-index: 99;
   border: 1px solid #eee;
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
@@ -272,6 +273,7 @@ hr.small {
 }
 .intro-header .post-heading .post-subheading {
   text-shadow: 2px 2px 2px #666;
+  margin-top: 10px;
 }
 .intro-header .post-heading .meta {
   font-style: italic;
@@ -699,6 +701,7 @@ figure.highlight table {
 }
 figure.highlight table td,
 figure.highlight table th {
+  min-width: 0;
   border: none;
   background: none;
 }

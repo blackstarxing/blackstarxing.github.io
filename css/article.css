@@ -150,6 +150,7 @@ figure.highlight table {
 }
 figure.highlight table td,
 figure.highlight table th {
+  min-width: 0;
   border: none;
   background: none;
 }
