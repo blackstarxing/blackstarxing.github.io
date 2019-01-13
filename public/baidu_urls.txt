@@ -1,3 +1,4 @@
+https://blackstar.coding.me/2019-01-10-simple-your-code.html
 https://blackstar.coding.me/2018-12-24-websites-recommend.html
 https://blackstar.coding.me/2018-12-12-frontend-network-knowledge.html
 https://blackstar.coding.me/2018-11-28-es6-change.html
@@ -7,4 +8,3 @@ https://blackstar.coding.me/2018-11-01-javascript-this-disabuse.html
 https://blackstar.coding.me/2018-10-18-javascript-scope.html
 https://blackstar.coding.me/2018-10-06-MFFL.html
 https://blackstar.coding.me/2018-09-20-something-about-miniProgram.html
-https://blackstar.coding.me/2018-09-05-javascript-singlethread-asynchronous.html

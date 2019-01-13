@@ -225,7 +225,8 @@
 <blockquote>
 <p>g 全局匹配<br>i 不区分大小写<br>m 多行匹配</p>
 </blockquote>
-<p>2、文本定义<br><code>/pattern/attributes</code>,如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/abc/g</span>;</span><br></pre></td></tr></table></figure></p>
+<p>2、文本定义<br><code>/pattern/attributes</code>,如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/abc/g</span>;</span><br></pre></td></tr></table></figure>
 <p>等价于第一种构造函数方式</p>
 <h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><table>
 <thead>
@@ -276,6 +277,14 @@
 <td>匹配字符串结束</td>
 </tr>
 <tr>
+<td>(?=pattern)</td>
+<td>正向肯定预查(look ahead positive assert)，在任何匹配pattern的字符串开始处匹配查找字符串</td>
+</tr>
+<tr>
+<td>(?!pattern)</td>
+<td>正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串</td>
+</tr>
+<tr>
 <td>x&#124;y</td>
 <td>匹配x或y</td>
 </tr>
@@ -290,6 +299,10 @@
 <tr>
 <td>\b</td>
 <td>匹配一个单词边界，也就是指单词和空格间的位置。例如，<code>&quot;er\b&quot;</code>可以匹配<code>&quot;never&quot;</code>中的<code>er</code>，但不能匹配<code>&quot;verb&quot;</code>中的<code>er</code></td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界</td>
 </tr>
 <tr>
 <td>\d</td>
@@ -325,7 +338,7 @@
 <h4 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h4><p><code>split()</code>根据正则规则分割字符串返回数组</p>
 <h4 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h4><p><code>replace()</code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>$1,…$9: 正则表达式中有几个<code>()</code>，就会传递几个参数，$1~$9分别代表本次匹配中每个<code>()</code>提取的结果，最多9个<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mobile.replace(<span class="regexp">/^(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;4&#125;)$/</span>, <span class="string">"$1****$2"</span>)</span><br></pre></td></tr></table></figure></p>
 <p>这是一个手机号加密的正则</p>
-<h3 id="常用正则"><a href="#常用正则" class="headerlink" title="常用正则"></a>常用正则</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 手机号码</span></span><br><span class="line">/^<span class="number">1</span>([<span class="number">358</span>][<span class="number">0</span><span class="number">-9</span>]|<span class="number">4</span>[<span class="number">579</span>]|<span class="number">66</span>|<span class="number">7</span>[<span class="number">0135678</span>]|<span class="number">9</span>[<span class="number">89</span>])[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">8</span>&#125;$/</span><br><span class="line"><span class="comment">// 固定电话</span></span><br><span class="line">/^(<span class="number">400</span>|<span class="number">800</span>)([<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">7</span>&#125;)|(<span class="number">0</span>\d&#123;<span class="number">2</span>,<span class="number">3</span>&#125;(-?)\d&#123;<span class="number">7</span>,<span class="number">8</span>&#125;)$/</span><br></pre></td></tr></table></figure>
+<h3 id="常用正则"><a href="#常用正则" class="headerlink" title="常用正则"></a>常用正则</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 手机号码</span></span><br><span class="line">/^<span class="number">1</span>([<span class="number">358</span>][<span class="number">0</span><span class="number">-9</span>]|<span class="number">4</span>[<span class="number">579</span>]|<span class="number">66</span>|<span class="number">7</span>[<span class="number">0135678</span>]|<span class="number">9</span>[<span class="number">89</span>])[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">8</span>&#125;$/</span><br><span class="line"><span class="comment">// 固定电话</span></span><br><span class="line">/^(<span class="number">400</span>|<span class="number">800</span>)([<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">7</span>&#125;)|(<span class="number">0</span>\d&#123;<span class="number">2</span>,<span class="number">3</span>&#125;(-?)\d&#123;<span class="number">7</span>,<span class="number">8</span>&#125;)$/</span><br><span class="line"><span class="comment">// 金额千分位</span></span><br><span class="line">str.replace(<span class="regexp">/\B(?=(\d&#123;3&#125;)+(?!\d))/g</span>, <span class="string">','</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="可视化在线校验工具"><a href="#可视化在线校验工具" class="headerlink" title="可视化在线校验工具"></a>可视化在线校验工具</h3><p><a href="https://www.debuggex.com/" target="_blank" rel="noopener">https://www.debuggex.com/</a><br>很棒的在线工具，不仅可以帮你运算出结果，还可以让你结合图形一环一环的捋清验证的过程，方便你进行修改调试<br><img src="https://s1.ax1x.com/2018/10/15/iaMHVe.png" alt="reg"></p>
 
 
