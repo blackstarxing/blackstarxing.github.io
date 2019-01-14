@@ -78,6 +78,19 @@ switch (state)
 }
 ```
 
+#### 利用对象结构判断状态
+
+``` javascript
+let state = {
+    1: 'success',
+    2: 'error',
+    3: 'unknown'
+}
+function foo(code) {
+    return state[code]
+}
+```
+
 #### 短路求值
 
 短路求值的意思是说只有当第一个运算数的值无法确定逻辑运算的结果时，才对第二个运算数进行求值：当`&&`的第一个运算数的值为`false`时，其结果必定为`false`，无需再运行第二个运算数，除非第一个运算数结果为`true`；`||`也一样。
