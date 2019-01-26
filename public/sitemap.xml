@@ -2,128 +2,135 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blackstarxing.github.io/2019-01-22-simple-your-code.html</loc>
+    
+    <lastmod>2019-01-26T02:55:09.573Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blackstarxing.github.io/2019-01-10-simple-your-code.html</loc>
     
-    <lastmod>2019-01-14T13:35:28.645Z</lastmod>
+    <lastmod>2019-01-26T02:44:35.352Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-08-10-regular-expression.html</loc>
     
-    <lastmod>2019-01-12T15:16:32.792Z</lastmod>
+    <lastmod>2019-01-12T15:16:32.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-12-24-websites-recommend.html</loc>
     
-    <lastmod>2018-12-24T17:41:34.252Z</lastmod>
+    <lastmod>2018-12-24T17:41:34.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-12-12-frontend-network-knowledge.html</loc>
     
-    <lastmod>2018-12-16T14:09:52.183Z</lastmod>
+    <lastmod>2018-12-16T14:09:52.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-09-05-javascript-singlethread-asynchronous.html</loc>
     
-    <lastmod>2018-12-04T12:31:10.717Z</lastmod>
+    <lastmod>2018-12-04T12:31:10.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-07-27-vue-damn-problems.html</loc>
     
-    <lastmod>2018-12-04T12:29:24.452Z</lastmod>
+    <lastmod>2018-12-04T12:29:24.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-08-23-arraybuffer-to-base64orblob.html</loc>
     
-    <lastmod>2018-12-04T12:28:42.965Z</lastmod>
+    <lastmod>2018-12-04T12:28:42.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-11-01-javascript-this-disabuse.html</loc>
     
-    <lastmod>2018-12-04T12:24:38.525Z</lastmod>
+    <lastmod>2018-12-04T12:24:38.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-11-28-es6-change.html</loc>
     
-    <lastmod>2018-12-04T12:22:21.802Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blackstarxing.github.io/2018-10-06-MFFL.html</loc>
-    
-    <lastmod>2018-12-03T12:18:50.527Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html</loc>
-    
-    <lastmod>2018-12-03T12:18:50.524Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
-    
-    <lastmod>2018-12-03T12:18:50.523Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
-    
-    <lastmod>2018-12-03T12:18:50.521Z</lastmod>
+    <lastmod>2018-12-04T12:22:21.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-10-18-javascript-scope.html</loc>
     
-    <lastmod>2018-12-03T12:18:50.521Z</lastmod>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
+    <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
     
-    <lastmod>2018-12-03T12:18:50.519Z</lastmod>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
+    
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-11-14-javascript-prototype.html</loc>
     
-    <lastmod>2018-12-03T12:18:50.518Z</lastmod>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html</loc>
+    
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-06-24-keep-going-on.html</loc>
     
-    <lastmod>2018-12-03T12:18:50.517Z</lastmod>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blackstarxing.github.io/2018-10-06-MFFL.html</loc>
+    
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
     
-    <lastmod>2018-12-03T12:18:50.514Z</lastmod>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
+    
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
   </url>
   
