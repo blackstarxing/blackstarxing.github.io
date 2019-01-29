@@ -1,7 +1,7 @@
 ---
 title: 记一次macOS音视频崩溃引发的备份重装经历
 date: 2019-01-22 22:04:05
-urlname: simple-your-code
+urlname: reset-recover-mac
 cover: "https://s2.ax1x.com/2019/01/26/knt2y4.jpg"
 categories: ["数码"]
 tags: ["MAC"]
