@@ -130,6 +130,10 @@ hr.small {
   font-weight: 800;
   letter-spacing: 1px;
   text-decoration: none;
+  line-height: 24px;
+}
+.navbar-custom .nav li a i {
+  position: static;
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
@@ -317,7 +321,7 @@ hr.small {
   margin-bottom: 10px;
 }
 .post-preview > a > .post-title.archive {
-  font-size: 22px;
+  font-size: 20px;
 }
 .post-preview > a > .post-subtitle {
   margin: 0;
