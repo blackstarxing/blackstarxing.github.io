@@ -114,6 +114,14 @@ hr.small {
   background: #fff;
   cursor: pointer;
 }
+.page-tag {
+  display: inline-block;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 3px 10px;
+  margin-bottom: 5px;
+}
 .navbar-custom {
   position: absolute;
   top: 0;
