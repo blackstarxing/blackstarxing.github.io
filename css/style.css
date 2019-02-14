@@ -123,6 +123,15 @@ hr.small {
   padding: 3px 10px;
   margin-bottom: 5px;
 }
+.preview-des {
+  font-size: 15px;
+  font-style: italic;
+  color: #a3a3a3;
+}
+.preview-des:hover,
+.preview-des:focus {
+  color: #0085a1;
+}
 .navbar-custom {
   position: absolute;
   top: 0;
