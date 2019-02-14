@@ -8,6 +8,11 @@
                 <%- item.subtitle %>
             </h3>
         <% } %>
+        <% if (item.description || item.excerpt) { %>
+            <p class="preview-des">
+                <%- item.description || item.excerpt %>
+            </p>
+        <% } %>
     </a>
     <%- partial('_partial/article-tags', {item: item}) %>
     <p class="post-meta">
