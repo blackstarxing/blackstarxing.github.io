@@ -112,7 +112,7 @@ new Vue({
 }
 ```
 
-在`Age: {% raw %}{{% endraw %}{num}}`这种写法中，`num`为传入的变量。
+在`Age: {% raw %}{{% endraw %}{num}}`这种写法中，`num`为插值。
 
 把这两个资源文件配置到`resources`后我们的准备工作就都完成了。
 
@@ -192,7 +192,7 @@ Vue.config.productionTip = false
 i18next.use(XHR).use(LngDetector).init({
     // lng: 'zh', // 设定语言
     fallbackLng: 'en', // 默认语言包
-    ns: ['user', 'main'],
+    ns: ['user', 'member'],
     defaultNS: 'user',
     backend: {
         loadPath: 'locales/{{lng}}/{{ns}}.json'
@@ -267,6 +267,22 @@ window.i18next.init({
 ```
 
 在js中可使用`i18next.t('member:common.currency')`，这是个全局方法。
+
+### 解决插值中字符被转义的问题
+
+默认情况下，插值会被转义以避免可能的xss攻击。比如插入的变量为`{ name: "blackstar's blog" }`，则转换后会输出`blackstar&#39;s blog`。可以通过在键之前放置`-`或在请求转换时将`escapeValue`选项设置为`false`来切换转义:
+
+``` json
+{
+    "name": "{{- name}}"
+}
+```
+
+``` javascript
+i18next.t('user:name', { name: "blackstar's blog", interpolation: { escapeValue: false } });
+```
+
+当然你也可以在`i18next.init()`初始化配置中将转义全局关掉，但并不建议，因为这样意味着你要自己对用户的输入进行校验防止xss攻击，所以只在特定的地方使用就好了。
 
 ### 结语
 
