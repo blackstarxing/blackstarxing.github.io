@@ -1,3 +1,4 @@
+https://blackstar.coding.me/2019-03-06-floating-point-calculation.html
 https://blackstar.coding.me/2019-02-18-i18next.html
 https://blackstar.coding.me/2019-02-07-frontend-trend.html
 https://blackstar.coding.me/2019-01-22-reset-recover-mac.html
@@ -7,4 +8,3 @@ https://blackstar.coding.me/2018-12-12-frontend-network-knowledge.html
 https://blackstar.coding.me/2018-11-28-es6-change.html
 https://blackstar.coding.me/2018-11-26-colleage-memories.html
 https://blackstar.coding.me/2018-11-14-javascript-prototype.html
-https://blackstar.coding.me/2018-11-01-javascript-this-disabuse.html
