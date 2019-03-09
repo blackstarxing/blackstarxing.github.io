@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blackstarxing.github.io/2019-03-06-floating-point-calculation.html</loc>
+    
+    <lastmod>2019-03-09T08:47:35.776Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blackstarxing.github.io/2019-02-18-i18next.html</loc>
     
     <lastmod>2019-02-20T12:21:36.019Z</lastmod>
@@ -121,21 +128,7 @@
   </url>
   
   <url>
-    <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
-    
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
-    
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blackstarxing.github.io/2018-11-14-javascript-prototype.html</loc>
     
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
@@ -156,7 +149,21 @@
   </url>
   
   <url>
+    <loc>https://blackstarxing.github.io/2018-11-14-javascript-prototype.html</loc>
+    
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
+    
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
     
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
