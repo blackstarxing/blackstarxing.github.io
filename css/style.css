@@ -593,6 +593,12 @@ article .container .row blockquote {
 article .container {
   padding-bottom: 80px;
 }
+article .container h4 {
+  font-size: 20px;
+}
+article .container h5 {
+  font-size: 16px;
+}
 article .container .row img {
   max-width: 100% !important;
   height: auto;
