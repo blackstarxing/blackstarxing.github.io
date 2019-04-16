@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blackstarxing.github.io/2019-04-15-es6-module.html</loc>
+    <lastmod>2019-04-16T15:25:27.168Z</lastmod>
+  </url>  <url>
+    <loc>https://blackstarxing.github.io/2019-04-05-create-vue-components-reason.html</loc>
+    <lastmod>2019-04-05T15:50:32.599Z</lastmod>
+  </url>  <url>
     <loc>https://blackstarxing.github.io/2019-03-20-elasticsearch.html</loc>
     <lastmod>2019-03-23T08:03:30.672Z</lastmod>
   </url>  <url>
@@ -46,28 +52,28 @@
     <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
   </url>  <url>
-    <loc>https://blackstarxing.github.io/2018-10-18-javascript-scope.html</loc>
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-  </url>  <url>
-    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-  </url>  <url>
-    <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-  </url>  <url>
-    <loc>https://blackstarxing.github.io/2018-10-06-MFFL.html</loc>
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-  </url>  <url>
     <loc>https://blackstarxing.github.io/2018-06-24-keep-going-on.html</loc>
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-  </url>  <url>
-    <loc>https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html</loc>
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
   </url>  <url>
     <loc>https://blackstarxing.github.io/2018-11-14-javascript-prototype.html</loc>
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
   </url>  <url>
+    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+  </url>  <url>
+    <loc>https://blackstarxing.github.io/2018-10-18-javascript-scope.html</loc>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+  </url>  <url>
+    <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+  </url>  <url>
     <loc>https://blackstarxing.github.io/2016-10-08-meet-beautiful.html</loc>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+  </url>  <url>
+    <loc>https://blackstarxing.github.io/2018-07-01-mac-sh-wrong.html</loc>
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+  </url>  <url>
+    <loc>https://blackstarxing.github.io/2018-10-06-MFFL.html</loc>
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
   </url>
 </urlset>

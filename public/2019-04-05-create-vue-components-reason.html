@@ -13,13 +13,12 @@
 
     <!--Keywords-->
     
-        <meta name="keywords" content="操作系统,MAC">
+        <meta name="keywords" content="前端,vue">
     
 
     <!--Description-->
     
-        <meta name="description" content="问题出现4月初进入到了一家新公司，在使用公司下发的.sh的文件生成git秘钥时却发现用我自己的MAC打开输入几步操作后显示报错，几次尝试过后还是不行。无奈只好先使用公司的windows机先pull代码熟悉项目。
-探寻问题但是问题既然出现了就应该好好探究一番，更何况有的时候在家里需要对代码进行一些紧急">
+        <meta name="description" content="其实内心有这个想法很久了，从当初开始使用Vue做为开发框架，到后面以Element UI为组件库开发了多个后台管理系统。一直在使用别人的组件库，可也有遇到过特殊的业务需求导致部分功能无法满足，再加上UED会有自己的设计风格，当团队及业务稳定的时候，如果能自己打造一套适合自己公司项目的组件库，那么在未">
     
 
     <!--Author-->
@@ -29,7 +28,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="解决MAC执行.sh文件报错">
+        <meta property="og:title" content="打造属于自己的Vue组件库系列一——初心">
     
 
     <!--Open Graph Description-->
@@ -53,7 +52,7 @@
 
     <!-- Title -->
     
-    <title>解决MAC执行.sh文件报错 - Blackstar&#39;s Blog</title>
+    <title>打造属于自己的Vue组件库系列一——初心 - Blackstar&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -152,12 +151,16 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>解决MAC执行.sh文件报错</h1>
+                    <h1>打造属于自己的Vue组件库系列一——初心</h1>
+                    
+                    <h2 class="post-subheading">
+                        人啊，总要激励自己不断向前
+                    </h2>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
-                        2018-07-01
+                        2019-04-05
                     </span>
                 </div>
             </div>
@@ -179,7 +182,7 @@
                             
 
 
-<a href="/tags/OS/" class="article-tags">操作系统</a> <a href="/tags/MAC/" class="article-tags">MAC</a>
+<a href="/tags/frontend/" class="article-tags">前端</a> <a href="/tags/vue/" class="article-tags">vue</a>
 
 
                         
@@ -195,7 +198,7 @@
                 
                 <!-- wordcount -->
                 <div class="word-count">
-                    <i class="fa fa-keyboard-o"></i>本文约368字
+                    <i class="fa fa-keyboard-o"></i>本文约279字
                 </div>
                 <!-- <div class="word-count">
                     <i class="fa fa-clock-o"></i>预计需要1min阅读
@@ -206,14 +209,10 @@
 
                 <!-- Post Main Content -->
                 <div class="article-content">
-                    <h3 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h3><p>4月初进入到了一家新公司，在使用公司下发的<code>.sh</code>的文件生成git秘钥时却发现用我自己的MAC打开输入几步操作后显示报错，几次尝试过后还是不行。无奈只好先使用公司的windows机先pull代码熟悉项目。</p>
-<h3 id="探寻问题"><a href="#探寻问题" class="headerlink" title="探寻问题"></a>探寻问题</h3><p>但是问题既然出现了就应该好好探究一番，更何况有的时候在家里需要对代码进行一些紧急的修改，不能拉取推送代码也着实不方便，经过一番查找很快便有了答案。</p>
-<h3 id="水落石出"><a href="#水落石出" class="headerlink" title="水落石出"></a>水落石出</h3><p>原来，由于Linux和windows的文本格式不同，所以对于<code>.sh</code>需要先进行转换，可以先在终端通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi text.sh</span><br></pre></td></tr></table></figure></p>
-<p>新建一个<code>.sh</code>文件，然后输入<code>i</code>进入编辑模式，将原来<code>.sh</code>中的命令复制进来<code>ESC</code>退出编辑，<code>:wq</code>保存<br>这时候再运行新建的<code>.sh</code>文件，这个时候可能会报<code>permission denied</code>的错误，没关系只要再执行一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 text.sh</span><br></pre></td></tr></table></figure></p>
-<p>修改权限就可以了，再运行就不会报错了。</p>
-<h3 id="新的问题"><a href="#新的问题" class="headerlink" title="新的问题"></a>新的问题</h3><p>至此我已经可以成功执行<code>.sh</code>里的命令生成公钥了，但是clone项目的时候又报错了，没关系，仍然是权限的问题，再对秘钥文件执行一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 或 chmod 600</span><br></pre></td></tr></table></figure></p>
-<p>就没问题了！</p>
-<p>希望本文能帮助到其他人</p>
+                    <p>其实内心有这个想法很久了，从当初开始使用Vue做为开发框架，到后面以Element UI为组件库开发了多个后台管理系统。一直在使用别人的组件库，可也有遇到过特殊的业务需求导致部分功能无法满足，再加上UED会有自己的设计风格，当团队及业务稳定的时候，如果能自己打造一套适合自己公司项目的组件库，那么在未来的迭代开发中都会方便不少。</p>
+<p>人的惰性经常会让你无限期将自己的计划搁置，你念念不忘却就是难以迈出那第一步。</p>
+<p>这一次，我不想再拖延了，虽然对开发组件库毫无经验，但是万丈高楼平地起，一步一个脚印走，由简入繁，在造轮子的过程中不断摸索实践，最后的成果一定是显著的。而这个系列博客也将敦促自己前行的步伐以及记录问题和收获，咱们且行且看。</p>
+<p><img src="https://s2.ax1x.com/2019/04/05/AWZjit.jpg" alt="sea-sky"></p>
 
 
                     

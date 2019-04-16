@@ -51,6 +51,13 @@
                         <!-- <% } %> -->
                     <!-- </div> -->
                 <% } %>
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约<%= wordcount(item.content) %>字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要<%= min2read(item.content) %>min阅读
+                </div> -->
 
                 <!-- Gallery -->
                 <% if (item.photos && item.photos.length){ %>
