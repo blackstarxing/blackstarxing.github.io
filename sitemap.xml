@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blackstarxing.github.io/2019-04-15-es6-module.html</loc>
+    
+    <lastmod>2019-04-16T15:25:27.168Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blackstarxing.github.io/2019-04-05-create-vue-components-reason.html</loc>
     
     <lastmod>2019-04-05T15:50:32.599Z</lastmod>

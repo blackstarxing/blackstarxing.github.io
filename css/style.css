@@ -385,6 +385,14 @@ hr.small {
 .sidebar-container .short-about {
   width: 80%;
 }
+.sidebar-container .short-about .word-count {
+  color: #4d4d4d;
+  margin-bottom: 0;
+}
+.sidebar-container .short-about .word-count span {
+  font-weight: bold;
+  font-style: italic;
+}
 .sidebar-container .short-about img {
   width: 100%;
   display: block;
@@ -690,6 +698,16 @@ article .container .row .toc-article .toc-content .toc {
 }
 article .container .row .article-comments {
   margin-top: 100px;
+}
+article .container .row .word-count {
+  color: #b2b2b2;
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+article .container .row .word-count .fa {
+  margin-right: 6px;
 }
 figure.highlight {
   background: #f3f3f3;

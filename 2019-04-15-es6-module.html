@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="JS,ES6">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="相比之前的CommonJS和AMD模块方案在运行时加载，ES6实现了模块的静态化使得编译时就能确定模块的依赖关系、输入以及输出的变量，这样可在编译时选择性加载，效率更高。
+ES6模块由两个关键字构成:import和export。直白点说就是导入和导出。
+exportexport有两种导出方式:变量/">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="详解export、export default及import">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>详解export、export default及import - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529827147060&di=9daf466807623fea081eaffa76c5dac6&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F539fa0f4e65ad.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>详解export、export default及import</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2019-04-15
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#export"><span class="toc-text">export</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#export-default"><span class="toc-text">export default</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#import"><span class="toc-text">import</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/JS/" class="article-tags">JS</a> <a href="/tags/ES6/" class="article-tags">ES6</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约1.1k字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要4min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <p>相比之前的<code>CommonJS</code>和<code>AMD</code>模块方案在运行时加载，ES6实现了模块的静态化使得编译时就能确定模块的依赖关系、输入以及输出的变量，这样可在编译时选择性加载，效率更高。</p>
+<p>ES6模块由两个关键字构成:<code>import</code>和<code>export</code>。直白点说就是导入和导出。</p>
+<h3 id="export"><a href="#export" class="headerlink" title="export"></a>export</h3><p><code>export</code>有两种导出方式:变量/函数声明导出和命名导出。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> name = <span class="string">'blackstar'</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;..&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'blackstar'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;..&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;name, bar&#125;</span><br></pre></td></tr></table></figure>
+<p>当然你也可以在导出的时候通过<code>as</code>关键字对变量进行重命名。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;..&#125;</span><br><span class="line"><span class="keyword">export</span> &#123; bar <span class="keyword">as</span> baz &#125;</span><br></pre></td></tr></table></figure>
+<p>重命名后的名字放在<code>as</code>之后。</p>
+<p><code>注意:export规定对外导出的变量必须与模块内部的变量一一对应，以下的写法会报错</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">export</span> a</span><br></pre></td></tr></table></figure>
+<p>这两种写法其实都是导出了一个值1，并不能对应到模块中的变量，所以<code>export</code>导出的必须是个变量而不是值。</p>
+<p>通过<code>export</code>导出的值是实时动态的，这是因为<code>export</code>绑定的是变量本身的引用或者指针，当模块内的变量值发生了改变，引入的变量值也会发生改变。</p>
+<h3 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h3><p>尽管可以在模块内部多次使用<code>export</code>，但ES6倾向于一个模块使用一个<code>export</code>，称为默认导出。<code>export default</code>用于指定模块的默认输出，一个模块只能有一个默认输出。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>export default</code>其实是输出了一个叫做<code>default</code>的变量，所以它后面不能跟变量声明语句，但是可以跟函数表达式，不过函数名在模块外部无效，视同匿名函数。<code>export default</code>也可以导出一个数值，因为相当于把值赋给<code>default</code>变量导出。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">var</span> a = <span class="number">1</span> <span class="comment">// error </span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="number">42</span></span><br></pre></td></tr></table></figure>
+<h3 id="import"><a href="#import" class="headerlink" title="import"></a>import</h3><p><code>import</code>关键字一共有四种加载方式:</p>
+<p>1、</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; foo, bar <span class="keyword">as</span> baz &#125; <span class="keyword">from</span> <span class="string">'./foo'</span></span><br></pre></td></tr></table></figure>
+<p>通过这种方式可以导入一个模块API的某些特定命名成员到你的顶层作用域中，并运行模块。这是一种窄导入的思想，假设一个模块一共导出了10个方法或变量，我们在另一个模块中只需要其中2个就可以按需加载，避免不必要的浪费。只是需要注意，导入的变量名字必须和导出的变量名一致。和<code>export</code>一样，<code>import</code>也可以通过<code>as</code>对变量进行重命名。<code>import</code>后面的<code>from</code>指定模块文件的位置，可以是相对路径，也可以是绝对路径，<code>.js</code>后缀可以省略。</p>
+<p>2、</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> _ <span class="keyword">from</span> <span class="string">'lodash'</span></span><br></pre></td></tr></table></figure>
+<p>由于<code>export default</code>(默认导出)就是输出一个叫做<code>default</code>的变量或方法，所以允许你为它取任意名字，又因为一个模块只会有一个<code>export default</code>，所以也就可以省略大括号的写法。上面的代码相当于:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">default</span> <span class="keyword">as</span> _ &#125; <span class="keyword">from</span> <span class="string">'lodash'</span></span><br></pre></td></tr></table></figure>
+<p>3、</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'lodash'</span></span><br></pre></td></tr></table></figure>
+<p>该写法表示只运行模块而不引入任何模块中的方法或变量。</p>
+<p>4、</p>
+<p>窄导入的设计思想允许我们按需引入，但是也会有需求将模块所有变量和方法加载进来，为了避免逐个声明，import提供了一种语法变体叫做命名空间导入。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// util.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;..&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;..&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> util <span class="keyword">from</span> <span class="string">'./util'</span></span><br><span class="line">util.foo()</span><br><span class="line">util.bar()</span><br></pre></td></tr></table></figure>
+<p>将整个API导入到一个命名空间。</p>
+<p><code>注意:所有导入的绑定都是不可变和/或只读的，导入之后所有试图赋值的动作都会抛出错误。</code></p>
+<p>上面的1、2；2、4也可以结合使用。如果想在一条<code>import</code>语句中同时输入默认方法和其他接口，可以写成下面这样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;..&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;..&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> _, &#123; bar, foo &#125; <span class="keyword">from</span> <span class="string">'lodash'</span></span><br></pre></td></tr></table></figure>
+<p>语法要求不带<code>as</code>的默认值永远在最前。</p>
+<p>最后，需要提醒一下，<code>import</code>和<code>export</code>命令只能在模块的顶层作用域，不能在代码块之中（比如，在<code>if</code>代码块之中，或在函数之中）。</p>
+<p><br></p>
+<p><em><font color="#bbb" size="3">部分内容参考自以下：</font></em><br><a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="noopener">http://es6.ruanyifeng.com/#docs/module</a></p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

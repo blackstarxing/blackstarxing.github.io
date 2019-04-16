@@ -384,6 +384,14 @@ hr.small {
 .sidebar-container .short-about {
   width: 80%;
 }
+.sidebar-container .short-about .word-count {
+  color: #4d4d4d;
+  margin-bottom: 0;
+}
+.sidebar-container .short-about .word-count span {
+  font-weight: bold;
+  font-style: italic;
+}
 .sidebar-container .short-about img {
   width: 100%;
   display: block;
