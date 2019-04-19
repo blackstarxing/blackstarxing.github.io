@@ -1,6 +1,5 @@
 ---
 title: 打造属于自己的Vue组件库系列一——初心
-subtitle: 人啊，总要激励自己不断向前
 date: 2019-04-05 22:33:57
 urlname: create-vue-components-reason
 categories: ["技术"]
