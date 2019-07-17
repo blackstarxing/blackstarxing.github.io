@@ -178,7 +178,7 @@
     catalog-container">
     <div class="toc-content">
         <strong class="toc-title">文章目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js-xlsx"><span class="toc-text">js-xlsx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多表格"><span class="toc-text">多表格</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js-xlsx"><span class="toc-text">js-xlsx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多表格"><span class="toc-text">多表格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#控制百分比显示"><span class="toc-text">控制百分比显示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
     </div>
 </div>
 <!-- toc scroll -->
@@ -218,10 +218,10 @@
                 
                 <!-- wordcount -->
                 <div class="word-count">
-                    <i class="fa fa-keyboard-o"></i>本文约674字
+                    <i class="fa fa-keyboard-o"></i>本文约759字
                 </div>
                 <!-- <div class="word-count">
-                    <i class="fa fa-clock-o"></i>预计需要2min阅读
+                    <i class="fa fa-clock-o"></i>预计需要3min阅读
                 </div> -->
 
                 <!-- Gallery -->
@@ -236,9 +236,9 @@
 <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><code>js-xlsx</code>支持直接引入资源文件以及<code>npm</code>、<code>bower</code>安装:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以从官方github上下载</span></span><br><span class="line">&lt;script lang=<span class="string">"javascript"</span> src=<span class="string">"dist/xlsx.full.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="comment">// 也可以引入CDN地址</span></span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/xlsx/0.14.3/xlsx.full.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>npm:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install xlsx</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install xlsx</span></span><br></pre></td></tr></table></figure>
 <p>bower:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> bower install js-xlsx</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> bower install js-xlsx</span></span><br></pre></td></tr></table></figure>
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>这里以<code>Angular</code>为例:</p>
 <p>第一步准备好数据:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$scope.data = [</span><br><span class="line">  &#123; <span class="attr">Name</span>: <span class="string">"Bill Clinton"</span>, <span class="attr">Index</span>: <span class="number">42</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">Name</span>: <span class="string">"GeorgeW Bush"</span>, <span class="attr">Index</span>: <span class="number">43</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">Name</span>: <span class="string">"Barack Obama"</span>, <span class="attr">Index</span>: <span class="number">44</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">Name</span>: <span class="string">"Donald Trump"</span>, <span class="attr">Index</span>: <span class="number">45</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
@@ -250,6 +250,9 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">"Barack Obama"</span>, <span class="attr">pres</span>: <span class="number">44</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">"Donald Trump"</span>, <span class="attr">pres</span>: <span class="number">45</span> &#125;</span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> ws = XLSX.utils.json_to_sheet(data);</span><br><span class="line"><span class="keyword">var</span> wb = XLSX.utils.book_new();</span><br><span class="line">XLSX.utils.book_append_sheet(wb, ws, <span class="string">"Presidents"</span>);</span><br><span class="line">XLSX.writeFile(wb, <span class="string">"sheetjs.xlsx"</span>);</span><br></pre></td></tr></table></figure>
 <h4 id="多表格"><a href="#多表格" class="headerlink" title="多表格"></a>多表格</h4><p><code>js-xlsx</code>还支持将多张表格一次性导出到同一个文件中:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> workbook = XLSX.utils.book_new();</span><br><span class="line"><span class="keyword">var</span> ws1 = XLSX.utils.table_to_sheet(<span class="built_in">document</span>.getElementById(<span class="string">'table1'</span>));</span><br><span class="line">XLSX.utils.book_append_sheet(workbook, ws1, <span class="string">"Sheet1"</span>);</span><br><span class="line"><span class="keyword">var</span> ws2 = XLSX.utils.table_to_sheet(<span class="built_in">document</span>.getElementById(<span class="string">'table2'</span>));</span><br><span class="line">XLSX.utils.book_append_sheet(workbook, ws2, <span class="string">"Sheet2"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="控制百分比显示"><a href="#控制百分比显示" class="headerlink" title="控制百分比显示"></a>控制百分比显示</h4><p>表格中如果有诸如<code>41%</code>这样的百分比数据在导出的<code>Excel</code>中会显示成<code>0.41</code>，只需要一个配置就可以避免这样的自动转换:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wb = XLSX.utils.table_to_book(<span class="built_in">document</span>.getElementById(<span class="string">'sjs-table'</span>), &#123;<span class="attr">raw</span>: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>raw</code>这个参数用来配置是否保持原有字符串。</p>
 <h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>今天只是对<code>jx-xlsx</code>做了一个最常用功能的介绍，其他框架的用法<code>GitHub</code>上也都有详尽介绍。更多丰富的功能我也还在发掘中。</p>
 
 
