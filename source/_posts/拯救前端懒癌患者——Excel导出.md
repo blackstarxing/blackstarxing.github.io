@@ -101,6 +101,16 @@ var ws2 = XLSX.utils.table_to_sheet(document.getElementById('table2'));
 XLSX.utils.book_append_sheet(workbook, ws2, "Sheet2");
 ```
 
+#### 控制百分比显示
+
+表格中如果有诸如`41%`这样的百分比数据在导出的`Excel`中会显示成`0.41`，只需要一个配置就可以避免这样的自动转换:
+
+``` javascript
+var wb = XLSX.utils.table_to_book(document.getElementById('sjs-table'), {raw: true});
+```
+
+`raw`这个参数用来配置是否保持原有字符串。
+
 ### 结语
 
 今天只是对`jx-xlsx`做了一个最常用功能的介绍，其他框架的用法`GitHub`上也都有详尽介绍。更多丰富的功能我也还在发掘中。
