@@ -1,3 +1,4 @@
+https://blackstar.coding.me/2019-08-17-fabric-doc.html
 https://blackstar.coding.me/2019-07-13-frontend-excel-export.html
 https://blackstar.coding.me/2019-06-25-MJInnocent.html
 https://blackstar.coding.me/2019-06-04-timezone-in-program.html
@@ -7,4 +8,3 @@ https://blackstar.coding.me/2019-04-05-create-vue-components-reason.html
 https://blackstar.coding.me/2019-03-20-elasticsearch.html
 https://blackstar.coding.me/2019-03-06-floating-point-calculation.html
 https://blackstar.coding.me/2019-02-18-i18next.html
-https://blackstar.coding.me/2019-02-07-frontend-trend.html
