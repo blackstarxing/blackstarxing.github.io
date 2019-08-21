@@ -219,7 +219,7 @@ canvas.add(block)
 | 方法                     | 作用                                                         |
 | ------------------------ | ------------------------------------------------------------ |
 | object.set()             | 设置对象属性，如rect.set({top: 50,left:100})                 |
-| object.scale()           | 缩放对象，一个参数时表示横纵方向缩放相同倍数，两个参数表示横纵方向分别缩放指定倍数 |
+| object.scale()           | 缩放对象                                                     |
 | object.rotate()          | 旋转对象                                                     |
 | object.getBoundingRect() | 返回对象的边界矩形（左，顶部，宽度，高度）的坐标             |
 | object.setCoords()       | 当对象修改了坐标、长宽、缩放、角度、倾斜程度等可能改变对象位置的属性时需要通过该方法重新计算位置 |
@@ -278,23 +278,42 @@ canvas.on('mouse:up', function (e) {
 在操作画布上的实例对象时我们并不希望它们超出画布的范围，那么就需要进行边界判断，控制对象不要越过指定区域。
 
 ``` javascript
+canvas.on('object:moving', function (e) {
+  checkBoudningBox(e)
+})
+canvas.on('object:rotating', function (e) {
+  checkBoudningBox(e)
+})
+canvas.on('object:scaling', function (e) {
+  checkBoudningBox(e)
+})
 // 此为对象坐标原点设置在中心的情况
-const objBoundingBox = obj.getBoundingRect()
-if (objBoundingBox.top < 0) {
-  obj.set('top', objBoundingBox.height/2)
+function checkBoudningBox(e) {
+  const obj = e.target
+
+  if (!obj) {
+    return
+  }
   obj.setCoords()
-}
-if (objBoundingBox.left > canvas.width - objBoundingBox.width) {
-  obj.set('left', canvas.width - objBoundingBox.width/2)
-  obj.setCoords()
-}
-if (objBoundingBox.top > canvas.height - objBoundingBox.height) {
-  obj.set('top', canvas.height - objBoundingBox.height/2)
-  obj.setCoords()
-}
-if (objBoundingBox.left < 0) {
-  obj.set('left', objBoundingBox.width/2)
-  obj.setCoords()
+  
+  const objBoundingBox = obj.getBoundingRect()
+  if (objBoundingBox.top < 0) {
+    obj.set('top', objBoundingBox.height/2)
+    obj.setCoords()
+  }
+  if (objBoundingBox.left > canvas.width - objBoundingBox.width) {
+    obj.set('left', canvas.width - objBoundingBox.width/2)
+    obj.setCoords()
+  }
+  if (objBoundingBox.top > canvas.height - objBoundingBox.height) {
+    obj.set('top', canvas.height - objBoundingBox.height/2)
+    obj.setCoords()
+  }
+  if (objBoundingBox.left < 0) {
+    obj.set('left', objBoundingBox.width/2)
+    obj.setCoords()
+  }
 }
 ```
 
+原理就是利用事件监听和对象边界矩形的顶点坐标，当坐标值超出画布范围时重置对象坐标。
