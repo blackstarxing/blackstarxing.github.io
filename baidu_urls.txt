@@ -1,3 +1,4 @@
+https://blackstar.coding.me/2019-09-27-chrome-devtools.html
 https://blackstar.coding.me/2019-08-30-css-stacking.html
 https://blackstar.coding.me/2019-08-17-fabric-doc.html
 https://blackstar.coding.me/2019-07-13-frontend-excel-export.html
@@ -7,4 +8,3 @@ https://blackstar.coding.me/2019-05-08-focus-on-user-experience.html
 https://blackstar.coding.me/2019-04-15-es6-module.html
 https://blackstar.coding.me/2019-04-05-create-vue-components-reason.html
 https://blackstar.coding.me/2019-03-20-elasticsearch.html
-https://blackstar.coding.me/2019-03-06-floating-point-calculation.html
