@@ -54,6 +54,7 @@ highlight:
 default_category: uncategorized
 category_map: 
   技术: technology
+  网站: websites
   生活: life
   数码: digital
   产品: product
@@ -66,6 +67,7 @@ tag_map:
   网络: network
   国际化: i18n
   产品设计: product-design
+  浏览器调试: devtools
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
