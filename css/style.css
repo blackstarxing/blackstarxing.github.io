@@ -385,6 +385,9 @@ hr.small {
   margin-top: 60px;
   font-weight: 700;
 }
+.sidebar-container h5 {
+  margin-top: 20px;
+}
 .sidebar-container .short-about {
   width: 80%;
 }
