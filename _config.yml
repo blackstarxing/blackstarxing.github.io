@@ -101,6 +101,6 @@ deploy:
 - type: git
   repository: 
     git: https://github.com/blackstarxing/blackstarxing.github.io.git
-    coding: https://git.coding.net/blackstar/blackstar.git
+    coding: https://e.coding.net/blackstar/blackstar.git
   branch: master
 - type: baidu_url_submitter
