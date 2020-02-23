@@ -802,7 +802,6 @@ pre .string,
 pre .tag .value,
 pre .phpdoc,
 pre .tex .formula,
-pre .regexp,
 pre .hexcolor {
   color: #2aa198;
 }

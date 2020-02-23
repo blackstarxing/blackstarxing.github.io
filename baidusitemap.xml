@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blackstarxing.github.io/2020-02-22-umi-dva-typescript.html</loc>
+    <lastmod>2020-02-23T08:12:22.102Z</lastmod>
+  </url>  <url>
     <loc>https://blackstarxing.github.io/2020-01-28-stay-with-hope.html</loc>
-    <lastmod>2020-01-29T06:00:30.299Z</lastmod>
+    <lastmod>2020-02-23T04:55:24.236Z</lastmod>
   </url>  <url>
     <loc>https://blackstarxing.github.io/2019-12-30-value-copy-and-reference-copy.html</loc>
     <lastmod>2020-01-01T14:11:56.643Z</lastmod>
