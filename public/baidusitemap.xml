@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blackstarxing.github.io/2020-01-28-stay-with-hope.html</loc>
-    <lastmod>2020-01-29T06:00:30.299Z</lastmod>
+    <lastmod>2020-02-23T08:35:02.250Z</lastmod>
+  </url>  <url>
+    <loc>https://blackstarxing.github.io/2020-02-22-umi-dva-typescript.html</loc>
+    <lastmod>2020-02-23T08:12:22.102Z</lastmod>
   </url>  <url>
     <loc>https://blackstarxing.github.io/2019-12-30-value-copy-and-reference-copy.html</loc>
     <lastmod>2020-01-01T14:11:56.643Z</lastmod>
@@ -88,10 +91,10 @@
     <loc>https://blackstarxing.github.io/2018-06-24-keep-going-on.html</loc>
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
   </url>  <url>
-    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
+    <loc>https://blackstarxing.github.io/2018-11-14-javascript-prototype.html</loc>
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
   </url>  <url>
-    <loc>https://blackstarxing.github.io/2018-11-14-javascript-prototype.html</loc>
+    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
   </url>  <url>
     <loc>https://blackstarxing.github.io/2018-10-18-javascript-scope.html</loc>
