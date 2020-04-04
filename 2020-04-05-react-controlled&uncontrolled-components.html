@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="React">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="受控组件我们在React中使用表单元素如input时，为了方便获得表单元素的属性值通常会给元素绑定状态(state)，并根据用户输入通过onChange事件来更新(且这种更新只能通过setState()进行)数据。像这种state为唯一数据源，且由React控制着输入操作的表单输入元素就叫做受控组件">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="React受控组件与非受控组件">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>React受控组件与非受控组件 - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529827147060&di=9daf466807623fea081eaffa76c5dac6&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F539fa0f4e65ad.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>React受控组件与非受控组件</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2020-04-05
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/React/" class="article-tags">React</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约1.1k字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要4min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <h3 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h3><p>我们在React中使用表单元素如<code>input</code>时，为了方便获得表单元素的属性值通常会给元素绑定状态(state)，并根据用户输入通过<code>onChange</code>事件来更新(且这种更新只能通过<code>setState()</code>进行)数据。像这种state为唯一数据源，且由React控制着输入操作的表单输入元素就叫做<code>受控组件</code>。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Form</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      name: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  handleSubmitClick() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.name)</span><br><span class="line">  &#125;;</span><br><span class="line">  handleInput(event) &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      name:event.target.value</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input type=<span class="string">"text"</span> value=&#123;<span class="keyword">this</span>.state.name&#125; onChange=&#123;(e) =&gt; <span class="keyword">this</span>.handleInput(e)&#125; /&gt;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; <span class="keyword">this</span>.handleSubmitClick()&#125;&gt;Search&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Form /&gt;, document.getElementById("root"));</span><br></pre></td></tr></table></figure>
+<h3 id="潜在问题"><a href="#潜在问题" class="headerlink" title="潜在问题"></a>潜在问题</h3><p>但由于表单的属性值完全由React控制，如果值的更新发生在异步操作中就会出现异常情况。看下面这个动图，我用了<code>setTimeout</code>模拟异步更新状态的过程，在输入框中快速地输入<code>123</code>，最后输入框中却只留下了<code>3</code>。</p>
+<p><img src="https://s1.ax1x.com/2020/04/04/G0D759.gif" alt="asyc-controlled"></p>
+<p>因为异步更新会和输入过程产生交错，从而吞掉部分输入，异步过程越长影响就越明显，反之则影响越小。但这只是针对输入数字和字母，如果输入中文问题就更大了。</p>
+<p>这一次我把<code>setTimeout</code>的延迟时间设置为<code>0</code>以便让更新状态的任务马上进入任务队列，尽可能早的执行:</p>
+<p><img src="https://s1.ax1x.com/2020/04/04/G0TNw9.gif" alt="asyc-IME"></p>
+<p>输入一串英文可以看到没什么问题，输入框中显示的是预期值，但当输入中文时却发现打出的是一串乱掉的拼音，根本没有办法打出文字。这是因为中文输入法需要我们在确定输入前选定结果，然而异步更新却在时刻改变着值，输入法无法正常工作，结果也就变得混乱。</p>
+<p><strong>(多说一句，之所以发现这个问题是因为我在使用Ant Design Mobile的<code>InputItem</code>组件时出现了相同的问题，说明<code>InputItem</code>的onChange回调也是个异步操作。)</strong></p>
+<p>一切都是因为React时刻控制着表单数据，要想屏蔽以上的bug我们需要寻找到另一种方案来使表单数据脱离React控制的同时还能保证可以随时取得我们想要的数据。</p>
+<h3 id="非受控组件"><a href="#非受控组件" class="headerlink" title="非受控组件"></a>非受控组件</h3><blockquote>
+<p> <code>Refs</code>提供了一种方式，允许我们访问<code>DOM</code>节点或在<code>render</code>方法中创建的<code>React</code>元素。</p>
+</blockquote>
+<p>通过使用<code>ref</code>来从<code>DOM</code>节点中获取表单数据，我们可以编写一个非受控组件。非受控组件将真实数据储存在<code>DOM</code>节点中，数据的获取来自于<code>DOM</code>节点，<code>React</code>无法影响它，所以即便触发了异步操作也不用有任何担心。</p>
+<p>代码以及实际效果:</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Form</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      name: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  handleSubmitClick() &#123;</span><br><span class="line">    <span class="keyword">const</span> name = <span class="keyword">this</span>._name.value;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.name)</span><br><span class="line">  &#125;;</span><br><span class="line">  handleInput(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> $<span class="keyword">this</span> = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">const</span> name = event.target.value;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">      $<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        name</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,<span class="number">1000</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input type=<span class="string">"text"</span> ref=&#123;(input) =&gt; <span class="keyword">this</span>._name = input&#125; onChange=&#123;e=&gt;<span class="keyword">this</span>.handleInput(e)&#125;/&gt;</span><br><span class="line">        &lt;button onClick=&#123;()=&gt;<span class="keyword">this</span>.handleSubmitClick()&#125;&gt;Search&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Form /&gt;, document.getElementById("root"));</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/04/04/G0Ob0U.gif" alt="uncontrolled-input"></p>
+<p>通过<code>ref</code>将表单<code>DOM</code>赋值给一个变量，后续任何时候都可以通过这个变量拿到表单的数据，当然你可以继续将数据存放进<code>state</code>，只不过它再也不会影响正常的输入了，也没有办法动态地改变表单数据。</p>
+<p>由于非受控组件不使用<code>value</code>传值，要设置初始值可以通过<code>defaultValue</code>:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">defaultValue</span>=<span class="string">"Blackstar"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ref</span>=<span class="string">&#123;(input)</span> =&gt;</span> this._name = input&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="怎么选择？"><a href="#怎么选择？" class="headerlink" title="怎么选择？"></a>怎么选择？</h3><p>介绍完了受控以及非受控组件，我们在实际的应用中应该如何选择？</p>
+<p>我是这样理解的:如果你需要时刻掌握输入的数据并对状态进行控制，比如你需要校验一些输入格式或者是转换大小写，同时场景中既不考虑中文输入也几乎没什么异步过程的话可以放心使用受控组件。</p>
+<p>而如果你只是在需要的时候能拿到数据就行，非受控组件显然可以保证不会给你带来什么意外惊喜。</p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
