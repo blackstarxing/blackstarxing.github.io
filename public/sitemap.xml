@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blackstarxing.github.io/2020-04-05-react-controlled&uncontrolled-components.html</loc>
+    
+    <lastmod>2020-04-04T16:29:31.729Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blackstarxing.github.io/2020-03-12-sass-handbook.html</loc>
     
     <lastmod>2020-03-14T07:40:20.903Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://blackstarxing.github.io/2019-05-08-focus-on-user-experience.html</loc>
     
     <lastmod>2019-05-10T15:35:56.438Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blackstarxing.github.io/2019-04-05-create-vue-components-reason.html</loc>
-    
-    <lastmod>2019-04-19T14:33:39.910Z</lastmod>
     
   </url>
   
