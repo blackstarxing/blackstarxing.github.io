@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="Python">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="全民学PythonPython这门语言虽然早在1989年圣诞节期间就被Guido van Rossum创造了出来，但近几年却突然在国内开始流行了起来：网站插入广告、培训机构宣传，甚至朋友圈推荐广告都可见Python的踪影。
+
+如此高的出现频率也吸引了很多非互联网行业的人试图学习了解，大有一种全民学P">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Python实现批量下载歌曲">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>Python实现批量下载歌曲 - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529827147060&di=9daf466807623fea081eaffa76c5dac6&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F539fa0f4e65ad.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Python实现批量下载歌曲</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2020-12-12
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#全民学Python"><span class="toc-text">全民学Python</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#了解Python"><span class="toc-text">了解Python</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#需求分析及实现思路"><span class="toc-text">需求分析及实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析网页"><span class="toc-text">分析网页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#抓取数据"><span class="toc-text">抓取数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#批量下载"><span class="toc-text">批量下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优化功能"><span class="toc-text">优化功能</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/Python/" class="article-tags">Python</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约1.9k字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要7min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <h4 id="全民学Python"><a href="#全民学Python" class="headerlink" title="全民学Python"></a>全民学Python</h4><p>Python这门语言虽然早在1989年圣诞节期间就被Guido van Rossum创造了出来，但近几年却突然在国内开始流行了起来：网站插入广告、培训机构宣传，甚至朋友圈推荐广告都可见Python的踪影。</p>
+<p><a href="https://imgchr.com/i/re4lxP" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/13/re4lxP.jpg" alt="ad"></a></p>
+<p>如此高的出现频率也吸引了很多非互联网行业的人试图学习了解，大有一种全民学Python的趋势。</p>
+<h4 id="了解Python"><a href="#了解Python" class="headerlink" title="了解Python"></a>了解Python</h4><p>相比其他语言，Python的哲学就是简单优雅，尽量写容易看明白的代码，尽量写少的代码。总之，代码量少是它的一大特点，代价就是运行速度慢，因为Python是动态的、解释性语言。</p>
+<p>用Python可以做什么？</p>
+<p>Python最广泛的应用大概就是用来爬虫了，我们可以通过它编写一些小工具来爬取数据；还可以做网站或者游戏的后台。</p>
+<p>有过其他语言开发经验的人学习Python是很好上手的，毕竟各种语言大体离不开变量、函数、对象这些概念，而且Python有很多第三方库可以帮助我们快速实现一些功能。0经验的小白也不要担心，推荐通过<a href="https://www.liaoxuefeng.com/wiki/1016959663602400" target="_blank" rel="noopener">廖雪峰的Python教程</a>学习，案例浅显易懂，搭配在线编辑器学习效果很不错，这里就不花费篇幅介绍一些基础知识了。阅读后续内容前你需要简单了解函数的使用、类和实例、http请求、BeautifulSoup库的使用、os文件读写、re正则匹配……以便更好地理解。</p>
+<h4 id="需求分析及实现思路"><a href="#需求分析及实现思路" class="headerlink" title="需求分析及实现思路"></a>需求分析及实现思路</h4><p>作为一个音乐爱好者，我首先想到要爬取的数据就是歌曲，那就索性把批量下载歌曲作为我们通过Python来实现的功能。</p>
+<p>通过一系列的探究，最终实现的功能是通过搜索歌手名字自动批量下载其热门歌曲。</p>
+<p>整体的思路如下：</p>
+<p><a href="https://imgchr.com/i/ra7pXd" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/20/ra7pXd.png" alt="process"></a></p>
+<p>已知前人总结的网易云下载外链地址为：<code>http://music.163.com/song/media/outer/url?id=xxx</code>，<code>xxx</code>为歌曲id，所以问题就简单化了：我们只需要批量获取歌曲的id，再通过下载外链拼接id一首一首下载即可。</p>
+<p>那么这些id从何而来？没错，通过网页。</p>
+<h4 id="分析网页"><a href="#分析网页" class="headerlink" title="分析网页"></a>分析网页</h4><p>我们访问网易云音乐的网页端，随便进入一个歌单，审查元素选取其中一首歌曲会定位到它的HTML树。</p>
+<p><a href="https://imgchr.com/i/ra7CnA" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/20/ra7CnA.png" alt="song-id"></a></p>
+<p>这样很容易我们就找到了这首歌曲的id，进而分析出该歌单的所有歌曲id都是存放在相同的标签和属性中。规则摸清了，接下来我们就利用Python帮我们去访问歌单页面，并且一次性获取所有的歌曲id。</p>
+<h4 id="抓取数据"><a href="#抓取数据" class="headerlink" title="抓取数据"></a>抓取数据</h4><p>这一步我们主要需要借助几个第三方库的能力，一个是<code>request</code>，通过<code>urlopen()</code>方法可以发起一个简单的web请求网页：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">req = request.Request(url=self.baseurl, headers=self.headers)</span><br><span class="line">response = request.urlopen(req)</span><br><span class="line">html = response.read().decode(<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
+<p>现在我们已经可以访问到目标页面了，接下来需要借助非常强大有用的两个第三方库：<code>BeautifulSoup</code>和<code>re</code>，前者用来解析网页、获取标签，后者是一个正则库，可以指定规则匹配符合条件的内容。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">analysis</span><span class="params">(self, html)</span>:</span></span><br><span class="line">  soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">  bs4 = soup.find_all(<span class="string">"li"</span>)</span><br><span class="line">  bs4 = str(bs4)</span><br><span class="line">  <span class="keyword">return</span> bs4</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">matching</span><span class="params">(self, bs4)</span>:</span></span><br><span class="line">  rule = re.compile(<span class="string">r'href="/song\?id=(\d*?)"'</span>, re.S)</span><br><span class="line">  id = re.findall(rule, bs4)</span><br><span class="line">  <span class="keyword">return</span> id</span><br></pre></td></tr></table></figure>
+<h4 id="批量下载"><a href="#批量下载" class="headerlink" title="批量下载"></a>批量下载</h4><p>通过解析和匹配标签属性我们就拿到了所有id，只要遍历这些id请求下载外链即可，优化一点还可以在下载前获取歌曲的基本信息，这里需要用到<code>requests</code>和<code>os</code>库来请求并写入歌曲。不同于<code>request</code>，<code>requests</code>是对<code>request</code>的进一步封装，可以直接构造<code>get</code>、<code>post</code>请求并发起。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">saveurl = <span class="string">"http://music.163.com/song/media/outer/url?id="</span> + id</span><br><span class="line">content = requests.get(url=saveurl, headers=self.headers).content</span><br><span class="line"><span class="keyword">with</span> open(self.path + songname + <span class="string">" - "</span> + singername + <span class="string">".mp3"</span>, <span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">  f.write(content)</span><br></pre></td></tr></table></figure>
+<h4 id="优化功能"><a href="#优化功能" class="headerlink" title="优化功能"></a>优化功能</h4><p>虽然我们已经实现了批量下载音乐的需求，但显然它并不好用，想要下载必须要知道歌单地址或者歌手页地址，能根据搜索的任意歌手下载对应的歌曲才是符合实际场景的。没问题，整体思路也是一样的，只不过多加了一步解析歌手id的步骤。</p>
+<p><a href="https://imgchr.com/i/rdpfbT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/20/rdpfbT.png" alt="search"></a></p>
+<p>我们效仿解析歌曲id的方式去解析歌手id，可是这一回却发现我们没有匹配到对应的元素，经过一番查询，获悉很可能是因为这个歌手列表的内容是异步加载的，访问网页的时候并获取不到对应的结构。</p>
+<p>看来我们只能换一条路尝试了，既然是异步加载那么数据肯定是通过接口获取的，那我们也可以通过模拟接口请求来获取查询的原始数据，很幸运这个接口也有人整理出来了。</p>
+<p>所以整个功能的流程就是：输入歌手名称——请求查询接口获取歌手列表——显示排在前面的几个歌手选项——选取其中一个歌手——根据选取的歌手id访问歌手页面获取歌曲id——批量下载。</p>
+<p>完整代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户名</span></span><br><span class="line">user_name = getpass.getuser()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Music</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, baseurl, path)</span>:</span></span><br><span class="line">        head = &#123;</span><br><span class="line">            <span class="string">"user-agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"</span></span><br><span class="line">        &#125;</span><br><span class="line">        baseurl = baseurl.replace(<span class="string">"#/"</span>, <span class="string">""</span>)</span><br><span class="line">        self.baseurl = baseurl</span><br><span class="line">        self.headers = head</span><br><span class="line">        self.path = path</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(self)</span>:</span></span><br><span class="line">        html = self.askurl()</span><br><span class="line">        bs4 = self.analysis(html)</span><br><span class="line">        id = self.matching(bs4)</span><br><span class="line">        self.save(id)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">askurl</span><span class="params">(self)</span>:</span></span><br><span class="line">        req = request.Request(url=self.baseurl, headers=self.headers)</span><br><span class="line">        response = request.urlopen(req)</span><br><span class="line">        html = response.read().decode(<span class="string">"utf-8"</span>)</span><br><span class="line">        <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">analysis</span><span class="params">(self, html)</span>:</span></span><br><span class="line">        soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">        bs4 = soup.find_all(<span class="string">"li"</span>)</span><br><span class="line">        bs4 = str(bs4)</span><br><span class="line">        <span class="keyword">return</span> bs4</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">matching</span><span class="params">(self, bs4)</span>:</span></span><br><span class="line">        rule = re.compile(<span class="string">r'href="/song\?id=(\d*?)"'</span>, re.S)</span><br><span class="line">        id = re.findall(rule, bs4)</span><br><span class="line">        <span class="keyword">return</span> id</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">(self, id)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> id:</span><br><span class="line">            url = <span class="string">"http://music.163.com/song?id="</span> + i</span><br><span class="line">            req = request.Request(url=url, headers=self.headers)</span><br><span class="line">            response = request.urlopen(req)</span><br><span class="line">            html = response.read().decode(<span class="string">"utf-8"</span>)</span><br><span class="line">            soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">            bs4 = soup.find_all(<span class="string">"title"</span>)</span><br><span class="line">            bs4 = str(bs4)</span><br><span class="line">            rule = re.compile(</span><br><span class="line">                <span class="string">r'&lt;title&gt;(.*?) - (.*?) - 单曲 - 网易云音乐&lt;/title&gt;'</span>, re.S)</span><br><span class="line">            name = re.findall(rule, bs4)</span><br><span class="line">            name = name[<span class="number">0</span>]</span><br><span class="line">            songname = name[<span class="number">0</span>].replace(<span class="string">r"/"</span>, <span class="string">"_"</span>)</span><br><span class="line">            singername = name[<span class="number">1</span>].replace(<span class="string">r"/"</span>, <span class="string">"_"</span>)</span><br><span class="line">            print(<span class="string">"正在下载："</span> + songname + <span class="string">" - "</span> + singername + <span class="string">"……"</span>)</span><br><span class="line">            saveurl = <span class="string">"http://music.163.com/song/media/outer/url?id="</span> + i</span><br><span class="line">            content = requests.get(url=saveurl, headers=self.headers).content</span><br><span class="line">            <span class="keyword">with</span> open(self.path + songname + <span class="string">" - "</span> + singername + <span class="string">".mp3"</span>, <span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">                f.write(content)</span><br><span class="line">            print(songname + <span class="string">" - "</span> + singername + <span class="string">"-----------下载完毕。"</span>)</span><br><span class="line">            time.sleep(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getArtistId</span><span class="params">()</span>:</span> </span><br><span class="line">    content = input(<span class="string">'请输入歌手名字: '</span>)</span><br><span class="line">    searchUrl = <span class="string">"http://music.163.com/api/search/get/web?csrf_token=hlpretag=&amp;hlposttag=&amp;s="</span> + \</span><br><span class="line">        content + <span class="string">"&amp;type=100&amp;offset=0&amp;total=true&amp;limit=20"</span></span><br><span class="line">    result = requests.get(url=searchUrl).json()</span><br><span class="line">    artistList = result[<span class="string">'result'</span>][<span class="string">'artists'</span>][:<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标</span></span><br><span class="line">    <span class="keyword">for</span> i,artist <span class="keyword">in</span> enumerate(artistList):</span><br><span class="line">        number = i + <span class="number">1</span></span><br><span class="line">        name = artist[<span class="string">'name'</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'transNames'</span> <span class="keyword">in</span> artist:</span><br><span class="line">            name = name + <span class="string">'('</span> + artist[<span class="string">'transNames'</span>][<span class="number">0</span>] + <span class="string">')'</span></span><br><span class="line">        print(<span class="string">"["</span> + str(number) + <span class="string">"]: "</span> + name)</span><br><span class="line">        </span><br><span class="line">    artistNo = int(input(<span class="string">'请输入歌手序号: '</span>))</span><br><span class="line">    <span class="keyword">return</span> artistList[artistNo<span class="number">-1</span>][<span class="string">'id'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line"></span><br><span class="line">    artistid = getArtistId()</span><br><span class="line">    artisturl = <span class="string">"http://music.163.com/#/artist?id="</span> + str(artistid)  <span class="comment"># 下载歌手歌曲的url</span></span><br><span class="line">    path = <span class="string">"/Users/"</span> + user_name + <span class="string">"/Downloads/music/"</span>  <span class="comment"># 保存路径</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 若下载文件夹不存在，则新建</span></span><br><span class="line">    isExists=os.path.exists(path)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> isExists:</span><br><span class="line">        os.makedirs(path) </span><br><span class="line"></span><br><span class="line">    artist_demo = Music(artisturl, path)</span><br><span class="line">    artist_demo.main()</span><br><span class="line">    print(<span class="string">"\n全部歌曲下载完毕"</span>)</span><br></pre></td></tr></table></figure>
+<p>这样，一个简单的批量下载歌曲的Python小工具就完成了，你还可以继续丰富完善它的功能，快去试试吧！</p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
