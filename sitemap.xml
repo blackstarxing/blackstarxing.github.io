@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blackstarxing.github.io/2020-12-12-download-songs-by-python.html</loc>
+    
+    <lastmod>2020-12-20T13:49:36.491Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blackstarxing.github.io/2020-04-05-react-controlled&uncontrolled-components.html</loc>
     
     <lastmod>2020-04-04T16:29:31.729Z</lastmod>
@@ -219,13 +226,6 @@
   </url>
   
   <url>
-    <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
-    
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blackstarxing.github.io/2018-06-24-keep-going-on.html</loc>
     
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
@@ -240,13 +240,6 @@
   </url>
   
   <url>
-    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
-    
-    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blackstarxing.github.io/2018-10-18-javascript-scope.html</loc>
     
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
@@ -254,7 +247,7 @@
   </url>
   
   <url>
-    <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
+    <loc>https://blackstarxing.github.io/2018-09-20-something-about-miniProgram.html</loc>
     
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
@@ -276,6 +269,20 @@
   
   <url>
     <loc>https://blackstarxing.github.io/2018-10-06-MFFL.html</loc>
+    
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blackstarxing.github.io/2018-11-26-colleage-memories.html</loc>
+    
+    <lastmod>2018-12-03T12:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blackstarxing.github.io/2018-07-14-vue-components-communication.html</loc>
     
     <lastmod>2018-12-03T12:18:50.000Z</lastmod>
     
