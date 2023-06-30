@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="JS">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="JavaScript 有如下类型的运算符:
+
+
+赋值运算符(Assignment operators)
+比较运算符(Comparison operators)
+算数运算符(Arithmetic operators)
+位运算符(Bitwise operators)
+逻辑运算符(Logical oper">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="JS运算符新说">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>JS运算符新说 - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://z3.ax1x.com/2021/04/20/cH69nx.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>JS运算符新说</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2019-10-25
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#算数运算符"><span class="toc-text">算数运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#幂运算符"><span class="toc-text">幂运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逗号运算符"><span class="toc-text">逗号运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较运算符"><span class="toc-text">比较运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#比较规则"><span class="toc-text">比较规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#和"><span class="toc-text">[] == []和[] == ![]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#位运算符"><span class="toc-text">位运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#判断奇偶数"><span class="toc-text">判断奇偶数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#取整"><span class="toc-text">取整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#交换数字值"><span class="toc-text">交换数字值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符优先级"><span class="toc-text">运算符优先级</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/JS/" class="article-tags">JS</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约1.1k字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要4min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <p>JavaScript 有如下类型的运算符:</p>
+<blockquote>
+<ul>
+<li>赋值运算符(Assignment operators)</li>
+<li>比较运算符(Comparison operators)</li>
+<li>算数运算符(Arithmetic operators)</li>
+<li>位运算符(Bitwise operators)</li>
+<li>逻辑运算符(Logical operators)</li>
+<li>字符串运算符(String operators)</li>
+<li>条件（三元）运算符(Conditional operator)</li>
+<li>逗号运算符(Comma operator)</li>
+<li>一元运算符(Unary operators)</li>
+<li>关系运算符(Relational operator)</li>
+</ul>
+</blockquote>
+<p>赋值运算符自不必多说了，基于<code>=</code>将右边的值赋给左边。</p>
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><p>最常用的算术运算符，加(<code>+</code>)、减(<code>-</code>)、乘(<code>*</code>)、除(<code>/</code>)、取余(<code>%</code>)、递增(<code>++</code>)、递减(<code>--</code>)熟悉的不能再熟悉。递增和递减分为前置和后置，区别在于是将自增(自减)后的值赋值还是先赋值再自增(自减)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 后置 </span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line">y = x++; </span><br><span class="line"><span class="comment">// y = 3, x = 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 前置</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">b = ++a; </span><br><span class="line"><span class="comment">// a = 3, b = 3</span></span><br></pre></td></tr></table></figure>
+<h4 id="幂运算符"><a href="#幂运算符" class="headerlink" title="幂运算符"></a>幂运算符</h4><p>这里着重提一下幂运算符(<code>**</code>)。幂运算符返回第一个操作数做底数，第二个操作数做指数的乘方。即a**b = a<sup>b</sup>。幂运算符是右结合的，这和其他运算符不同:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a ** b ** c = a ** (b ** c)</span><br></pre></td></tr></table></figure>
+<p>但是需要特别注意，底数前不能紧跟一元运算符(<code>+/-/~/!/delete/void/typeof</code>)，比如:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">-2</span> ** <span class="number">2</span> <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+<p>因为这会有歧义。如果一定要强制使用负底数，或者打破右结合可以使用括号：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">-2</span>) ** <span class="number">2</span></span><br><span class="line">(a ** b) ** c</span><br></pre></td></tr></table></figure>
+<h3 id="逗号运算符"><a href="#逗号运算符" class="headerlink" title="逗号运算符"></a>逗号运算符</h3><p>逗号运算符用于对它的每个操作数求值（从左到右），并返回最后一个操作数的值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num);  <span class="comment">//5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log((x++,x)) <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>比较运算符中最值得关注的就是相等运算符(<code>==</code>)和严格相等运算符(<code>===</code>)。相等运算符在两侧的值类型不相同会先进行类型转换在比较值，只要值相等即为<code>true</code>，而严格相等运算符既要比较值也要比较类型。这里就涉及到了类型转换的问题。</p>
+<h4 id="比较规则"><a href="#比较规则" class="headerlink" title="比较规则"></a>比较规则</h4><blockquote>
+<ul>
+<li>字符串和布尔值都转为数字再比较</li>
+<li>当两侧的值都是字符串时，不会将其转换为数字进行比较而是会分别比较字符串中字符的Unicode编码</li>
+<li>undefined 与 null 相等，即 undefined == null</li>
+<li>两侧有一个是对象，则先调用valueOf()方法或toString()方法将对象转换为其原始值（一个字符串或数字类型的值），再用结果比较</li>
+<li>NaN和任何值包括它自己比较，结果都为<code>false</code>。</li>
+</ul>
+</blockquote>
+<h4 id="和"><a href="#和" class="headerlink" title="[] == []和[] == ![]"></a>[] == []和[] == ![]</h4><p>当两个操作数都是对象时，JavaScript会比较其内部引用，当且仅当他们的引用指向内存中的相同对象（区域）时才相等，即他们在栈内存中的引用地址相同。</p>
+<p><code>[]</code>属于引用类型，即便两个都是空数组，但是由于引用地址不同，所以:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[] == [] <span class="comment">//false</span></span><br><span class="line"><span class="comment">// 同理</span></span><br><span class="line">&#123;&#125; == &#123;&#125; <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>而对于<code>[] == ![]</code>，根据运算符优先级，<code>!</code>的优先级大于<code>==</code>，所以先会执行<code>![]</code>。<code>!</code>可以将变量转换成布尔类型，<code>null</code>、<code>undefined</code>、<code>NaN</code>以及空字符串(<code>&#39;&#39;</code>)取反都为<code>true</code>，其余都为<code>false</code>。</p>
+<p>故<code>[] == ![]</code>相当于<code>[] == false</code>相当于<code>[] == 0</code>。左侧值作为对象需要调用<code>toString()</code>方法，<code>[].toString() = &#39;&#39;</code>，所以我们来看一下完整的推导过程:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[] == ![] -&gt; [] == <span class="literal">false</span> -&gt; [] == <span class="number">0</span> -&gt; <span class="string">''</span> == <span class="number">0</span> -&gt; <span class="number">0</span> == <span class="number">0</span> -&gt; <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>但是<code>{}</code>的转换结果为<code>NaN</code>，<code>NaN == 0</code>结果为<code>false</code>，所以<code>{} == !{}</code>结果为<code>false</code>。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="number">1</span>             <span class="comment">//true</span></span><br><span class="line"><span class="string">'1'</span> == <span class="number">1</span>           <span class="comment">//true</span></span><br><span class="line"><span class="literal">false</span> == <span class="number">0</span>         <span class="comment">//true</span></span><br><span class="line"><span class="literal">true</span> == <span class="number">2</span>          <span class="comment">//false</span></span><br><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>  <span class="comment">// true</span></span><br><span class="line"><span class="literal">null</span> == <span class="number">0</span>          <span class="comment">//false</span></span><br><span class="line"><span class="literal">undefined</span> == <span class="number">0</span>     <span class="comment">//false</span></span><br><span class="line"><span class="literal">NaN</span> == <span class="number">0</span>           <span class="comment">//false</span></span><br><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span>         <span class="comment">//false</span></span><br><span class="line"><span class="literal">NaN</span> == !<span class="literal">NaN</span>        <span class="comment">//true</span></span><br><span class="line">[] == []           <span class="comment">//false</span></span><br><span class="line">[] == ![]          <span class="comment">//true</span></span><br><span class="line">&#123;&#125; == &#123;&#125;           <span class="comment">//false</span></span><br><span class="line">&#123;&#125; == !&#123;&#125;          <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>位运算符包括按位与(<code>&amp;</code>)、按位或(<code>|</code>)、按位异或(<code>^</code>)、按位非(<code>~</code>)、左移(<code>&lt;&lt;</code>)、有符号右移(<code>&gt;&gt;</code>)和无符号右移(<code>&gt;&gt;&gt;</code>)，都涉及到二进制数，使用场景比较少，可自行查阅。这里介绍几个位运算符的妙用。</p>
+<h4 id="判断奇偶数"><a href="#判断奇偶数" class="headerlink" title="判断奇偶数"></a>判断奇偶数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num &amp; <span class="number">1</span> === <span class="number">1</span> <span class="comment">// num 为奇数</span></span><br><span class="line">num &amp; <span class="number">1</span> === <span class="number">0</span> <span class="comment">// num 为偶数</span></span><br></pre></td></tr></table></figure>
+<p>因为二进制的奇数最低位是1，偶数最低位是0，按位与任意一个为0结果即为0，否则为1，所以可以判断奇偶数。</p>
+<h4 id="取整"><a href="#取整" class="headerlink" title="取整"></a>取整</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.21</span> &gt;&gt; <span class="number">0</span> <span class="comment">// 5</span></span><br><span class="line"><span class="number">5.21</span> &lt;&lt; <span class="number">0</span> <span class="comment">// 5</span></span><br><span class="line"><span class="number">5.21</span> | <span class="number">0</span>  <span class="comment">// 5</span></span><br><span class="line">~~ <span class="number">5.21</span>   <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<p>但是不可对负数进行取整。</p>
+<h4 id="交换数字值"><a href="#交换数字值" class="headerlink" title="交换数字值"></a>交换数字值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">6</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">77</span></span><br><span class="line">a ^= b</span><br><span class="line">b ^= a</span><br><span class="line">a ^= b</span><br><span class="line"><span class="built_in">console</span>.log(a)   <span class="comment">// 77</span></span><br><span class="line"><span class="built_in">console</span>.log(b)   <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><p>圆括号运算符(<code>()</code>)可改变运算符顺序，优先级最高。完整的运算符优先级顺序可查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="noopener">MDN</a>。</p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

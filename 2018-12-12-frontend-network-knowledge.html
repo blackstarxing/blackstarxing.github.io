@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="前端,网络">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="身为前端从业人员，HTML、CSS、JS固然是我们赖以生存的三叉戟，但是不能忽视的一点是我们所搭建的网页是要依靠浏览器来运行的，因此了解掌握一定的网络知识将会让我们手中的利器更加所向披靡。
+我们从那个被说烂的话题开始：我们在浏览器里输入一个地址到页面完整呈现，这其中究竟发生了些什么（我们这篇只说前半">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="作为一名前端你都需要掌握哪些网络知识？">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>作为一名前端你都需要掌握哪些网络知识？ - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://s1.ax1x.com/2018/12/14/FUBftU.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>作为一名前端你都需要掌握哪些网络知识？</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2018-12-12
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS解析"><span class="toc-text">DNS解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络协议"><span class="toc-text">网络协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP请求"><span class="toc-text">HTTP请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求行"><span class="toc-text">请求行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求头"><span class="toc-text">请求头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求体"><span class="toc-text">请求体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTPS协议"><span class="toc-text">HTTPS协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-2-0"><span class="toc-text">HTTP 2.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP响应"><span class="toc-text">HTTP响应</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#状态码"><span class="toc-text">状态码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#响应头"><span class="toc-text">响应头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#响应体"><span class="toc-text">响应体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存机制"><span class="toc-text">缓存机制</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/frontend/" class="article-tags">前端</a> <a href="/tags/network/" class="article-tags">网络</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约2.5k字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要8min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <p>身为前端从业人员，HTML、CSS、JS固然是我们赖以生存的三叉戟，但是不能忽视的一点是我们所搭建的网页是要依靠浏览器来运行的，因此了解掌握一定的网络知识将会让我们手中的利器更加所向披靡。</p>
+<p>我们从那个被说烂的话题开始：我们在浏览器里输入一个地址到页面完整呈现，这其中究竟发生了些什么（我们这篇只说前半部分）？</p>
+<h3 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h3><p>每一台计算机都有一个唯一的IP地址，计算机根据IP实现相互通信，而我们通常使用的域名更多的是为了方便记忆以及个性化需要，它并不能直接对应到的服务器IP，我们需要经过DNS服务器去查找IP，这个根据域名找到IP地址的过程就是DNS解析。</p>
+<h3 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h3><p>通过DNS解析拿到IP地址后我们就根据IP地址和默认端口与服务器进行<code>TCP</code>连接，这里根据协议不同端口号也有区别，HTTP协议是<code>80</code>，HTTPS协议是<code>443</code>，它们之间的区别我们稍后说，先来说说<code>TCP</code>。</p>
+<p>计算机网络共有七层协议：应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。</p>
+<p><img src="https://s1.ax1x.com/2018/12/16/FajzU1.png" alt="OSI"></p>
+<p><code>TCP</code>协议位于传输层，用于提供应用进程之间的逻辑通信。通过<code>TCP</code>三次握手过程确保和服务器已经建立连接后浏览器就可以向其发送HTTP请求了。</p>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>HTTP位于应用层，它是构建在TCP/IP协议上的，它的请求报文由四个部分组成：请求行、请求头、空行、请求体。</p>
+<h4 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h4><p>请求行中包括了请求方法（常用POST、GET）、请求URL（不包括域名）以及HTTP协议版本。例如：</p>
+<blockquote>
+<p>GET /a.html HTTP/1.1</p>
+</blockquote>
+<h4 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h4><p>请求头包括了很多属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>User-Agent</code></td>
+<td>产生请求的浏览器类型</td>
+</tr>
+<tr>
+<td><code>Accept</code></td>
+<td>客户端希望接受的数据类型，比如 Accept：text/xml（application/json）表示希望接受到的是xml（json）类型</td>
+</tr>
+<tr>
+<td><code>Authorization</code></td>
+<td>用于表示HTTP协议中需要认证资源的认证信息</td>
+</tr>
+<tr>
+<td><code>Cookie</code></td>
+<td>客户端通过这个头可以向服务器带数据，这是最重要的请求头信息之一，改变了HTTP的无状态性，可以保存用户状态</td>
+</tr>
+<tr>
+<td><code>Content-Type</code></td>
+<td>发送端发送的实体数据的数据类型。比如，Content-Type：text/html（application/json）表示发送的是html（json）类型</td>
+</tr>
+<tr>
+<td><code>Cache-Control</code></td>
+<td>用来指定当前的请求是否使用缓存机制，常见的取值有public、private、no-cache、max-age、must-revalidate</td>
+</tr>
+<tr>
+<td><code>Host</code></td>
+<td>请求的主机名，允许多个域名同处一个IP地址，即虚拟主机</td>
+</tr>
+<tr>
+<td><code>Referer</code></td>
+<td>表示这个请求是从哪个URL过来的</td>
+</tr>
+</tbody>
+</table>
+<p>空行用于告知服务器请求头已结束。</p>
+<h4 id="请求体"><a href="#请求体" class="headerlink" title="请求体"></a>请求体</h4><p>当进行POST请求时会有请求体。</p>
+<h3 id="HTTPS协议"><a href="#HTTPS协议" class="headerlink" title="HTTPS协议"></a>HTTPS协议</h3><p>由于HTTP协议是以明文的方式来发送内容，不提供任何方式的数据加密，因此很容易受到攻击导致信息被截取。而HTTPS协议是在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密，安全性会更高。</p>
+<h3 id="HTTP-2-0"><a href="#HTTP-2-0" class="headerlink" title="HTTP 2.0"></a>HTTP 2.0</h3><p>HTTP 2.0是1999年HTTP/1.1发布后的下一代HTTP协议，在开放互联网上HTTP 2.0将只用于https://网址，而http://网址将继续使用HTTP/1。</p>
+<p>相比 HTTP/1.x，HTTP 2.0有很多新特性：</p>
+<p>1、二进制分帧层：HTTP 2.0增加了一个二进制分帧层，改进了传输性能，实现了低延迟和高吞吐量。</p>
+<p>2、压缩头部：对请求头进行了压缩，相同的请求不会在头部带上未改变的属性。</p>
+<p>3、多路复用：可以连接发起多重的请求，HTTP1中的keep-alive用于长连接而不必重新建立连接，然而keep-alive必须等本次请求彻底完成后才能发送下一个请求，而HTTP2的请求与响应以二进制帧的形式交错进行，大大提高了效率。</p>
+<p><img src="https://s1.ax1x.com/2018/12/16/FavS4x.png" alt="multiple"></p>
+<p>4、请求优先：可以对资源的下载顺序进行排序。</p>
+<p>5、服务端推送：可以将资源主动推送给客户端。</p>
+<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><p>服务器接收到请求后会对其进行处理并返回HTTP报文，响应报文也由四个部分组成：状态行、响应头、空行、响应体。</p>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>状态行格式如下：<strong>HTTP-Version Status-Code Reason-Phrase</strong>。</p>
+<p>其中，<code>HTTP-Version</code>表示服务器HTTP协议的版本；<code>Status-Code</code>表示服务器发回的响应状态代码；<code>Reason-Phrase</code>表示状态代码的文本描述。状态代码由三位数字组成，第一个数字定义了响应的类别，且有五种可能取值。</p>
+<ul>
+<li><code>1xx</code>：指示信息–表示请求已接收，继续处理。</li>
+<li><code>2xx</code>：成功–表示请求已被成功接收、理解、接受。</li>
+<li><code>3xx</code>：重定向–要完成请求必须进行更进一步的操作。</li>
+<li><code>4xx</code>：客户端错误–请求有语法错误或请求无法实现。</li>
+<li><code>5xx</code>：服务器端错误–服务器未能实现合法的请求。</li>
+</ul>
+<p>比较常见的状态码有：</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>状态描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200</code>  (OK)</td>
+<td>请求成功</td>
+</tr>
+<tr>
+<td><code>301</code>  (Moved Permanently)</td>
+<td>永久重定向。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</td>
+</tr>
+<tr>
+<td><code>304</code>  (Not Modified)</td>
+<td>自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容</td>
+</tr>
+<tr>
+<td><code>400</code>  (Bad Request)</td>
+<td>客户端请求的语法错误，服务器无法理解，通常是请求参数有误</td>
+</tr>
+<tr>
+<td><code>401</code>  (Unauthorized)</td>
+<td>表示发送的请求需要有HTTP认证信息或者是认证失败了</td>
+</tr>
+<tr>
+<td><code>403</code>  (Forbidden)</td>
+<td>服务器理解请求客户端的请求，但是拒绝执行此请求</td>
+</tr>
+<tr>
+<td><code>404</code>  (Not Found)</td>
+<td>服务器无法根据客户端的请求找到资源</td>
+</tr>
+<tr>
+<td><code>500</code>  (Internal Server Error)</td>
+<td>服务器内部错误，无法完成请求</td>
+</tr>
+</tbody>
+</table>
+<h4 id="响应头"><a href="#响应头" class="headerlink" title="响应头"></a>响应头</h4><p>响应头用于描述服务器的基本信息，以及数据的描述，服务器通过这些数据的描述信息，可以通知客户端如何处理等一会儿它回送的数据。</p>
+<p>常用的响应头信息：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Allow</code></td>
+<td>服务器支持哪些请求方法（如GET、POST等）</td>
+</tr>
+<tr>
+<td><code>Content-Encoding</code></td>
+<td>文档的编码(Encode)方法</td>
+</tr>
+<tr>
+<td><code>Content-Type</code></td>
+<td>表示后面的文档属于什么MIME类型。Servlet默认为text/plain，但通常需要显式地指定为text/html。由于经常要设置Content-Type，因此HttpServletResponse提供了一个专用的方法setContentType</td>
+</tr>
+<tr>
+<td><code>Date</code></td>
+<td>当前的GMT时间</td>
+</tr>
+<tr>
+<td><code>Expires</code></td>
+<td>告诉浏览器把回送的资源缓存多长时间，-1或0则是不缓存</td>
+</tr>
+<tr>
+<td><code>Etag</code></td>
+<td>指示资源的状态唯一标识</td>
+</tr>
+<tr>
+<td><code>Last-Modified</code></td>
+<td>文档的最后改动时间。客户可以通过If-Modified-Since请求头提供一个日期，该请求将被视为一个条件GET，只有改动时间迟于指定时间的文档才会返回，否则返回一个304（Not Modified）状态。Last-Modified也可用setDateHeader方法来设置</td>
+</tr>
+<tr>
+<td><code>Refresh</code></td>
+<td>表示浏览器应该在多少时间之后刷新文档</td>
+</tr>
+<tr>
+<td><code>Server</code></td>
+<td>服务器名字</td>
+</tr>
+<tr>
+<td><code>Set-Cookie</code></td>
+<td>设置和页面关联的Cookie</td>
+</tr>
+<tr>
+<td><code>WWW-Authenticate</code></td>
+<td>表示在请求获取这个实体时应当使用的认证模式</td>
+</tr>
+</tbody>
+</table>
+<h4 id="响应体"><a href="#响应体" class="headerlink" title="响应体"></a>响应体</h4><p>响应体就是响应的消息体，如果是纯数据就是返回纯数据，如果请求的是HTML页面，那么返回的就是HTML代码，如果是JS就是JS代码等等。</p>
+<h3 id="缓存机制"><a href="#缓存机制" class="headerlink" title="缓存机制"></a>缓存机制</h3><p>浏览器在向服务器请求资源时并不一定每一次都从服务器重新获取，因为浏览器自身的缓存机制可以帮助我们处理从何处获取资源的问题。</p>
+<p>通过<code>Cache-Control</code>指定缓存机制，当第一次请求资源时，http响应头会包含以下信息：</p>
+<ul>
+<li><code>Last-Modified</code>——资源最后修改的时间</li>
+<li><code>Etag</code>——资源的状态唯一标识</li>
+<li><code>Expires</code>——资源在浏览器缓存中的过期时间</li>
+</ul>
+<p>然后浏览器会将文件缓存到<code>Cache</code>目录下，并同时保存文件的上述信息。当第二次请求该文件时，浏览器会先检查<code>Cache</code>目录下是否含有该文件，如果有，并且还没到<code>Expires</code>设置的时间，即文件还没有过期，那么此时浏览器将直接从<code>Cache</code>目录中读取文件，而不再发送请求。如果文件此时已经过期，则浏览器会发送一次HTTP请求到服务器，并在头部携带上当前文件的如下信息：</p>
+<blockquote>
+<p>If-Modified-Since Thu, 26 Nov 2009 13:50:19 GMT<br>If-None-Match “8fb8b-14-4794674acdcc0”</p>
+</blockquote>
+<p>也就是把文件上一次修改的时间，以及上一次请求返回的<code>Etag</code>值一起发送给服务器。服务器在接收到这个请求的时候，先解析Header里头的信息，然后校验该头部信息。如果该文件从上次时间到现在都没有过修改或者<code>Etag</code>信息没有变化，则服务端将直接返回一个<code>304</code>的状态，而不再返回文件资源。如果服务器经过匹配发现文件修改过了，就会将文件资源返回，并带上新文件状态信息。</p>
+<p>通过这种缓存机制就可以很大程度减少网络带宽优化网络性能，这对于提升用户体验也是一个极大的帮助。</p>
+<p><em><font color="#bbb" size="3">部分内容参考自以下：</font></em><br><a href="https://www.cnblogs.com/xuan52rock/p/4885282.html" target="_blank" rel="noopener">https://www.cnblogs.com/xuan52rock/p/4885282.html</a></p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

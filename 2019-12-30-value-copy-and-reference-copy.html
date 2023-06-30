@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="JS">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="在程序语言中，变量的赋值以及相互之间的引用绝对是使用最频繁的。但在这种引用的过程中很容易出现一个问题:比如为变量a赋了某个值，变量b引用了变量a，此后我们修改了b的内容，却发现有时a的值也变了，有的时候却不变，这是为什么？
+引用指向的是值JavaScript中变量的引用指向的是值，即使一个值被多个变">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="理解JS中按值传递及按引用传递">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>理解JS中按值传递及按引用传递 - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://z3.ax1x.com/2021/04/20/cH69nx.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>理解JS中按值传递及按引用传递</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2019-12-30
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用指向的是值"><span class="toc-text">引用指向的是值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本类型与引用类型"><span class="toc-text">基本类型与引用类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数是按值传递？"><span class="toc-text">函数参数是按值传递？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/JS/" class="article-tags">JS</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约1.1k字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要4min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <p>在程序语言中，变量的赋值以及相互之间的引用绝对是使用最频繁的。但在这种引用的过程中很容易出现一个问题:比如为变量<code>a</code>赋了某个值，变量<code>b</code>引用了变量<code>a</code>，此后我们修改了<code>b</code>的内容，却发现有时<code>a</code>的值也变了，有的时候却不变，这是为什么？</p>
+<h3 id="引用指向的是值"><a href="#引用指向的是值" class="headerlink" title="引用指向的是值"></a>引用指向的是值</h3><p><strong>JavaScript</strong>中变量的引用指向的是<strong>值</strong>，即使一个值被多个变量引用，他们所指向的都是同一个值，彼此并无关联。影响引用传递结果的是值的类型。</p>
+<h3 id="基本类型与引用类型"><a href="#基本类型与引用类型" class="headerlink" title="基本类型与引用类型"></a>基本类型与引用类型</h3><p><strong>JavaScript</strong>值有两大类型:基本类型与引用类型。基本类型包括<code>数字、字符串、布尔、null、undefined和ES6中的symbol</code>。引用类型包括<code>对象（数组和内置对象）和函数</code>。基本类型值是简单的数据段，直接保存在内存中。引用类型值是对象，可以添加、修改和删除属性或方法，但无法直接访问，需要通过内存地址访问。</p>
+<p>当为变量引用基本类型的值时，实际上会拷贝一个值副本给新的变量，引用相同基本类型值的变量相互独立，如下图:</p>
+<p><img src="https://s2.ax1x.com/2020/01/01/lGF1j1.png" alt="value-copy" style="width: 50%!important;display: block;margin: 0 auto;"></p>
+<p>代码验证:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例一</span></span><br><span class="line"><span class="keyword">let</span> num1 = <span class="number">5</span></span><br><span class="line"><span class="keyword">let</span> num2 = num1</span><br><span class="line">num2 ++</span><br><span class="line"><span class="built_in">console</span>.log(num2) <span class="comment">// 6</span></span><br><span class="line"><span class="built_in">console</span>.log(num1) <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<p>可以看到虽然<code>num2</code>引用了<code>num1</code>的值，但是仅仅是拷贝了相同的值，<code>num2</code>的变化不会传递给<code>num1</code>。</p>
+<p>而当为变量赋予引用类型的值时，拷贝的是内存地址，不同的变量指向的是同一个对象。因此当变量修改了某些属性时会改变其内存地址指向的对象:</p>
+<p><img src="https://s2.ax1x.com/2020/01/01/lGFlcR.png" alt="reference-copy" style="width: 70%!important;display: block;margin: 0 auto;"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例二</span></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Jackson'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> man = person</span><br><span class="line">man.name = <span class="string">'blackstar'</span></span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// blackstar</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例三</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1</span><br><span class="line">arr2.push(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// [1,2,3,4]</span></span><br></pre></td></tr></table></figure>
+<p>修改变量会改变内存地址指向的对象，由此会影响所有引用同一地址的变量。但前提是修改对象属性，而不是重新赋值新的引用类型值:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例四</span></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Jackson'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> man = person</span><br><span class="line">man = &#123;</span><br><span class="line">  name: <span class="string">'blackstar'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// Jackson</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例五</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1</span><br><span class="line">arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">// [4,5,6]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// [1,2,3]</span></span><br></pre></td></tr></table></figure>
+<p>重新赋值改变了内存地址，指向了一个新的对象，从原本共同引用的对象中脱离开来，自立门户，自然也就不会影响其他变量了。</p>
+<p>再来一个组合代码强化一下理解:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例六</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  info: &#123;</span><br><span class="line">    age: <span class="number">26</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> fe = obj.info</span><br><span class="line"><span class="keyword">let</span> age = obj.info.age</span><br><span class="line">obj.info.age = <span class="number">16</span></span><br><span class="line"><span class="built_in">console</span>.log(fe) <span class="comment">// &#123; age: 16 &#125; 引用的对象属性发生变化，变量跟随改变</span></span><br><span class="line"><span class="built_in">console</span>.log(age) <span class="comment">// 26 变量拷贝的是基本类型值，不会受对象改变影响</span></span><br><span class="line">fe.age = <span class="number">41</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.info) <span class="comment">// &#123; age: 41 &#125; 属性修改，相互影响</span></span><br><span class="line">fe = &#123;</span><br><span class="line">  name: <span class="string">'blackstar'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(fe); <span class="comment">// &#123; name: 'blackstar' &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.info); <span class="comment">// &#123; age: 41 &#125; 变量指向了新的对象，不影响原来引用的对象</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数参数是按值传递？"><a href="#函数参数是按值传递？" class="headerlink" title="函数参数是按值传递？"></a>函数参数是按值传递？</h3><p>No!不能这么说，还是和开头我们所说的一样，如何传递仍然取决于值的类型，<strong><code>基本类型按值传递，引用类型按引用传递</code></strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例七</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">wrapper</span>) </span>&#123;</span><br><span class="line">  wrapper.a = <span class="number">42</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  a: <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line">foo(obj)</span><br><span class="line"><span class="built_in">console</span>.log(obj.a) <span class="comment">// 42</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例八</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">  value += <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> num = <span class="number">10</span></span><br><span class="line">count(num)</span><br><span class="line"><span class="built_in">console</span>.log(num) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p>你看，我们将一个引用了对象的变量传入函数并且在函数中改变对象的属性，函数外该变量也会同步发生改变，若传入一个基本类型值则不然，这和我们之前实验的结果一致。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>由于引用类型赋值操作保存的是指向对象的内存地址，指向的是同一对象，因此很容易在传递的过程中相互影响，理解不同类型值的传递规则，明确拷贝的目的是拷贝值副本还是建立联系，这会使数据的流转更加分明和清晰。</p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="JS">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="引言非计算机领域的人看到这样的标题一定会觉得莫名其妙，0.1+0.2这样的算式和1+1=2差不多咋还能有其它结果。然而在计算机世界里确实存在很多类似的运算你觉得可以拍着胸脯保证结果但实际往往截然不同，归根究底都是因为精度丢失，我们今天就从JavaScript的角度来解读一下这个问题。
+JavaScr">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="薛定谔的浮点运算:为啥0.1+0.2不等于0.3?">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>薛定谔的浮点运算:为啥0.1+0.2不等于0.3? - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://z3.ax1x.com/2021/04/20/cH69nx.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>薛定谔的浮点运算:为啥0.1+0.2不等于0.3?</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2019-03-06
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#引言"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript的数值类型"><span class="toc-text">JavaScript的数值类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#双精度浮点数"><span class="toc-text">双精度浮点数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#精度丢失"><span class="toc-text">精度丢失</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决精度计算"><span class="toc-text">解决精度计算</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/JS/" class="article-tags">JS</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约875字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要3min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>非计算机领域的人看到这样的标题一定会觉得莫名其妙，0.1+0.2这样的算式和1+1=2差不多咋还能有其它结果。然而在计算机世界里确实存在很多类似的运算你觉得可以拍着胸脯保证结果但实际往往截然不同，归根究底都是因为精度丢失，我们今天就从JavaScript的角度来解读一下这个问题。</p>
+<h3 id="JavaScript的数值类型"><a href="#JavaScript的数值类型" class="headerlink" title="JavaScript的数值类型"></a>JavaScript的数值类型</h3><p>不像Java、C语言有整型和浮点型（int、float、double），JavaScript只有一种数值类型:<code>number</code>。和大部分编程语言一样<code>number</code>也是基于<strong><em>IEEE 754</em></strong>标准实现的浮点数。</p>
+<h4 id="双精度浮点数"><a href="#双精度浮点数" class="headerlink" title="双精度浮点数"></a>双精度浮点数</h4><p>浮点数通过科学计数法存储以节约存储空间，JavaScript使用双精度格式，即64位二进制。科学计数法公式如下:</p>
+<p><img src="https://s2.ax1x.com/2019/03/09/ASt81A.jpg" alt="scientific_notation"></p>
+<p><img src="https://s2.ax1x.com/2019/03/08/ASpWxP.jpg" alt="64bit"></p>
+<table>
+<thead>
+<tr>
+<th>1位</th>
+<th>11位</th>
+<th>52位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S（符号位），编号63</td>
+<td>E（阶码位），编号62 ~52</td>
+<td>M（尾数位），编号51 ~ 0</td>
+</tr>
+<tr>
+<td>0表示正，1表示负</td>
+<td>指数，可表示0~2047</td>
+<td>超出部分舍0进1</td>
+</tr>
+</tbody>
+</table>
+<p>为了能够处理负指数，实际指数位存储在指数域中的值需要减去一个偏移量(单精度为127,双精度为1023)，因此指数0~1022表示负，1024~2047表示正。 而<strong><em>IEEE 754</em></strong>规定，有效数字第一位默认总是1，不保存在64位浮点数之中，所以尾数位最多可以存储53位有效数字。所以公式变为:</p>
+<p><img src="https://s2.ax1x.com/2019/03/09/AStG6I.jpg" alt="scientific_notation_new"></p>
+<p>根据上面的公式我们来举个例子看看。一个十进制数<code>10.5</code>，我们把它转成二进制得到:<code>1010.1</code>，用科学计数法表示</p>
+<blockquote>
+<p>1010.1 = 1.0101×2^3</p>
+</blockquote>
+<p>因此S=0，E=1026，M=0101。</p>
+<h4 id="精度丢失"><a href="#精度丢失" class="headerlink" title="精度丢失"></a>精度丢失</h4><p>而像0.1这样的小数转成二进制是个无限循环:</p>
+<p><code>0.0001100110011001100110011001100110011001100110011001101...</code></p>
+<p>0.2转成二进制同样是无限循环:</p>
+<p><code>0.001100110011001100110011001100110011001100110011001101...</code></p>
+<p>由于尾数位有长度限制，无法精确存储，对正数来说，只要尾数多余位不全是0，则向尾数最低有效位进1；对负数来说，则是简单地舍去。</p>
+<p>用科学计数法表示，0.1的阶码是-4，0.2的阶码是-3，想要对他们的尾数进行相加运算首先需要对阶，小阶对大阶，所以将0.1的阶码变为-3，尾数相应右移一位，因此:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    0.1100110011001100110011001100110011001100110011001101(1100进1)</span><br><span class="line">+   1.1001100110011001100110011001100110011001100110011010(1001进1)</span><br><span class="line">    ------------------------------------------------------</span><br><span class="line">   10.0110011001100110011001100110011001100110011001100111</span><br></pre></td></tr></table></figure>
+<p>用科学计数法表示阶码进1，尾数右移一位无法表示全，所以最低有效位需要进1，所以最后的结果就是:</p>
+<blockquote>
+<p> 2^-2×1.0011001100110011001100110011001100110011001100110100</p>
+</blockquote>
+<p>将这个结果转成十进制刚好得到<code>0.30000000000000004</code>。</p>
+<h3 id="解决精度计算"><a href="#解决精度计算" class="headerlink" title="解决精度计算"></a>解决精度计算</h3><p>所以一切真相大白了，浮点运算的结果不准确就是由于精度丢失导致的，那么怎样避免?如果你做过和金额相关的业务，稍不留神一定会有测试给你提bug告诉你数值显示出错啦，怎么出现好多位小数。</p>
+<p>简单的方法是先把小数转成整数再运算。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> num1Digits = (num1.toString().split(<span class="string">'.'</span>)[<span class="number">1</span>] || <span class="string">''</span>).length;</span><br><span class="line">    <span class="keyword">const</span> num2Digits = (num2.toString().split(<span class="string">'.'</span>)[<span class="number">1</span>] || <span class="string">''</span>).length;</span><br><span class="line">    <span class="keyword">const</span> baseNum = <span class="built_in">Math</span>.pow(<span class="number">10</span>, <span class="built_in">Math</span>.max(num1Digits, num2Digits));</span><br><span class="line">    <span class="keyword">return</span> (num1 * baseNum + num2 * baseNum) / baseNum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方便的话，可以使用现成的工具库，比如:<a href="https://mathjs.org/" target="_blank" rel="noopener">math.js</a>。</p>
+<p><br></p>
+<p><em><font color="#bbb" size="3">部分内容参考自以下：</font></em><br><a href="https://zhuanlan.zhihu.com/p/30703042" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/30703042</a><br><a href="https://shenbao.github.io/2016/10/16/Javascript-0.1+0.2-!=-0.3/" target="_blank" rel="noopener">https://shenbao.github.io/2016/10/16/Javascript-0.1+0.2-!=-0.3/</a><br><a href="https://blog.csdn.net/u013347241/article/details/79210840" target="_blank" rel="noopener">https://blog.csdn.net/u013347241/article/details/79210840</a></p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

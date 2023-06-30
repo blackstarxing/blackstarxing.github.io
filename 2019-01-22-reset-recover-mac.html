@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="MAC">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="音视频崩溃事情要从几天前说起。
+一个周末的晚上，电脑右上角忽然频繁跳出网易云音乐播放失败的通知，接着网页上的视频也无法播放，刷新了几次网页依然不行，我以为是网络问题就去睡了。可第二天早上起来准备看我牛的比赛时，依然无法播放，家里的网络也没问题，看比赛要紧，重启试试吧，嘿，果然好了。
+可是到了晚上这个">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="记一次macOS音视频崩溃引发的备份重装经历">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>记一次macOS音视频崩溃引发的备份重装经历 - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://s2.ax1x.com/2019/01/26/knt2y4.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>记一次macOS音视频崩溃引发的备份重装经历</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2019-01-22
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#音视频崩溃"><span class="toc-text">音视频崩溃</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#备份"><span class="toc-text">备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用恢复功能重装系统"><span class="toc-text">利用恢复功能重装系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#恢复备份"><span class="toc-text">恢复备份</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、进入时间机器恢复备份"><span class="toc-text">1、进入时间机器恢复备份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、迁移助理"><span class="toc-text">2、迁移助理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、使用恢复功能完整恢复"><span class="toc-text">3、使用恢复功能完整恢复</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#悬而未解"><span class="toc-text">悬而未解</span></a></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/MAC/" class="article-tags">MAC</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/digital/">数码</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约1.4k字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要4min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <h3 id="音视频崩溃"><a href="#音视频崩溃" class="headerlink" title="音视频崩溃"></a>音视频崩溃</h3><p>事情要从几天前说起。</p>
+<p>一个周末的晚上，电脑右上角忽然频繁跳出网易云音乐播放失败的通知，接着网页上的视频也无法播放，刷新了几次网页依然不行，我以为是网络问题就去睡了。可第二天早上起来准备看我牛的比赛时，依然无法播放，家里的网络也没问题，看比赛要紧，重启试试吧，嘿，果然好了。</p>
+<p>可是到了晚上这个情况又一次出现了，去网上搜了一下，有人说这是macOS的核心音频守护进程出了问题，只需在终端中执行<code>sudo killall coreaudiod</code>或者在活动监视器中退出<code>coreaudiod</code>进程：</p>
+<p><img src="https://s2.ax1x.com/2019/01/22/kApsfI.jpg" alt="coreaudiod"></p>
+<p>果然音视频马上又可以正常播放了。然而这个我认为是偶现的问题在此后几天频频出现，特别是使用Mac系统特别受欢迎的开源播放器IINA播放电影更是2分钟内必崩溃。虽然重启<code>coreaudiod</code>进程可以快速解决，但总归不能根治问题。上网自行查阅以及咨询APPLE技术支持后我分别尝试了卸载问题出现前最新安装过的软件、<a href="https://support.apple.com/zh-cn/HT204063" target="_blank" rel="noopener">重置NVRAM</a>、<a href="https://support.apple.com/zh-cn/guide/mac-help/mh21245/mac" target="_blank" rel="noopener">安全模式启动</a>、切换管理员、重装系统，可是问题还是依旧存在。</p>
+<p>抱着电脑去了离家最近的乐堤港APPLE授权店检测表明硬件是没有问题的，看起来只剩下抹盘重装一种方式了，如果你并没有遇到过上述问题，但是刚好有需要对电脑进行备份和抹盘重装那么你也可以接着读下去。</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>Mac提供了一个很方便的备份工具——<strong>时间机器</strong>（Time Machine），在此之前你需要一个移动硬盘或其他外接存储设备，连接电脑会跳出一个这样的弹窗：</p>
+<p><img src="https://s2.ax1x.com/2019/01/24/ke4We1.png" alt="chooseDisk"></p>
+<p>点击<strong>用作备份磁盘</strong>，然后进入时间机器偏好设置，选中磁盘后你会看到这样的界面：</p>
+<p><img src="https://s2.ax1x.com/2019/01/24/ke4fdx.png" alt="machine set"></p>
+<p>如果勾选了<strong>自动备份</strong>会在未来的某个时刻开始备份，这里我们不等了，直接备份。勾选<strong>在菜单栏中显示时间机器</strong>，点击状态栏上的时间机器图标<strong>立即备份</strong>：</p>
+<p><img src="https://s2.ax1x.com/2019/01/25/keIpAx.png" alt="backupnow"></p>
+<p>如果你是首次进行备份，那么这个过程会持续比较长的时间，但是不影响电脑的正常使用。</p>
+<p>备份完成后，关机，接下来我们需要用到macOS的恢复功能。</p>
+<h3 id="利用恢复功能重装系统"><a href="#利用恢复功能重装系统" class="headerlink" title="利用恢复功能重装系统"></a>利用恢复功能重装系统</h3><p>一共有三种方式进入恢复功能，首先关机状态下按下开机键然后立刻按住<code>Command (⌘)-R</code>、<code>Option-⌘-R</code>或<code>Shift-Option-⌘-R</code>组合键，注意动作一定要快，这三种方式的不同在于所安装的macOS版本，通常我们用<code>Command (⌘)-R</code>就行了，当看到旋转的地球或者苹果标志的时候就可以松手了，片刻后屏幕上会出现下面这个页面，先点击磁盘工具抹掉磁盘（<code>再次提醒一定要先进行备份！！！</code>）。</p>
+<p><img src="https://s2.ax1x.com/2019/01/25/keIbVI.jpg" alt="mac_recovery"></p>
+<p>磁盘清空后再返回点击<strong>重新安装macOS</strong>，需要再点击几次同意、继续之类的按钮后系统就会自动下载安装了，这一步除了耗时较长，操作非常简单。</p>
+<h3 id="恢复备份"><a href="#恢复备份" class="headerlink" title="恢复备份"></a>恢复备份</h3><p>重装好系统后，你的电脑就像刚到手一样干干净净的了，我们根据需要恢复之前的备份。恢复备份主要也有三种方式：</p>
+<h4 id="1、进入时间机器恢复备份"><a href="#1、进入时间机器恢复备份" class="headerlink" title="1、进入时间机器恢复备份"></a>1、进入时间机器恢复备份</h4><p>点击时间机器状态图标进入时间机器，你会看到过往备份版本的文件夹时间轴，点选想要恢复的版本下的文件夹或文件然后恢复就可以了，这种方式的优点是可是任意选择文件进行恢复。</p>
+<p><img src="https://s2.ax1x.com/2019/01/26/knuMlt.jpg" alt="timemachine_line"></p>
+<h4 id="2、迁移助理"><a href="#2、迁移助理" class="headerlink" title="2、迁移助理"></a>2、迁移助理</h4><p>点开访达，菜单栏点击<strong>前往</strong>–&gt;<strong>实用工具</strong>。</p>
+<p><img src="https://s2.ax1x.com/2019/01/26/knu7Ae.png" alt="finder"></p>
+<p><img src="https://s2.ax1x.com/2019/01/26/knuo7D.png" alt="assist"></p>
+<p>点开<strong>迁移助理</strong>，然后按照顺序一步一步操作：</p>
+<p><img src="https://s2.ax1x.com/2019/01/26/knu5nK.jpg" alt="assist"></p>
+<p><img src="https://s2.ax1x.com/2019/01/26/knuI0O.jpg" alt="assist"></p>
+<p><img src="https://s2.ax1x.com/2019/01/26/knuhX6.jpg" alt="assist"></p>
+<p><img src="https://s2.ax1x.com/2019/01/26/knuHtH.jpg" alt="assist"></p>
+<p>使用<strong>迁移助理</strong>可以一次性恢复所有文稿数据、应用以及系统设置，如果想要还原除系统以外的所有备份这个工具非常实用。</p>
+<p>但是有个疑问，APPLE官网说使用迁移助理可以从按日期和时间排列的备份列表中选择恢复，但是尽管我的硬盘里已经有多个备份但是一直都只显示日期最近的一个，如果你知道怎么能切换版本麻烦告诉我一下方法。</p>
+<h4 id="3、使用恢复功能完整恢复"><a href="#3、使用恢复功能完整恢复" class="headerlink" title="3、使用恢复功能完整恢复"></a>3、使用恢复功能完整恢复</h4><p>最后一种方法就是前面重装时用到的恢复功能，选择第一项就是恢复备份的所有内容，包括文件、应用、系统以及各种设置，这个是可以选择恢复的备份版本的。</p>
+<h3 id="悬而未解"><a href="#悬而未解" class="headerlink" title="悬而未解"></a>悬而未解</h3><p>回到开始的问题，抹盘重装后经过测试，音视频播放不会崩溃了，我仍然不死心的觉得是系统的问题，通过<strong>迁移助理</strong>恢复所有的文件和应用后该死的问题又回来了。好吧，看来只可能是之前安装过的某个应用或者命令导致的，但是想要排查出来具体哪个宛如大海捞针，罢了，重新只恢复文稿，应用什么的抹掉慢慢安装吧。如果有人也遇到类似的问题并且找到了根源还望能够分享一下！</p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

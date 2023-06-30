@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    
+
+    <!--Keywords-->
+    
+        <meta name="keywords" content="JS">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="在阅读别人的代码时，你一定有过不少大呼竟然还有这种操作的时刻，一段相同的逻辑或功能，为什么别人只用5行就搞定，而自己却用了10行甚至更多。冗余复杂的代码不仅可读性差，效率也可能受到影响，那么在JavaScript中都有哪些小技巧来让我们的代码更加优雅呢？
+优化条件判断条件判断其实是最能区分小白和有经">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jiaxing Yan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="编写优雅的JavaScript代码">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Blackstar的博客世界">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Blackstar&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>编写优雅的JavaScript代码 - Blackstar&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Don't rush and never settle</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/blackstarxing">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://z3.ax1x.com/2021/04/20/cH69nx.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>编写优雅的JavaScript代码</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2019-01-10
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            
+                <div id="toc" class="toc-article
+    col-lg-2 col-lg-offset-0
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="toc-content">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优化条件判断"><span class="toc-text">优化条件判断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#逻辑运算符"><span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三元表达式"><span class="toc-text">三元表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#switch-case"><span class="toc-text">switch case</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用对象结构判断状态"><span class="toc-text">利用对象结构判断状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#短路求值"><span class="toc-text">短路求值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#every-、some"><span class="toc-text">every()、some()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#减少嵌套，提早return"><span class="toc-text">减少嵌套，提早return</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#善用ES6"><span class="toc-text">善用ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#箭头函数"><span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数默认值"><span class="toc-text">参数默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#includes-多条件判断"><span class="toc-text">includes()多条件判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二维及多维数组展开"><span class="toc-text">二维及多维数组展开</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组去重"><span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异步处理"><span class="toc-text">异步处理</span></a></li></ol></li></ol>
+    </div>
+</div>
+<!-- toc scroll -->
+<script type="text/javascript">
+    window.onscroll=function(){
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t>=document.querySelector(".intro-header").offsetHeight){
+            document.querySelector(".toc-content").className = 'toc-content fixed'
+        } else {
+            document.querySelector(".toc-content").className = 'toc-content'
+        }
+
+    }
+</script>
+            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags and categories -->
+                
+                    <div class="article-tag">
+                        
+                            
+
+
+<a href="/tags/JS/" class="article-tags">JS</a>
+
+
+                        
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-5 post-categories"> -->
+                        <!--  -->
+                            <!-- 
+
+<a href="/categories/technology/">技术</a>
+ -->
+                        <!--  -->
+                    <!-- </div> -->
+                
+                <!-- wordcount -->
+                <div class="word-count">
+                    <i class="fa fa-keyboard-o"></i>本文约1.3k字
+                </div>
+                <!-- <div class="word-count">
+                    <i class="fa fa-clock-o"></i>预计需要5min阅读
+                </div> -->
+
+                <!-- Gallery -->
+                
+
+                <!-- Post Main Content -->
+                <div class="article-content">
+                    <p>在阅读别人的代码时，你一定有过不少大呼竟然还有这种操作的时刻，一段相同的逻辑或功能，为什么别人只用5行就搞定，而自己却用了10行甚至更多。冗余复杂的代码不仅可读性差，效率也可能受到影响，那么在JavaScript中都有哪些小技巧来让我们的代码更加优雅呢？</p>
+<h3 id="优化条件判断"><a href="#优化条件判断" class="headerlink" title="优化条件判断"></a>优化条件判断</h3><p>条件判断其实是最能区分小白和有经验工程师的标准之一，如果一段代码频频出现<code>if else</code>，想必看的人一定是眉头紧锁的。其实对于条件判断有着很多种优化的方法。</p>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (sex === <span class="string">'male'</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (age&gt;<span class="number">18</span>) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (age &lt; <span class="number">18</span>) &#123;</span><br><span class="line">    <span class="comment">// 公交半价 </span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(age &gt; <span class="number">60</span>) &#123;</span><br><span class="line">    <span class="comment">// 公交半价</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看上面两段代码，脑壳疼不，对于刚开始写代码的新人来说这种情况一定不少。我们用<code>&amp;&amp;</code>以及<code>||</code>一句话实现上述逻辑：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (sex === <span class="string">'male'</span> &amp;&amp; age &gt; <span class="number">18</span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (age &lt; <span class="number">18</span> || age &gt; <span class="number">60</span>) &#123;</span><br><span class="line">    <span class="comment">// 公交半价</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h4><p>对于非真既假的条件判断往往比较适合使用三元表达式来替代<code>if else</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sex = user.sex === <span class="number">0</span> ? <span class="string">'男'</span> : <span class="string">'女'</span></span><br></pre></td></tr></table></figure>
+<h4 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h4><p>对于状态值比较多的条件判断，使用<code>switch case</code>会比一排排使用<code>if {} else if {} else if {}</code>更加合理：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (state == <span class="string">'1'</span>) &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="string">'2'</span>) &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="string">'3'</span>) &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125; <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ❌ </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (state)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="利用对象结构判断状态"><a href="#利用对象结构判断状态" class="headerlink" title="利用对象结构判断状态"></a>利用对象结构判断状态</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> state = &#123;</span><br><span class="line">    <span class="number">1</span>: <span class="string">'success'</span>,</span><br><span class="line">    <span class="number">2</span>: <span class="string">'error'</span>,</span><br><span class="line">    <span class="number">3</span>: <span class="string">'unknown'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">code</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> state[code]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="短路求值"><a href="#短路求值" class="headerlink" title="短路求值"></a>短路求值</h4><p>短路求值的意思是说只有当第一个运算数的值无法确定逻辑运算的结果时，才对第二个运算数进行求值：当<code>&amp;&amp;</code>的第一个运算数的值为<code>false</code>时，其结果必定为<code>false</code>，无需再运行第二个运算数，除非第一个运算数结果为<code>true</code>；<code>||</code>也一样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通的if语句</span></span><br><span class="line"><span class="keyword">if</span>(test)&#123;</span><br><span class="line">    isTrue()  <span class="comment">// Test is true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面的语句可以使用 '&amp;&amp;' 写为：</span></span><br><span class="line"></span><br><span class="line">( test &amp;&amp; isTrue() )  <span class="comment">// Test is true</span></span><br></pre></td></tr></table></figure>
+<p>而<code>||</code>可以给参数设置默认值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name = name || <span class="string">'Blackstar'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="every-、some"><a href="#every-、some" class="headerlink" title="every()、some()"></a>every()、some()</h4><p>判断数组中是否全部或部分满足条件时可以使用<code>every()</code>或<code>some()</code>方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">arr.every(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span>  <span class="comment">// false</span></span><br><span class="line">&#125;)</span><br><span class="line">arr.some(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span>  <span class="comment">// true</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="减少嵌套，提早return"><a href="#减少嵌套，提早return" class="headerlink" title="减少嵌套，提早return"></a>减少嵌套，提早return</h4><p>当条件判断逐级递进时，一层层嵌套堆叠容易做无用功。我们应当遵循当发现无效条件时及时<code>return</code>的规则。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">fruit, quantity</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 条件 1：fruit 必须有值</span></span><br><span class="line">    <span class="keyword">if</span> (fruit) &#123;</span><br><span class="line">        <span class="comment">// 条件 2：必须为苹果</span></span><br><span class="line">        <span class="keyword">if</span> (fruit == <span class="string">'apple'</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'red'</span>)</span><br><span class="line">            <span class="comment">// 条件 3：数量必须大于 10</span></span><br><span class="line">            <span class="keyword">if</span> (quantity &gt; <span class="number">10</span>) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'big quantity'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'No fruit!'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 测试结果</span></span><br><span class="line">test(<span class="literal">null</span>) <span class="comment">// 抛出错误：No fruits</span></span><br><span class="line">test(<span class="string">'apple'</span>) <span class="comment">// 打印：red</span></span><br><span class="line">test(<span class="string">'apple'</span>, <span class="number">20</span>) <span class="comment">// 打印：red，big quantity</span></span><br></pre></td></tr></table></figure>
+<p>这一层层的判断像极了回调地狱，而我们要看到最下面才会知道非水果的判断逻辑，而使用提早<code>return</code>的规则：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">fruit, quantity</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 条件 1：提前抛出错误</span></span><br><span class="line">    <span class="keyword">if</span> (!fruit) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'No fruit!'</span>)</span><br><span class="line">    <span class="comment">// 条件2：必须为苹果</span></span><br><span class="line">    <span class="keyword">if</span> (fruit == <span class="string">'apple'</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'red'</span>)</span><br><span class="line">        <span class="comment">// 条件 3：数量必须大于 10</span></span><br><span class="line">        <span class="keyword">if</span> (quantity &gt; <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'big quantity'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>及早的抛出错误，减少嵌套，保持良好的编码风格，无疑提高了程序的可读性。</p>
+<h3 id="善用ES6"><a href="#善用ES6" class="headerlink" title="善用ES6"></a>善用ES6</h3><p>ES6前面的文章有介绍过（<a href="/2018-11-28-es6-change.html">ES6——一场JavaScript语法的重大变革</a>），除了弥补了一些设计缺陷，最主要的还是帮助我们简化了代码。</p>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>箭头函数不必多说：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function">(<span class="params">x,y</span>) =&gt;</span> x + y</span><br></pre></td></tr></table></figure>
+<h4 id="参数默认值"><a href="#参数默认值" class="headerlink" title="参数默认值"></a>参数默认值</h4><p>对上面短路求值的进一步优化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">name = <span class="string">'Blackstar'</span></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="includes-多条件判断"><a href="#includes-多条件判断" class="headerlink" title="includes()多条件判断"></a>includes()多条件判断</h4><p>判断变量是否满足其一结果时，不停使用<code>||</code>运算？使用<code>some()</code>方法？No，在ES6中，我们只需这样使用includes()方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">fruit</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 条件提取到数组中</span></span><br><span class="line">    <span class="keyword">const</span> redFruits = [<span class="string">'apple'</span>, <span class="string">'strawberry'</span>, <span class="string">'cherry'</span>, <span class="string">'cranberries'</span>]</span><br><span class="line">    <span class="keyword">if</span> (redFruits.includes(fruit)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'red'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二维及多维数组展开"><a href="#二维及多维数组展开" class="headerlink" title="二维及多维数组展开"></a>二维及多维数组展开</h4><p>借用<code>...</code>扩展运算符及<code>concat()</code>方法，<code>concat()</code>用于连接两个或多个数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二维数组</span></span><br><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,[<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">a = [].concat(...a)</span><br><span class="line"><span class="comment">// 多维数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flattenArray</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> flattened =[].concat(...arr)</span><br><span class="line">    <span class="keyword">return</span> flattened.some(<span class="function"><span class="params">item</span> =&gt;</span><span class="built_in">Array</span>.isArray(item))?flattenArray(flattened):flattened</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> arr =[<span class="number">11</span>,[<span class="number">22</span>,<span class="number">33</span>],[<span class="number">44</span>,[<span class="number">55</span>,<span class="number">66</span>,[<span class="number">77</span>,[<span class="number">88</span>]],<span class="number">99</span>]]]</span><br><span class="line"><span class="keyword">const</span> flatArr = flattenArray(arr) <span class="comment">// =&gt; [11, 22, 33, 44, 55, 66, 77, 88, 99]</span></span><br></pre></td></tr></table></figure>
+<h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numList = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(numList)) <span class="comment">// [1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+<p><code>Set</code>保证了数据结构中成员的值是唯一的，而<code>Array.from</code>可以将这种数据结构转变为真正的数组。</p>
+<h4 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h4><p>避免回调地狱，请使用<code>Promise</code>，参看前文（<a href="/2018-09-05-javascript-singlethread-asynchronous.html">JS单线程与异步</a>），不再赘述。</p>
+<p><em><font color="#bbb" size="3">部分内容参考自以下：</font></em><br><a href="https://www.css88.com/archives/9865" target="_blank" rel="noopener">https://www.css88.com/archives/9865</a></p>
+
+
+                    
+                </div>
+
+                <!-- Comments -->
+                
+                    <div class="article-comments">
+                        
+    <!-- <hr /> -->
+    <!-- <h3>留言:</h3> -->
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+	
+	<!-- Back to Top -->
+    <div class="backTop">
+	<i class="fa fa-arrow-up"></i>
+</div>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+    
+
+    
+
+    
+        <li>
+            <a href="https://github.com/blackstarxing" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="http://weibo.com/2959895465/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+</ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="https://github.com/blackstarxing" target="_blank">Jiaxing Yan</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5c04e81409a134c5c17f9bac4d7b20ca";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Back to Top -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".backTop").click(function(){
+            $("html,body").animate({scrollTop:0},'slow');
+        });
+        var h = $(window).height();
+        if($(window).scrollTop()>h){
+            $(".backTop").show()
+        }
+        $(window).scroll(function(){
+            if($(window).scrollTop()>h){
+                $(".backTop").fadeIn();
+            }else{
+                $(".backTop").fadeOut();
+            }
+        })
+    });
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'blackstarxing';
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
