@@ -231,7 +231,7 @@
                 <!-- Post Main Content -->
                 <div class="article-content">
                     <h4 id="全民学Python"><a href="#全民学Python" class="headerlink" title="全民学Python"></a>全民学Python</h4><p>Python这门语言虽然早在1989年圣诞节期间就被Guido van Rossum创造了出来，但近几年却突然在国内开始流行了起来：网站插入广告、培训机构宣传，甚至朋友圈推荐广告都可见Python的踪影。</p>
-<p><a href="https://imgchr.com/i/re4lxP" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/13/re4lxP.jpg" alt="ad"></a></p>
+<p><img src="https://s3.ax1x.com/2020/12/13/re4lxP.jpg" alt="ad"></p>
 <p>如此高的出现频率也吸引了很多非互联网行业的人试图学习了解，大有一种全民学Python的趋势。</p>
 <h4 id="了解Python"><a href="#了解Python" class="headerlink" title="了解Python"></a>了解Python</h4><p>相比其他语言，Python的哲学就是简单优雅，尽量写容易看明白的代码，尽量写少的代码。总之，代码量少是它的一大特点，代价就是运行速度慢，因为Python是动态的、解释性语言。</p>
 <p>用Python可以做什么？</p>
@@ -240,11 +240,11 @@
 <h4 id="需求分析及实现思路"><a href="#需求分析及实现思路" class="headerlink" title="需求分析及实现思路"></a>需求分析及实现思路</h4><p>作为一个音乐爱好者，我首先想到要爬取的数据就是歌曲，那就索性把批量下载歌曲作为我们通过Python来实现的功能。</p>
 <p>通过一系列的探究，最终实现的功能是通过搜索歌手名字自动批量下载其热门歌曲。</p>
 <p>整体的思路如下：</p>
-<p><a href="https://imgchr.com/i/ra7pXd" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/20/ra7pXd.png" alt="process"></a></p>
+<p><img src="https://s3.ax1x.com/2020/12/20/ra7pXd.png" alt="process"></p>
 <p>已知前人总结的网易云下载外链地址为：<code>http://music.163.com/song/media/outer/url?id=xxx</code>，<code>xxx</code>为歌曲id，所以问题就简单化了：我们只需要批量获取歌曲的id，再通过下载外链拼接id一首一首下载即可。</p>
 <p>那么这些id从何而来？没错，通过网页。</p>
 <h4 id="分析网页"><a href="#分析网页" class="headerlink" title="分析网页"></a>分析网页</h4><p>我们访问网易云音乐的网页端，随便进入一个歌单，审查元素选取其中一首歌曲会定位到它的HTML树。</p>
-<p><a href="https://imgchr.com/i/ra7CnA" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/20/ra7CnA.png" alt="song-id"></a></p>
+<p><img src="https://s3.ax1x.com/2020/12/20/ra7CnA.png" alt="song-id"></p>
 <p>这样很容易我们就找到了这首歌曲的id，进而分析出该歌单的所有歌曲id都是存放在相同的标签和属性中。规则摸清了，接下来我们就利用Python帮我们去访问歌单页面，并且一次性获取所有的歌曲id。</p>
 <h4 id="抓取数据"><a href="#抓取数据" class="headerlink" title="抓取数据"></a>抓取数据</h4><p>这一步我们主要需要借助几个第三方库的能力，一个是<code>request</code>，通过<code>urlopen()</code>方法可以发起一个简单的web请求网页：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">req = request.Request(url=self.baseurl, headers=self.headers)</span><br><span class="line">response = request.urlopen(req)</span><br><span class="line">html = response.read().decode(<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
@@ -253,7 +253,7 @@
 <h4 id="批量下载"><a href="#批量下载" class="headerlink" title="批量下载"></a>批量下载</h4><p>通过解析和匹配标签属性我们就拿到了所有id，只要遍历这些id请求下载外链即可，优化一点还可以在下载前获取歌曲的基本信息，这里需要用到<code>requests</code>和<code>os</code>库来请求并写入歌曲。不同于<code>request</code>，<code>requests</code>是对<code>request</code>的进一步封装，可以直接构造<code>get</code>、<code>post</code>请求并发起。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">saveurl = <span class="string">"http://music.163.com/song/media/outer/url?id="</span> + id</span><br><span class="line">content = requests.get(url=saveurl, headers=self.headers).content</span><br><span class="line"><span class="keyword">with</span> open(self.path + songname + <span class="string">" - "</span> + singername + <span class="string">".mp3"</span>, <span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">  f.write(content)</span><br></pre></td></tr></table></figure>
 <h4 id="优化功能"><a href="#优化功能" class="headerlink" title="优化功能"></a>优化功能</h4><p>虽然我们已经实现了批量下载音乐的需求，但显然它并不好用，想要下载必须要知道歌单地址或者歌手页地址，能根据搜索的任意歌手下载对应的歌曲才是符合实际场景的。没问题，整体思路也是一样的，只不过多加了一步解析歌手id的步骤。</p>
-<p><a href="https://imgchr.com/i/rdpfbT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/20/rdpfbT.png" alt="search"></a></p>
+<p><img src="https://s3.ax1x.com/2020/12/20/rdpfbT.png" alt="search"></p>
 <p>我们效仿解析歌曲id的方式去解析歌手id，可是这一回却发现我们没有匹配到对应的元素，经过一番查询，获悉很可能是因为这个歌手列表的内容是异步加载的，访问网页的时候并获取不到对应的结构。</p>
 <p>看来我们只能换一条路尝试了，既然是异步加载那么数据肯定是通过接口获取的，那我们也可以通过模拟接口请求来获取查询的原始数据，很幸运这个接口也有人整理出来了。</p>
 <p>所以整个功能的流程就是：输入歌手名称——请求查询接口获取歌手列表——显示排在前面的几个歌手选项——选取其中一个歌手——根据选取的歌手id访问歌手页面获取歌曲id——批量下载。</p>

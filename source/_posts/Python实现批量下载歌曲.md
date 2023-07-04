@@ -11,7 +11,7 @@ toc: true
 
 Python这门语言虽然早在1989年圣诞节期间就被Guido van Rossum创造了出来，但近几年却突然在国内开始流行了起来：网站插入广告、培训机构宣传，甚至朋友圈推荐广告都可见Python的踪影。
 
-[![ad](https://s3.ax1x.com/2020/12/13/re4lxP.jpg)](https://imgchr.com/i/re4lxP)
+![ad](https://s3.ax1x.com/2020/12/13/re4lxP.jpg)
 
 如此高的出现频率也吸引了很多非互联网行业的人试图学习了解，大有一种全民学Python的趋势。
 
@@ -33,7 +33,7 @@ Python最广泛的应用大概就是用来爬虫了，我们可以通过它编�
 
 整体的思路如下：
 
-[![process](https://s3.ax1x.com/2020/12/20/ra7pXd.png)](https://imgchr.com/i/ra7pXd)
+![process](https://s3.ax1x.com/2020/12/20/ra7pXd.png)
 
 已知前人总结的网易云下载外链地址为：`http://music.163.com/song/media/outer/url?id=xxx`，`xxx`为歌曲id，所以问题就简单化了：我们只需要批量获取歌曲的id，再通过下载外链拼接id一首一首下载即可。
 
@@ -43,7 +43,7 @@ Python最广泛的应用大概就是用来爬虫了，我们可以通过它编�
 
 我们访问网易云音乐的网页端，随便进入一个歌单，审查元素选取其中一首歌曲会定位到它的HTML树。
 
-[![song-id](https://s3.ax1x.com/2020/12/20/ra7CnA.png)](https://imgchr.com/i/ra7CnA)
+![song-id](https://s3.ax1x.com/2020/12/20/ra7CnA.png)
 
 这样很容易我们就找到了这首歌曲的id，进而分析出该歌单的所有歌曲id都是存放在相同的标签和属性中。规则摸清了，接下来我们就利用Python帮我们去访问歌单页面，并且一次性获取所有的歌曲id。
 
@@ -87,7 +87,7 @@ with open(self.path + songname + " - " + singername + ".mp3", "wb") as f:
 
 虽然我们已经实现了批量下载音乐的需求，但显然它并不好用，想要下载必须要知道歌单地址或者歌手页地址，能根据搜索的任意歌手下载对应的歌曲才是符合实际场景的。没问题，整体思路也是一样的，只不过多加了一步解析歌手id的步骤。
 
-[![search](https://s3.ax1x.com/2020/12/20/rdpfbT.png)](https://imgchr.com/i/rdpfbT)
+![search](https://s3.ax1x.com/2020/12/20/rdpfbT.png)
 
 我们效仿解析歌曲id的方式去解析歌手id，可是这一回却发现我们没有匹配到对应的元素，经过一番查询，获悉很可能是因为这个歌手列表的内容是异步加载的，访问网页的时候并获取不到对应的结构。
 
