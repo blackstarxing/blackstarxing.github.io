@@ -1,7 +1,7 @@
 ---
 title: React受控组件与非受控组件
 date: 2020-04-05 19:16:26
-urlname: react-controlled&uncontrolled-components
+urlname: react-controlled-or-uncontrolled-components
 categories: ["技术"]
 tags: ["React"]
 ---
